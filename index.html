@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BB369 Platform</title>
   <meta name="description" content="Structured decision platform for home service projects, space upgrades, and business decision support." />
+
   <style>
     body {
       margin: 0;
@@ -55,6 +56,12 @@
       text-decoration: none;
       font-weight: 600;
       border: 1px solid #111111;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
     }
 
     .btn-dark {
@@ -103,10 +110,19 @@
     }
 
     .module-image {
-      height: 180px;
-      background-size: cover;
-      background-position: center;
-      background-color: #ececec;
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border-bottom: 1px solid #efefef;
+    }
+
+    .module-image img {
+      width: 42px;
+      height: 42px;
+      opacity: 0.85;
+      object-fit: contain;
     }
 
     .module-content {
@@ -126,13 +142,23 @@
 
     .bottom-cta {
       border-top: 1px solid #ececec;
-      padding-top: 28px;
+      padding-top: 40px;
       text-align: center;
     }
 
     .bottom-cta p {
       color: #666666;
       margin-bottom: 14px;
+      font-size: 1rem;
+    }
+
+    .footer-note {
+      font-size: 0.85rem;
+      color: #888888;
+      text-align: center;
+      max-width: 620px;
+      margin: 20px auto 0;
+      line-height: 1.5;
     }
 
     .footer {
@@ -159,14 +185,26 @@
       .hero h1 {
         font-size: 2.2rem;
       }
+
+      .module-image {
+        height: 72px;
+      }
+
+      .module-image img {
+        width: 38px;
+        height: 38px;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="container">
 
+    <!-- HERO -->
     <section class="hero">
       <h1>BB369 Platform</h1>
+
       <p>
         Structured decision support for home service projects, space upgrades, and business decision needs.
         Compare clear options, understand likely ranges, and move forward with confidence.
@@ -184,15 +222,20 @@
       </p>
     </section>
 
+    <!-- MODULES -->
     <section id="modules">
       <h2 class="section-title">Service Modules</h2>
+
       <p class="section-note">
         Each module helps users compare options, understand estimated ranges, and move toward a structured next step.
       </p>
 
       <div class="module-grid">
+
         <a class="module-card" href="industries/windows.html">
-          <div class="module-image"></div>
+          <div class="module-image">
+            <img src="assets/icon-windows.png" alt="Windows & Doors">
+          </div>
           <div class="module-content">
             <h3>Windows & Doors</h3>
             <p>Repair, upgrade, and replacement decision paths.</p>
@@ -200,7 +243,9 @@
         </a>
 
         <a class="module-card" href="industries/curtains.html">
-          <div class="module-image"></div>
+          <div class="module-image">
+            <img src="assets/icon-curtains.png" alt="Curtains">
+          </div>
           <div class="module-content">
             <h3>Curtains</h3>
             <p>Installation, upgrade, and custom drapery options.</p>
@@ -208,7 +253,9 @@
         </a>
 
         <a class="module-card" href="industries/cabinets.html">
-          <div class="module-image"></div>
+          <div class="module-image">
+            <img src="assets/icon-cabinets.png" alt="Cabinets & Storage">
+          </div>
           <div class="module-content">
             <h3>Cabinets & Storage</h3>
             <p>Storage improvements, layout upgrades, and built-in solutions.</p>
@@ -216,29 +263,39 @@
         </a>
 
         <a class="module-card" href="industries/flooring.html">
-          <div class="module-image"></div>
+          <div class="module-image">
+            <img src="assets/icon-flooring.png" alt="Flooring">
+          </div>
           <div class="module-content">
             <h3>Flooring</h3>
             <p>Refresh, upgrade, and premium finish pathways.</p>
           </div>
         </a>
+
       </div>
     </section>
 
+    <!-- CTA -->
     <section class="bottom-cta">
       <p>Need help making the right next decision?</p>
+
       <a class="btn btn-dark" href="https://cal.com/bb369tech/space-upgrade-decision-consultation-%E7%A9%BA%E9%97%B4%E5%8D%87%E7%BA%A7%E5%86%B3%E7%AD%96%E5%92%A8%E8%AF%A2">
         Book a Decision Review
       </a>
     </section>
-    
-<div class="footer-note">
-  Estimates are for reference only. Final decisions are confirmed through professional assessment.
-</div>
+
+    <!-- DISCLAIMER -->
+    <div class="footer-note">
+      Estimates are for reference only. Final decisions are confirmed through professional assessment.
+    </div>
+
+    <!-- FOOTER -->
     <div class="footer">
       <div>BB369 Platform</div>
       <div>Structured decision systems for service businesses.</div>
-      <div class="provenance">Based on a structured decision approach · Research-informed</div>
+      <div class="provenance">
+        Based on a structured decision approach · Research-informed
+      </div>
     </div>
 
   </div>
