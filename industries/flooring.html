@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>BB369 PLATFORM | Flooring Solutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header class="app-header">
+      <div class="header-top">
+        <a href="../index.html" class="btn-back-home">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+          Back to Home
+        </a>
+        <div class="brand-group">
+          <span class="brand-name">BB369</span>
+          <span class="brand-accent">PLATFORM</span>
+        </div>
+      </div>
+      <div class="header-tagline">Flooring Solutions</div>
+    </header>
+
+    <main class="content-wrapper">
+      <!-- Step Navigation (Progress Bar) -->
+      <nav class="step-nav">
+        <div class="step-item active" data-target="1">1<span>Style</span></div>
+        <div class="step-item" data-target="2">2<span>Size</span></div>
+        <div class="step-item" data-target="3">3<span>Preview</span></div>
+        <div class="step-item" data-target="4">4<span>Book</span></div>
+      </nav>
+
+      <!-- Step 1: Solution Style -->
+      <section class="step-view active" id="step-1">
+        <h2 class="section-title">Select Your Look</h2>
+        <div class="options-grid">
+          <div class="option-card active" data-style="basic" data-rate="6" data-img="floor_basic.png">
+            <div class="card-image" style="background-image: url('floor_basic.png')"></div>
+            <div class="card-info">
+              <span class="badge">Option A</span>
+              <h3>Basic Refresh</h3>
+              <p>Practical & Clean</p>
+              <div class="price-tag">$6/sq.ft</div>
+            </div>
+          </div>
+
+          <div class="option-card" data-style="standard" data-rate="10" data-img="floor_standard.png">
+            <div class="card-image" style="background-image: url('floor_standard.png')"></div>
+            <div class="card-info">
+              <span class="badge">Option B</span>
+              <h3>Standard Upgrade</h3>
+              <p>Durable & Warm</p>
+              <div class="price-tag">$10/sq.ft</div>
+            </div>
+          </div>
+
+          <div class="option-card" data-style="custom" data-rate="16" data-img="floor_custom.png">
+            <div class="card-image" style="background-image: url('floor_custom.png')"></div>
+            <div class="card-info">
+              <span class="badge">Option C</span>
+              <h3>Premium Finish</h3>
+              <p>Luxury & Character</p>
+              <div class="price-tag">$16/sq.ft</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 2: Area / Estimate -->
+      <section class="step-view" id="step-2">
+        <h2 class="section-title">Estimate Cost</h2>
+        <div class="calculator-panel">
+          <div class="input-container">
+            <label for="area-input">Total Area (sq ft)</label>
+            <div class="input-wrapper">
+              <input type="number" id="area-input" value="300" min="50" step="10">
+              <span class="unit">FT²</span>
+            </div>
+          </div>
+          
+          <div class="calculation-summary">
+            <div class="summary-row">
+              <span>Rate</span>
+              <span id="display-rate">$6.00</span>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="total-row">
+              <label>Estimated Total</label>
+              <div id="total-price">$1,800</div>
+            </div>
+          </div>
+          <p class="notice">This system provides structured estimates for reference only. Final pricing and solutions are confirmed through professional assessment and on-site measurement.</p>
+        </div>
+      </section>
+
+      <!-- Step 3: Visual Preview -->
+      <section class="step-view" id="step-3">
+        <h2 class="section-title">Visual Preview</h2>
+        <div class="preview-container">
+          <div class="image-frame">
+            <img id="main-preview" src="floor_basic.png" alt="Preview">
+            <div class="preview-caption">
+              <span id="style-name">Basic Refresh</span>
+              <span class="divider">|</span>
+              <span id="area-val">300 sq ft</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step 4: Book Service -->
+      <section class="step-view" id="step-4">
+        <h2 class="section-title">Ready to Proceed?</h2>
+        <div class="action-panel">
+          <p class="action-desc">Get a professional consultation and precise measurements for your flooring project.</p>
+          <div class="action-buttons">
+            <a href="https://cal.com/bb369tech/service-consultation-on-site-measurement-服务咨询与上门测量" class="btn primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+              Book Consultation
+            </a>
+            <a href="tel:+1-XXX-XXX-XXXX" class="btn secondary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>
+              Call Service
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <div class="footer-nav">
+        <button id="prev-btn" class="nav-btn" disabled>Back</button>
+        <button id="next-btn" class="nav-btn active">Next</button>
+      </div>
+      <div class="provenance">Based on a structured decision approach</div>
+    </footer>
+  </div>
+  <script src="script.js" type="module"></script>
+</body>
+</html>
