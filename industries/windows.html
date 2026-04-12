@@ -3,486 +3,339 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Professional Window & Door Solutions</title>
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://esm.sh/three@0.160.0",
-        "three/examples/jsm/controls/OrbitControls": "https://esm.sh/three@0.160.0/examples/jsm/controls/OrbitControls",
-        "nipplejs": "https://esm.sh/nipplejs@0.10.1"
-      }
-    }
-  </script>
+  <title>Premium Windows & Doors</title>
+  <link rel="stylesheet" href="../style.css">
   <style>
-    :root {
-      --primary: #111111;
-      --secondary: #666666;
-      --bg: #ffffff;
-      --accent: #f0f0f0;
-      --radius: 12px;
-      --safe-area-inset-bottom: env(safe-area-inset-bottom);
-    }
-
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--primary);
-      line-height: 1.5;
-      overflow: hidden;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111111;
     }
 
-    header {
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--accent);
+    .page {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-bottom: 40px;
+    }
+
+    .topbar {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(10px);
-      z-index: 100;
-      flex-shrink: 0;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid #ececec;
+      font-size: 0.95rem;
     }
 
-    header h1 {
-      font-size: 16px;
-      margin: 0;
+    .back-link {
+      color: #111;
+      text-decoration: none;
+    }
+
+    .page-title {
+      font-size: 1rem;
       font-weight: 600;
     }
 
-    .back-btn {
-      text-decoration: none;
-      color: var(--primary);
-      font-size: 13px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    main {
-      flex: 1;
-      overflow-y: auto;
-      padding: 16px;
-      padding-bottom: calc(140px + var(--safe-area-inset-bottom));
-    }
-
-    .hero {
-      width: 100%;
-      height: 100px;
-      background-image: url('hero-window.png');
-      background-size: cover;
-      background-position: center;
-      border-radius: var(--radius);
-      margin-bottom: 24px;
-      background-color: #e9e9e9;
+    .hero-image {
+      margin: 26px 24px 32px;
+      height: 150px;
+      border-radius: 22px;
+      background: #e9e9e9 center/cover no-repeat;
+      background-image: url('../assets/windows-hero.jpg');
     }
 
     .tabs {
       display: flex;
-      gap: 8px;
-      margin-bottom: 16px;
-      position: sticky;
-      top: -16px; /* Offset for main padding */
-      background: white;
-      padding: 8px 0;
-      z-index: 10;
+      gap: 14px;
+      padding: 0 24px 24px;
+      flex-wrap: wrap;
     }
 
-    .tab {
-      padding: 6px 14px;
+    .tab-btn {
+      padding: 12px 22px;
       border-radius: 999px;
-      border: 1px solid var(--primary);
-      background: none;
-      font-size: 13px;
+      border: 1px solid #111;
+      background: #fff;
+      color: #111;
+      font-size: 0.95rem;
       cursor: pointer;
-      transition: all 0.2s;
     }
 
-    .tab.active {
-      background: var(--primary);
-      color: white;
+    .tab-btn.active {
+      background: #111;
+      color: #fff;
     }
 
-    .content-section {
-      display: none;
+    .section-box {
+      margin: 0 24px 24px;
+      border-radius: 22px;
+      background: #f3f3f3;
+      min-height: 280px;
+      padding: 22px;
     }
 
-    .content-section.active {
-      display: block;
-      animation: fadeIn 0.3s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .box {
-      border: 1px solid #ddd;
-      border-radius: var(--radius);
-      padding: 12px;
-      margin-bottom: 12px;
-      background: #fafafa;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .box:hover {
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-    }
-
-    .box:active {
-      transform: scale(0.98);
-    }
-
-    .price-tag {
-      font-weight: 700;
-      font-size: 1.2rem;
-      display: block;
-      margin-top: 4px;
-    }
-
-    .calculator-grid {
+    .solutions-grid {
       display: grid;
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
     }
 
-    .input-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+    .solution-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 18px;
+      padding: 18px;
     }
 
-    label {
-      font-size: 14px;
-      color: var(--secondary);
+    .solution-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
     }
 
-    select, input {
-      padding: 12px;
+    .solution-card p {
+      margin: 0 0 10px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .price {
+      font-weight: 600;
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      max-width: 760px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+      color: #444;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
       border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 16px;
-      width: 100%;
-      background: white;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+      background: #fff;
     }
 
-    .result-box {
-      background: var(--primary);
-      color: white;
-      padding: 20px;
-      border-radius: var(--radius);
-      margin-top: 20px;
-      text-align: center;
+    .quote-result {
+      margin-top: 22px;
+      font-size: 1.05rem;
+      font-weight: 600;
     }
 
-    .result-box h3 {
-      margin: 0 0 10px 0;
-      font-weight: 400;
-      color: #ccc;
-      font-size: 14px;
+    .quote-note {
+      margin-top: 10px;
+      color: #777;
+      font-size: 0.88rem;
+      max-width: 760px;
+      line-height: 1.5;
     }
 
-    .total-price {
-      font-size: 32px;
-      font-weight: 800;
-    }
-
-    #visualizer-container {
-      width: 100%;
-      height: 220px;
-      background: linear-gradient(180deg, #f3f3f3 0%, #e7e7e7 100%);
-      border-radius: var(--radius);
+    .visual-wrap {
       position: relative;
+      min-height: 300px;
+      border-radius: 20px;
+      background: #ececec center/cover no-repeat;
+      background-image: url('../assets/windows-preview.jpg');
       overflow: hidden;
     }
 
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px;
-      background: var(--primary);
-      color: white;
-      border-radius: 999px;
+    .visual-hint {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      background: rgba(255,255,255,0.9);
+      color: #444;
+      font-size: 0.9rem;
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+
+    .cta-wrap {
       text-align: center;
+      padding: 10px 0 0;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
       text-decoration: none;
       font-weight: 600;
-      border: 1px solid var(--primary);
-      cursor: pointer;
-      font-size: 14px;
-      flex: 1;
+      background: #111;
+      color: #fff;
+      margin-bottom: 14px;
     }
 
-    .btn-outline {
-      background: transparent;
-      color: var(--primary);
-      border: 1px solid var(--primary);
+    .cta-note {
+      max-width: 620px;
+      margin: 12px auto 0;
+      color: #888;
+      font-size: 0.85rem;
+      line-height: 1.5;
     }
 
-    .muted {
-      color: var(--secondary);
-      font-size: 12px;
-      margin-top: 12px;
+    .footer {
+      margin: 42px 24px 0;
+      padding-top: 18px;
+      border-top: 1px solid #ececec;
       text-align: center;
+      color: #888;
+      font-size: 0.92rem;
     }
 
-    .cta-container {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 12px 16px calc(12px + var(--safe-area-inset-bottom));
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid var(--accent);
-      z-index: 100;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 8px;
-    }
-
-    canvas {
-      width: 100% !important;
-      height: 100% !important;
-      display: block;
-    }
-
-    .controls-hint {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
+    .provenance {
+      margin-top: 8px;
       font-size: 10px;
-      background: rgba(255,255,255,0.7);
-      padding: 2px 6px;
-      border-radius: 4px;
-      pointer-events: none;
+      color: #aaa;
+      opacity: 0.75;
     }
 
-    .color-dot {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: 2px solid #ddd;
-      cursor: pointer;
-      transition: transform 0.2s;
+    .hidden {
+      display: none;
     }
 
-    .color-dot:active {
-      transform: scale(0.9);
+    @media (max-width: 640px) {
+      .hero-image {
+        height: 120px;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="page">
 
-  <header>
-    <a href="../index.html" class="back-btn">← Home</a>
-    <h1>Premium Windows & Doors</h1>
-    <div style="width: 40px"></div>
-  </header>
+    <div class="topbar">
+      <a class="back-link" href="../index.html">← Home</a>
+      <div class="page-title">Premium Windows & Doors</div>
+      <div style="width:60px;"></div>
+    </div>
 
-  <main>
-    <div class="hero"></div>
+    <div class="hero-image"></div>
 
     <div class="tabs">
-      <button class="tab active" onclick="showTab('options', this)">Solutions</button>
-      <button class="tab" onclick="showTab('calculator', this)">Quote Tool</button>
-      <button class="tab" onclick="showTab('visualizer', this)">3D Visualizer</button>
+      <button class="tab-btn" data-tab="solutions">Solutions</button>
+      <button class="tab-btn" data-tab="quote">Quote Tool</button>
+      <button class="tab-btn active" data-tab="visual">3D Visualizer</button>
     </div>
 
-    <section id="options" class="content-section active">
-      <p style="margin-top:0">Curated high-performance window and door maintenance and upgrade solutions.</p>
-      
-      <div class="box">
-        <strong>Option A: Basic Repair</strong>
-        <span class="price-tag">$80 – $200</span>
-        <p>Precision adjustment of seals, locks, or hardware. Quickly resolve leaks and drafts to extend the life of your current windows.</p>
-      </div>
-
-      <div class="box">
-        <strong>Option B: Standard Service</strong>
-        <span class="price-tag">$200 – $600</span>
-        <p>Comprehensive performance optimization. Significantly improve insulation and soundproofing for maximum comfort.</p>
-      </div>
-
-      <div class="box">
-        <strong>Option C: Premium Replacement / Custom</strong>
-        <span class="price-tag">$600 – $1,500+</span>
-        <p>Bespoke customization and full replacement. Tailored to your architectural style with premium craftsmanship and artistic glass.</p>
-      </div>
-
-      <a href="#" class="btn btn-outline" style="margin-bottom: 20px">Browse Featured Projects</a>
-    </section>
-
-    <section id="calculator" class="content-section">
-      <div class="calculator-grid">
-        <div class="input-group">
-          <label>Project Type</label>
-          <select id="calc-type" onchange="calculate()">
-            <option value="window">Single Window</option>
-            <option value="door">Entry Door</option>
-            <option value="sliding">Sliding Patio Door</option>
-          </select>
+    <!-- Solutions -->
+    <section class="section-box hidden" id="solutions">
+      <div class="solutions-grid">
+        <div class="solution-card">
+          <h3>Option A — Basic Repair</h3>
+          <p>Simple fixes and targeted improvement for existing windows or doors.</p>
+          <div class="price">$25 – $260</div>
         </div>
 
-        <div class="input-group">
-          <label>Material</label>
-          <select id="calc-material" onchange="calculate()">
-            <option value="vinyl">Vinyl (Economy)</option>
-            <option value="wood">Wood (Premium)</option>
-            <option value="aluminum">Aluminum (Modern)</option>
-          </select>
+        <div class="solution-card">
+          <h3>Option B — Standard Upgrade</h3>
+          <p>Improved materials, better efficiency, and a cleaner finished look.</p>
+          <div class="price">$300 – $700</div>
         </div>
 
-        <div class="input-group">
-          <label>Glass Type</label>
-          <select id="calc-glass" onchange="calculate()">
-            <option value="single">Single Pane</option>
-            <option value="double" selected>Double Pane (Standard)</option>
-            <option value="triple">Triple Pane (Eco)</option>
-          </select>
-        </div>
-
-        <div class="input-group">
-          <label>Estimated Area (Sq Ft)</label>
-          <input type="number" id="calc-area" value="12" min="1" oninput="calculate()">
-        </div>
-      </div>
-
-      <div class="result-box">
-        <h3>Estimated Investment</h3>
-        <div class="total-price" id="total-price">$450</div>
-      </div>
-      
-      <p class="muted">
-        Includes standard installation labor. Final price depends on site conditions.
-      </p>
-    </section>
-
-    <section id="visualizer" class="content-section">
-      <div id="visualizer-container">
-        <div class="controls-hint">Drag to Rotate • Pinch to Zoom</div>
-      </div>
-      <div class="input-group" style="margin-top: 16px;">
-        <label>Frame Color</label>
-        <div style="display: flex; gap: 12px; margin-top: 8px;">
-          <button class="color-dot" onclick="changeFrameColor('#222222')" style="background:#222;"></button>
-          <button class="color-dot" onclick="changeFrameColor('#ffffff')" style="background:#fff;"></button>
-          <button class="color-dot" onclick="changeFrameColor('#4a321f')" style="background:#4a321f;"></button>
-          <button class="color-dot" onclick="changeFrameColor('#747d8c')" style="background:#747d8c;"></button>
+        <div class="solution-card">
+          <h3>Option C — Premium Replacement</h3>
+          <p>Full replacement path for long-term performance and visual upgrade.</p>
+          <div class="price">$700 – $1,500+</div>
         </div>
       </div>
     </section>
 
-    <p class="muted">
-      Quotes and plans provided are for preliminary reference only. Due to unique architectural structures, precise pricing requires an on-site inspection by a professional technician.
-      We prioritize human review to ensure the safest and most tailored professional service for you.
-    </p>
+    <!-- Quote Tool -->
+    <section class="section-box hidden" id="quote">
+      <div class="quote-grid">
+        <div class="field">
+          <label for="serviceType">Service Type</label>
+          <select id="serviceType">
+            <option value="120">Window Repair</option>
+            <option value="450">Window Upgrade</option>
+            <option value="900">Window Replacement</option>
+            <option value="180">Door Repair</option>
+            <option value="550">Door Upgrade</option>
+            <option value="1200">Door Replacement</option>
+          </select>
+        </div>
 
-    <p class="muted" style="margin-bottom: 40px;">
-      This system structures decision options without automating outcomes.  
-      Human judgment remains central in all final results.
-    </p>
-  </main>
+        <div class="field">
+          <label for="unitCount">Estimated Quantity</label>
+          <input id="unitCount" type="number" min="1" value="1" />
+        </div>
+      </div>
 
-  <div class="cta-container">
-    <a class="btn" href="https://cal.com/bb369tech/service-decision-review">
-      📅 Book Appointment
-    </a>
-    <div class="cta-row">
-      <a class="btn btn-outline" href="tel:+1-XXX-XXX-XXXX">
-        📞 Call Service
-      </a>
+      <div class="quote-result" id="quoteResult">Estimated Total: $120</div>
 
+      <div class="quote-note">
+        Estimates are for reference only. Final pricing and solutions are confirmed through professional assessment and on-site measurement.
+      </div>
+    </section>
+
+    <!-- Visualizer -->
+    <section class="section-box" id="visual">
+      <div class="visual-wrap">
+        <div class="visual-hint">Drag to Rotate • Pinch to Zoom</div>
+      </div>
+    </section>
+
+    <div class="cta-wrap">
+      <a class="cta-btn" href="https://cal.com/bb369tech/service-decision-review">Book a Decision Review</a>
+      <div class="cta-note">
+        Estimates are for reference only. Final decisions are confirmed through professional assessment.
+      </div>
     </div>
+
+    <div class="footer">
+      <div>BB369 Platform</div>
+      <div>Structured decision systems for service businesses.</div>
+      <div class="provenance">Based on a structured decision approach · Research-informed</div>
+    </div>
+
   </div>
 
-  <script type="module" src="app.js"></script>
   <script>
-    function showTab(tabId, btn) {
-      document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    const tabs = document.querySelectorAll('.tab-btn');
+    const sections = {
+      solutions: document.getElementById('solutions'),
+      quote: document.getElementById('quote'),
+      visual: document.getElementById('visual')
+    };
 
-      document.getElementById(tabId).classList.add('active');
-      btn.classList.add('active');
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
 
-      const clickSound = new Audio('click.mp3');
-      clickSound.volume = 0.2;
-      clickSound.play().catch(() => {});
-
-      if (tabId === 'visualizer') {
-        window.dispatchEvent(new Event('resize'));
-      }
-    }
-
-    function calculate() {
-      const type = document.getElementById('calc-type').value;
-      const material = document.getElementById('calc-material').value;
-      const glass = document.getElementById('calc-glass').value;
-      const area = parseFloat(document.getElementById('calc-area').value) || 0;
-
-      const baseRates = {
-        window: 200,
-        door: 600,
-        sliding: 1200
-      };
-
-      const materialMultipliers = {
-        vinyl: 1,
-        wood: 1.8,
-        aluminum: 1.4
-      };
-
-      const glassAddons = {
-        single: 0,
-        double: 50,
-        triple: 150
-      };
-
-      const total = (baseRates[type] * materialMultipliers[material]) + (glassAddons[glass] * (area / 10)) + (area * 15);
-
-      const display = document.getElementById('total-price');
-      const formatted = new Intl.NumberFormat('en-US', { 
-        style: 'currency', 
-        currency: 'USD',
-        maximumFractionDigits: 0 
-      }).format(total);
-
-      if (display.innerText !== formatted) {
-        display.innerText = formatted;
-        
-        // Brief chime on change
-        if (window.lastCalcValue !== formatted) {
-           const chime = new Audio('calculate.mp3');
-           chime.volume = 0.1;
-           chime.play().catch(() => {});
-           window.lastCalcValue = formatted;
-        }
-      }
-    }
-
-    function changeFrameColor(color) {
-      if (window.setFrameColor) {
-        window.setFrameColor(color);
-      }
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      calculate();
+        Object.values(sections).forEach(sec => sec.classList.add('hidden'));
+        sections[btn.dataset.tab].classList.remove('hidden');
+      });
     });
+
+    const serviceType = document.getElementById('serviceType');
+    const unitCount = document.getElementById('unitCount');
+    const quoteResult = document.getElementById('quoteResult');
+
+    function updateQuote() {
+      const base = parseFloat(serviceType.value) || 0;
+      const qty = parseInt(unitCount.value, 10) || 1;
+      const total = base * qty;
+      quoteResult.textContent = `Estimated Total: $${total.toLocaleString()}`;
+    }
+
+    serviceType.addEventListener('change', updateQuote);
+    unitCount.addEventListener('input', updateQuote);
+    updateQuote();
   </script>
 </body>
 </html>
