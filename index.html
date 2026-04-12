@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BB369 Platform</title>
-  <meta
-    name="description"
-    content="BB369 Platform helps service businesses turn complex customer decisions into clear options."
-  />
+  <meta name="description" content="Structured decision platform for home service projects." />
   <style>
     body {
       margin: 0;
@@ -18,113 +15,150 @@
     }
 
     .container {
-      max-width: 960px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 48px 20px 72px;
-    }
-
-    h1, h2, h3 {
-      margin-top: 0;
-      color: #111111;
-    }
-
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 48px;
-      margin-bottom: 12px;
-      border-bottom: 1px solid #e5e5e5;
-      padding-bottom: 8px;
-    }
-
-    h3 {
-      font-size: 1.1rem;
-      margin-top: 28px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      margin: 0 0 16px;
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    a {
-      color: #111111;
-      text-decoration: none;
-      border-bottom: 1px solid #111111;
-    }
-
-    a:hover {
-      opacity: 0.75;
+      padding: 40px 20px 80px;
     }
 
     .hero {
-      padding-bottom: 18px;
+      border-radius: 24px;
+      padding: 72px 32px;
+      background:
+        linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.28)),
+        url('assets/hero-home.png') center/cover no-repeat;
+      color: white;
+      margin-bottom: 48px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin: 0 0 16px;
     }
 
     .hero p {
-      max-width: 720px;
+      max-width: 680px;
+      margin: 0 0 20px;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.92);
     }
 
-    .cta {
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
       display: inline-block;
-      margin-top: 12px;
-      padding: 12px 20px;
-      border: 1px solid #111111;
+      padding: 14px 22px;
       border-radius: 999px;
       text-decoration: none;
       font-weight: 600;
+      border: 1px solid #111111;
     }
 
-    .muted {
+    .btn-dark {
+      background: #111111;
+      color: #ffffff;
+      border-color: #111111;
+    }
+
+    .btn-light {
+      background: rgba(255,255,255,0.9);
+      color: #111111;
+      border-color: rgba(255,255,255,0.9);
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin: 0 0 18px;
+    }
+
+    .section-note {
       color: #666666;
+      margin-bottom: 28px;
+      max-width: 760px;
     }
 
-    .grid {
+    .module-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-bottom: 56px;
     }
 
-    .card {
-      border: 1px solid #e5e5e5;
-      border-radius: 16px;
-      padding: 20px;
+    .module-card {
+      border: 1px solid #e8e8e8;
+      border-radius: 20px;
+      overflow: hidden;
       background: #fafafa;
+      text-decoration: none;
+      color: #111111;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .coming-soon {
-      color: #777777;
+    .module-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .module-image {
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      background-color: #ececec;
+    }
+
+    .module-content {
+      padding: 18px;
+    }
+
+    .module-content h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+
+    .module-content p {
+      margin: 0;
+      color: #666666;
+      font-size: 0.95rem;
+    }
+
+    .bottom-cta {
+      border-top: 1px solid #ececec;
+      padding-top: 28px;
+      text-align: center;
+    }
+
+    .bottom-cta p {
+      color: #666666;
+      margin-bottom: 14px;
     }
 
     .footer {
-      margin-top: 64px;
-      padding-top: 20px;
-      border-top: 1px solid #e5e5e5;
-      font-size: 0.95rem;
-      color: #666666;
+      margin-top: 56px;
+      border-top: 1px solid #ececec;
+      padding-top: 18px;
+      text-align: center;
+      color: #888888;
+      font-size: 0.92rem;
+    }
+
+    .provenance {
+      margin-top: 10px;
+      font-size: 10px;
+      color: #aaaaaa;
+      opacity: 0.75;
     }
 
     @media (max-width: 640px) {
-      h1 {
-        font-size: 2rem;
+      .hero {
+        padding: 56px 20px;
       }
 
-      .container {
-        padding: 36px 16px 60px;
+      .hero h1 {
+        font-size: 2.2rem;
       }
     }
   </style>
@@ -134,88 +168,66 @@
 
     <section class="hero">
       <h1>BB369 Platform</h1>
-      <p>Turn complex service decisions into clear options.</p>
-      <p>Make faster decisions. Compare options. Book with confidence.</p>
-
-      <a class="cta" href="industries/windows.html">Start Your Upgrade →</a>
-    </section>
-
-    <section>
-      <h2>How It Works</h2>
-      <p><strong>Identify → Compare → Decide → Book</strong></p>
-      <p class="muted">
-        A structured decision system for service businesses that helps customers
-        understand options more clearly before taking the next step.
+      <p>
+        Structured decision support for home service projects.
+        Compare clear options, understand likely ranges, and book the next step with confidence.
       </p>
-    </section>
-
-    <section>
-      <h2>Industries</h2>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Home Upgrade</h3>
-          <ul>
-            <li><a href="industries/windows.html">Windows &amp; Doors</a></li>
-            <li><span class="coming-soon">Cabinets — Coming soon</span></li>
-            <li><span class="coming-soon">Curtains — Coming soon</span></li>
-            <li><span class="coming-soon">Interior Doors — Coming soon</span></li>
-            <li><span class="coming-soon">Remodeling — Coming soon</span></li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Repair &amp; Maintenance</h3>
-          <ul>
-            <li><span class="coming-soon">HVAC — Coming soon</span></li>
-            <li><span class="coming-soon">Plumbing — Coming soon</span></li>
-            <li><span class="coming-soon">Electrical — Coming soon</span></li>
-            <li><span class="coming-soon">Home Repair — Coming soon</span></li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Local Services</h3>
-          <ul>
-            <li><span class="coming-soon">Cleaning — Coming soon</span></li>
-            <li><span class="coming-soon">Security Systems — Coming soon</span></li>
-            <li><span class="coming-soon">Custom Service Modules — Coming soon</span></li>
-          </ul>
-        </div>
+      <div class="hero-actions">
+        <a class="btn btn-light" href="industries/windows.html">Explore Modules</a>
+        <a class="btn btn-dark" href="https://cal.com/bb369tech/service-decision-review">Book Consultation</a>
       </div>
     </section>
 
     <section>
-      <h2>Real Example</h2>
-      <p>
-        <a href="clients/home-upgrade-la.html">
-          See how a service business improved customer decision-making →
+      <h2 class="section-title">Service Modules</h2>
+      <p class="section-note">
+        Each module helps users compare options, understand estimated ranges, and move toward a structured next step.
+      </p>
+
+      <div class="module-grid">
+        <a class="module-card" href="industries/windows.html">
+          <div class="module-image" style="background-image:url('assets/windows-cover.png');"></div>
+          <div class="module-content">
+            <h3>Windows & Doors</h3>
+            <p>Repair, upgrade, and replacement decision paths.</p>
+          </div>
         </a>
-      </p>
-      <p class="muted">
-        Visuals and examples may be simplified to focus on structure and clarity.
-      </p>
+
+        <a class="module-card" href="industries/curtains.html">
+          <div class="module-image" style="background-image:url('assets/curtains-cover.png');"></div>
+          <div class="module-content">
+            <h3>Curtains</h3>
+            <p>Installation, upgrade, and custom drapery options.</p>
+          </div>
+        </a>
+
+        <a class="module-card" href="industries/cabinets.html">
+          <div class="module-image" style="background-image:url('assets/cabinets-cover.png');"></div>
+          <div class="module-content">
+            <h3>Cabinets & Storage</h3>
+            <p>Storage improvements, layout upgrades, and built-in solutions.</p>
+          </div>
+        </a>
+
+        <a class="module-card" href="industries/flooring.html">
+          <div class="module-image" style="background-image:url('assets/flooring-cover.png');"></div>
+          <div class="module-content">
+            <h3>Flooring</h3>
+            <p>Refresh, upgrade, and premium finish pathways.</p>
+          </div>
+        </a>
+      </div>
     </section>
 
-    <section>
-      <h2>Advanced Features</h2>
-      <p>Photo-based assessment <span class="coming-soon">(Coming soon)</span></p>
-      <p class="muted">
-        Future modules may support photo upload, quick review, and more guided recommendations.
-      </p>
-    </section>
-
-    <section>
-      <h2>Get Started</h2>
-      <p>
-        Begin with the current live module:
-        <a href="industries/windows.html">Windows &amp; Doors →</a>
-      </p>
+    <section class="bottom-cta">
+      <p>Need help deciding what fits your space best?</p>
+      <a class="btn btn-dark" href="https://cal.com/bb369tech/service-decision-review">Book a Service Decision Review</a>
     </section>
 
     <div class="footer">
-      <p>BB369 Platform</p>
-      <p>Structured decision systems for service businesses.</p>
+      <div>BB369 Platform</div>
+      <div>Structured decision systems for service businesses.</div>
+      <div class="provenance">Based on a structured decision approach · Research-informed</div>
     </div>
 
   </div>
