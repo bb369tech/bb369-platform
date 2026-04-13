@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Premium Windows & Doors</title>
   <link rel="stylesheet" href="../style.css">
+
   <style>
     body {
       margin: 0;
@@ -38,27 +39,7 @@
       font-weight: 600;
     }
 
-    .intro-box {
-      margin: 24px 24px 20px;
-      padding: 34px 24px;
-      border-radius: 22px;
-      background: linear-gradient(to bottom, #ffffff, #f3f3f3);
-      border: 1px solid #ececec;
-      text-align: center;
-    }
-
-    .intro-box h1 {
-      margin: 0 0 12px;
-      font-size: 1.8rem;
-    }
-
-    .intro-box p {
-      margin: 0 auto;
-      max-width: 760px;
-      color: #666;
-      line-height: 1.6;
-      font-size: 0.96rem;
-    }
+    /* ❌ 横图已删除 */
 
     .tabs {
       display: flex;
@@ -82,26 +63,19 @@
       color: #fff;
     }
 
-    .visual-gallery {
-      padding: 0 24px 8px;
-      text-align: center;
+    /* ✅ 新增：三图并排 */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding: 0 24px 20px;
     }
 
-    .main-visual {
+    .image-grid img {
       width: 100%;
-      max-width: 900px;
-      display: block;
-      margin: 0 auto 22px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    .sub-visual {
-      width: 100%;
-      max-width: 760px;
-      display: block;
-      margin: 0 auto 22px;
       border-radius: 16px;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
     }
 
     .section-box {
@@ -179,14 +153,14 @@
       line-height: 1.5;
     }
 
+    /* 3D区域去掉图片干扰 */
     .visual-wrap {
       position: relative;
       height: 160px;
       max-width: 620px;
       margin: 0 auto;
       border-radius: 16px;
-      background: #ececec center/cover no-repeat;
-      background-image: url('../assets/windows-preview.jpg');
+      background: #ececec;
       overflow: hidden;
     }
 
@@ -199,7 +173,7 @@
       font-size: 0.75rem;
       padding: 6px 10px;
       border-radius: 10px;
-      opacity: 0.9;
+      opacity: 0.8;
       z-index: 1;
     }
 
@@ -246,36 +220,9 @@
     .hidden {
       display: none;
     }
-
-    @media (max-width: 640px) {
-      .intro-box {
-        margin: 20px 16px 18px;
-        padding: 26px 18px;
-      }
-
-      .intro-box h1 {
-        font-size: 1.45rem;
-      }
-
-      .tabs {
-        padding: 0 16px 20px;
-      }
-
-      .visual-gallery {
-        padding: 0 16px 6px;
-      }
-
-      .section-box {
-        margin: 0 16px 20px;
-        min-height: 200px;
-      }
-
-      .visual-wrap {
-        height: 132px;
-      }
-    }
   </style>
 </head>
+
 <body>
   <div class="page">
 
@@ -285,12 +232,7 @@
       <div style="width:60px;"></div>
     </div>
 
-    <div class="intro-box">
-      <h1>Premium Windows & Doors</h1>
-      <p>
-        Compare upgrade options, review visual references, and make a clearer next decision for your space.
-      </p>
-    </div>
+    <!-- ❌ 横图删除 -->
 
     <div class="tabs">
       <button class="tab-btn" data-tab="solutions">Solutions</button>
@@ -298,10 +240,11 @@
       <button class="tab-btn active" data-tab="visual">3D Visualizer</button>
     </div>
 
-    <div class="visual-gallery">
-      <img src="../assets/windows-hero.jpg" alt="Premium windows and doors main visual" class="main-visual">
-      <img src="../assets/windows-preview.jpg" alt="Before and after window upgrade" class="sub-visual">
-      <img src="../assets/window-styles-overview.jpg" alt="Window styles overview" class="sub-visual">
+    <!-- ✅ 三图并排 -->
+    <div class="image-grid">
+      <img src="../assets/windows-hero.jpg">
+      <img src="../assets/windows-preview.jpg">
+      <img src="../assets/window-styles-overview.jpg">
     </div>
 
     <!-- Solutions -->
@@ -349,13 +292,9 @@
       </div>
 
       <div class="quote-result" id="quoteResult">Estimated Total: $120</div>
-
-      <div class="quote-note">
-        Estimates are for reference only. Final pricing and solutions are confirmed through professional assessment and on-site measurement.
-      </div>
     </section>
 
-    <!-- Visualizer -->
+    <!-- Visual -->
     <section class="section-box" id="visual">
       <div class="visual-wrap">
         <div class="visual-hint">Preview reference</div>
@@ -364,15 +303,6 @@
 
     <div class="cta-wrap">
       <a class="cta-btn" href="https://cal.com/bb369tech/service-decision-review">Book a Decision Review</a>
-      <div class="cta-note">
-        Estimates are for reference only. Final decisions are confirmed through professional assessment.
-      </div>
-    </div>
-
-    <div class="footer">
-      <div>BB369 Platform</div>
-      <div>Structured decision systems for service businesses.</div>
-      <div class="provenance">Based on a structured decision approach · Research-informed</div>
     </div>
 
   </div>
@@ -389,7 +319,6 @@
       btn.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
         btn.classList.add('active');
-
         Object.values(sections).forEach(sec => sec.classList.add('hidden'));
         sections[btn.dataset.tab].classList.remove('hidden');
       });
