@@ -33,24 +33,22 @@
       text-decoration: none;
     }
 
-    .topbar-spacer {
-      width: 60px;
+    .page-title {
+      font-size: 1rem;
+      font-weight: 600;
     }
 
-    /* 顶部简洁高级区 */
+    /* 顶部柔和说明区 */
     .hero-soft {
-      margin: 20px 24px 16px;
-      padding: 44px 28px;
-      border-radius: 26px;
+      margin: 20px 24px 10px;
+      padding: 36px 24px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+      border: 1px solid #ececec;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
       position: relative;
       overflow: hidden;
-      text-align: center;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(0,0,0,0.03), transparent 35%),
-        radial-gradient(circle at 80% 80%, rgba(0,0,0,0.025), transparent 35%),
-        linear-gradient(180deg, #ffffff 0%, #f4f4f4 100%);
-      border: 1px solid #ececec;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.035);
     }
 
     .hero-soft::before {
@@ -58,7 +56,7 @@
       position: absolute;
       inset: 0;
       background: url("../assets/windows-hero.jpg") center/cover no-repeat;
-      opacity: 0.035;
+      opacity: 0.04;
       z-index: 0;
     }
 
@@ -68,25 +66,30 @@
     }
 
     .hero-soft h1 {
-      margin: 0 0 12px;
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
+      margin: 0 0 10px;
+      font-size: 1.6rem;
+      font-weight: 600;
       color: #111;
     }
 
     .hero-soft p {
       margin: 0 auto;
-      max-width: 760px;
+      max-width: 680px;
       color: #666;
-      font-size: 1rem;
-      line-height: 1.7;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .hero-soft-sub {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #888;
     }
 
     .tabs {
       display: flex;
       gap: 14px;
-      padding: 0 24px 24px;
+      padding: 16px 24px 24px;
       flex-wrap: wrap;
     }
 
@@ -141,6 +144,50 @@
       font-weight: 600;
     }
 
+    .decision-note {
+      font-size: 12px;
+      color: #888;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    .popular-badge {
+      font-size: 12px;
+      color: #fff;
+      background: #111;
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .case-box {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid #e8e8e8;
+    }
+
+    .case-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #111;
+    }
+
+    .case-text {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+
+    .case-foot {
+      font-size: 12px;
+      color: #999;
+      margin-top: 6px;
+    }
+
     .quote-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -180,45 +227,42 @@
       line-height: 1.5;
     }
 
-    /* 可见的3D代码窗户 */
+    /* 3D 可视区：纯代码生成 */
     .visual-wrap {
       position: relative;
       height: 300px;
       max-width: 860px;
       margin: 0 auto;
-      border-radius: 20px;
-      background:
-        radial-gradient(circle at top, rgba(255,255,255,0.9), rgba(255,255,255,0) 35%),
-        linear-gradient(180deg, #f6f6f6 0%, #e8e8e8 100%);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #f4f4f4 0%, #e9e9e9 100%);
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
     }
 
     .window-3d {
       width: 360px;
       height: 220px;
       perspective: 900px;
-      transform: rotateX(8deg) rotateY(-18deg);
+      transform: rotateX(8deg) rotateY(-16deg);
     }
 
     .frame.outer-frame {
       width: 100%;
       height: 100%;
-      background: linear-gradient(180deg, #1b1b1b, #2b2b2b);
-      border-radius: 10px;
-      padding: 14px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+      background: #1f1f1f;
+      border-radius: 8px;
+      padding: 12px;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.18);
     }
 
     .frame.inner-frame {
       position: relative;
       width: 100%;
       height: 100%;
-      background: #262626;
-      border-radius: 6px;
+      background: #2c2c2c;
+      border-radius: 4px;
       overflow: hidden;
     }
 
@@ -226,11 +270,8 @@
       position: absolute;
       top: 10px;
       bottom: 10px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.55), rgba(180,210,235,0.15)),
-        linear-gradient(180deg, rgba(255,255,255,0.15), rgba(255,255,255,0));
+      background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(180,210,235,0.18));
       border: 1px solid rgba(255,255,255,0.35);
-      box-shadow: inset 0 0 20px rgba(255,255,255,0.06);
     }
 
     .left-panel {
@@ -250,7 +291,7 @@
       left: 50%;
       width: 8px;
       transform: translateX(-50%);
-      background: #181818;
+      background: #1d1d1d;
     }
 
     .visual-hint {
@@ -263,7 +304,7 @@
       padding: 6px 10px;
       border-radius: 10px;
       opacity: 0.9;
-      z-index: 2;
+      z-index: 1;
     }
 
     /* 底部固定三图 */
@@ -281,6 +322,13 @@
       aspect-ratio: 1 / 1;
       transform: scale(0.96);
       display: block;
+    }
+
+    .image-grid-note {
+      text-align: center;
+      color: #666;
+      margin: 2px 24px 22px;
+      font-size: 14px;
     }
 
     .cta-wrap {
@@ -305,6 +353,12 @@
       color: #888;
       font-size: 0.85rem;
       line-height: 1.5;
+    }
+
+    .cta-safe {
+      font-size: 12px;
+      color: #888;
+      margin-top: 8px;
     }
 
     .footer {
@@ -340,16 +394,16 @@
 
     @media (max-width: 640px) {
       .hero-soft {
-        margin: 16px 16px 10px;
-        padding: 30px 18px;
+        margin: 16px 16px 8px;
+        padding: 26px 18px;
       }
 
       .hero-soft h1 {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
       }
 
       .tabs {
-        padding: 0 16px 20px;
+        padding: 14px 16px 20px;
       }
 
       .section-box {
@@ -358,12 +412,12 @@
       }
 
       .visual-wrap {
-        height: 240px;
+        height: 220px;
       }
 
       .window-3d {
-        width: 260px;
-        height: 160px;
+        width: 250px;
+        height: 150px;
       }
 
       .image-grid {
@@ -377,14 +431,18 @@
 
     <div class="topbar">
       <a class="back-link" href="../index.html">← Home</a>
-      <div class="topbar-spacer"></div>
+      <div class="page-title">Premium Windows & Doors</div>
+      <div style="width:60px;"></div>
     </div>
 
     <div class="hero-soft">
       <h1>Premium Windows & Doors</h1>
       <p>
-        Compare upgrade options, review real results, and make a clearer decision for your space.
+        Replace old windows, improve insulation, and upgrade your home appearance — with clear options and pricing.
       </p>
+      <div class="hero-soft-sub">
+        Local service · Los Angeles area · On-site measurement available
+      </div>
     </div>
 
     <div class="tabs">
@@ -400,18 +458,41 @@
           <h3>Option A — Basic Repair</h3>
           <p>Simple fixes and targeted improvement for existing windows or doors.</p>
           <div class="price">$25 – $260</div>
+          <div class="decision-note">
+            Best for quick fixes and lower-cost improvements.
+          </div>
         </div>
 
         <div class="solution-card">
+          <div class="popular-badge">Most Popular</div>
           <h3>Option B — Standard Upgrade</h3>
           <p>Improved materials, better efficiency, and a cleaner finished look.</p>
           <div class="price">$300 – $700</div>
+          <div class="decision-note">
+            Most customers choose this for balanced performance and cost.
+          </div>
         </div>
 
         <div class="solution-card">
           <h3>Option C — Premium Replacement</h3>
           <p>Full replacement path for long-term performance and visual upgrade.</p>
           <div class="price">$700 – $1,500+</div>
+          <div class="decision-note">
+            Best for older units, larger upgrades, and long-term value.
+          </div>
+        </div>
+      </div>
+
+      <div class="case-box">
+        <div class="case-title">Recent Project · Los Angeles</div>
+        <div class="case-text">
+          Replaced old sliding windows with energy-efficient double-pane windows.
+        </div>
+        <div class="case-text">
+          Completed in 1 day. Improved insulation and reduced outside noise significantly.
+        </div>
+        <div class="case-foot">
+          Similar projects available · Free consultation
         </div>
       </div>
     </section>
@@ -440,7 +521,7 @@
       <div class="quote-result" id="quoteResult">Estimated Total: $120</div>
 
       <div class="quote-note">
-        Estimates are for reference only. Final pricing and solutions are confirmed through professional assessment and on-site measurement.
+        Estimates are based on typical projects. Final pricing is confirmed after on-site measurement.
       </div>
     </section>
 
@@ -467,8 +548,13 @@
       <img src="../assets/window-styles-overview.jpg" alt="Window styles overview">
     </div>
 
+    <p class="image-grid-note">
+      Real projects · Before & after · Available styles
+    </p>
+
     <div class="cta-wrap">
       <a class="cta-btn" href="https://cal.com/bb369tech/service-decision-review">Book a Decision Review</a>
+      <div class="cta-safe">Free consultation · No pressure · Fast response</div>
       <div class="cta-note">
         Estimates are for reference only. Final decisions are confirmed through professional assessment.
       </div>
