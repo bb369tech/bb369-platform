@@ -1,495 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Premium Windows & Doors</title>
-  <link rel="stylesheet" href="../style.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #111111;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Windows & Doors</title>
 
-    .page {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding-bottom: 40px;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #111;
+}
 
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 24px;
-      border-bottom: 1px solid #ececec;
-      font-size: 0.95rem;
-    }
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-    .back-link {
-      color: #111;
-      text-decoration: none;
-    }
+/* 顶部 */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid #eee;
+}
 
-    .page-title {
-      font-size: 1rem;
-      font-weight: 600;
-    }
+.page-title {
+  font-weight: 600;
+}
 
-    /* 顶部柔和说明区 */
-    .hero-soft {
-      margin: 20px 24px 10px;
-      padding: 36px 24px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
-      border: 1px solid #ececec;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
-    }
+/* ===== 顶部区域（原有 + 新增背景） ===== */
+.hero-soft {
+  margin: 20px 24px 10px;
+  padding: 36px 24px;
+  border-radius: 22px;
 
-    .hero-soft h1 {
-      margin: 0 0 10px;
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: #111;
-    }
+  background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+  border: 1px solid #ececec;
 
-    .hero-soft p {
-      margin: 0 auto;
-      max-width: 680px;
-      color: #666;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.03);
 
-    .tabs {
-      display: flex;
-      gap: 14px;
-      padding: 16px 24px 24px;
-      flex-wrap: wrap;
-    }
+  position: relative;   /* ✅ 新增 */
+  overflow: hidden;     /* ✅ 新增 */
+}
 
-    .tab-btn {
-      padding: 12px 22px;
-      border-radius: 999px;
-      border: 1px solid #111;
-      background: #fff;
-      color: #111;
-      font-size: 0.95rem;
-      cursor: pointer;
-    }
+/* 👉 新增背景层 */
+.hero-soft::before {
+  content: "";
+  position: absolute;
+  inset: 0;
 
-    .tab-btn.active {
-      background: #111;
-      color: #fff;
-    }
+  background: url("../assets/windows-hero.jpg") center/cover no-repeat;
 
-    .section-box {
-      margin: 0 24px 24px;
-      border-radius: 22px;
-      background: #f3f3f3;
-      min-height: 220px;
-      padding: 22px;
-    }
+  opacity: 0.04;   /* 👈 可以调 0.03 / 0.06 */
+  z-index: 0;
+}
 
-    .solutions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
+.hero-soft * {
+  position: relative;
+  z-index: 1;
+}
 
-    .solution-card {
-      background: #ffffff;
-      border: 1px solid #e5e5e5;
-      border-radius: 18px;
-      padding: 18px;
-    }
+.hero-soft h1 {
+  margin: 0 0 10px;
+  font-size: 1.6rem;
+}
 
-    .solution-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
-    }
+.hero-soft p {
+  margin: 0 auto;
+  max-width: 680px;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
 
-    .solution-card p {
-      margin: 0 0 10px;
-      color: #666;
-      line-height: 1.5;
-    }
+/* 按钮 */
+.tabs {
+  display: flex;
+  gap: 12px;
+  padding: 16px 24px;
+}
 
-    .price {
-      font-weight: 600;
-    }
+.tab-btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid #111;
+  background: #fff;
+  cursor: pointer;
+}
 
-    .quote-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      max-width: 760px;
-    }
+.tab-btn.active {
+  background: #111;
+  color: #fff;
+}
 
-    .field label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.92rem;
-      color: #444;
-    }
+/* 内容块 */
+.section-box {
+  margin: 0 24px 24px;
+  padding: 20px;
+  border-radius: 20px;
+  background: #f5f5f5;
+}
 
-    .field input,
-    .field select {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid #ddd;
-      font-size: 0.95rem;
-      box-sizing: border-box;
-      background: #fff;
-    }
+/* 三方案 */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+}
 
-    .quote-result {
-      margin-top: 22px;
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
+.solution-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 14px;
+}
 
-    .quote-note {
-      margin-top: 10px;
-      color: #777;
-      font-size: 0.88rem;
-      max-width: 760px;
-      line-height: 1.5;
-    }
+.price {
+  font-weight: bold;
+}
 
-    /* 3D 可视区：纯代码生成 */
-    .visual-wrap {
-      position: relative;
-      height: 260px;
-      max-width: 760px;
-      margin: 0 auto;
-      border-radius: 18px;
-      background: linear-gradient(180deg, #f4f4f4 0%, #e9e9e9 100%);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+/* 报价 */
+.field {
+  margin-bottom: 12px;
+}
 
-    .window-3d {
-      width: 320px;
-      height: 190px;
-      perspective: 900px;
-      transform: rotateX(8deg) rotateY(-16deg);
-    }
+/* 3D */
+.visual-wrap {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  border-radius: 16px;
+}
 
-    .frame.outer-frame {
-      width: 100%;
-      height: 100%;
-      background: #1f1f1f;
-      border-radius: 8px;
-      padding: 12px;
-      box-shadow: 0 18px 35px rgba(0,0,0,0.18);
-    }
+/* 图片 */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  padding: 20px 40px;
+}
 
-    .frame.inner-frame {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      background: #2c2c2c;
-      border-radius: 4px;
-      overflow: hidden;
-    }
+.image-grid img {
+  width: 100%;
+  border-radius: 16px;
+}
 
-    .glass-panel {
-      position: absolute;
-      top: 10px;
-      bottom: 10px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(180,210,235,0.18));
-      border: 1px solid rgba(255,255,255,0.35);
-    }
+/* CTA */
+.cta-wrap {
+  text-align: center;
+}
 
-    .left-panel {
-      left: 10px;
-      width: calc(50% - 15px);
-    }
+.cta-btn {
+  background: #111;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 999px;
+  text-decoration: none;
+}
 
-    .right-panel {
-      right: 10px;
-      width: calc(50% - 15px);
-    }
-
-    .window-divider {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 8px;
-      transform: translateX(-50%);
-      background: #1d1d1d;
-    }
-
-    .visual-hint {
-      position: absolute;
-      left: 14px;
-      bottom: 14px;
-      background: rgba(255,255,255,0.92);
-      color: #444;
-      font-size: 0.75rem;
-      padding: 6px 10px;
-      border-radius: 10px;
-      opacity: 0.9;
-      z-index: 1;
-    }
-
-    /* 底部固定三图 */
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding: 0 40px 30px;
-    }
-
-    .image-grid img {
-      width: 100%;
-      border-radius: 16px;
-      object-fit: cover;
-      aspect-ratio: 1 / 1;
-      transform: scale(0.96);
-      display: block;
-    }
-
-    .cta-wrap {
-      text-align: center;
-      padding: 10px 0 0;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      background: #111;
-      color: #fff;
-      margin-bottom: 14px;
-    }
-
-    .cta-note {
-      max-width: 620px;
-      margin: 12px auto 0;
-      color: #888;
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
-
-    .footer {
-      margin: 42px 24px 0;
-      padding-top: 18px;
-      border-top: 1px solid #ececec;
-      text-align: center;
-      color: #888;
-      font-size: 0.92rem;
-    }
-
-    .provenance {
-      margin-top: 8px;
-      font-size: 10px;
-      color: #aaa;
-      opacity: 0.75;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    @media (max-width: 900px) {
-      .image-grid {
-        grid-template-columns: 1fr;
-        padding: 0 24px 24px;
-      }
-
-      .image-grid img {
-        transform: none;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .hero-soft {
-        margin: 16px 16px 8px;
-        padding: 26px 18px;
-      }
-
-      .hero-soft h1 {
-        font-size: 1.35rem;
-      }
-
-      .tabs {
-        padding: 14px 16px 20px;
-      }
-
-      .section-box {
-        margin: 0 16px 20px;
-        min-height: 200px;
-      }
-
-      .visual-wrap {
-        height: 220px;
-      }
-
-      .window-3d {
-        width: 250px;
-        height: 150px;
-      }
-
-      .image-grid {
-        padding: 0 16px 24px;
-      }
-    }
-  </style>
+/* 隐藏 */
+.hidden {
+  display: none;
+}
+</style>
 </head>
+
 <body>
-  <div class="page">
 
-    <div class="topbar">
-      <a class="back-link" href="../index.html">← Home</a>
-      <div class="page-title">Premium Windows & Doors</div>
-      <div style="width:60px;"></div>
+<div class="page">
+
+<!-- 顶部 -->
+<div class="topbar">
+  <div>← Home</div>
+  <div class="page-title">Premium Windows & Doors</div>
+</div>
+
+<!-- 顶部说明 -->
+<div class="hero-soft">
+  <h1>Premium Windows & Doors</h1>
+  <p>
+    Compare upgrade options, review real results, and make a clearer decision for your space.
+  </p>
+</div>
+
+<!-- Tabs -->
+<div class="tabs">
+  <button class="tab-btn active" data-tab="solutions">Solutions</button>
+  <button class="tab-btn" data-tab="quote">Quote Tool</button>
+  <button class="tab-btn" data-tab="visual">3D Visualizer</button>
+</div>
+
+<!-- Solutions -->
+<section id="solutions" class="section-box">
+  <div class="solutions-grid">
+    <div class="solution-card">
+      <h3>Option A — Basic Repair</h3>
+      <p>Simple fixes and targeted improvement</p>
+      <div class="price">$25–260</div>
     </div>
-
-    <div class="hero-soft">
-      <h1>Premium Windows & Doors</h1>
-      <p>
-        Compare upgrade options, review real results, and make a clearer decision for your space.
-      </p>
+    <div class="solution-card">
+      <h3>Option B — Standard Upgrade</h3>
+      <p>Better materials and efficiency</p>
+      <div class="price">$300–700</div>
     </div>
-
-    <div class="tabs">
-      <button class="tab-btn active" data-tab="solutions">Solutions</button>
-      <button class="tab-btn" data-tab="quote">Quote Tool</button>
-      <button class="tab-btn" data-tab="visual">3D Visualizer</button>
+    <div class="solution-card">
+      <h3>Option C — Premium Replacement</h3>
+      <p>Full replacement upgrade</p>
+      <div class="price">$700–1500+</div>
     </div>
-
-    <!-- Solutions -->
-    <section class="section-box" id="solutions">
-      <div class="solutions-grid">
-        <div class="solution-card">
-          <h3>Option A — Basic Repair</h3>
-          <p>Simple fixes and targeted improvement for existing windows or doors.</p>
-          <div class="price">$25 – $260</div>
-        </div>
-
-        <div class="solution-card">
-          <h3>Option B — Standard Upgrade</h3>
-          <p>Improved materials, better efficiency, and a cleaner finished look.</p>
-          <div class="price">$300 – $700</div>
-        </div>
-
-        <div class="solution-card">
-          <h3>Option C — Premium Replacement</h3>
-          <p>Full replacement path for long-term performance and visual upgrade.</p>
-          <div class="price">$700 – $1,500+</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quote Tool -->
-    <section class="section-box hidden" id="quote">
-      <div class="quote-grid">
-        <div class="field">
-          <label for="serviceType">Service Type</label>
-          <select id="serviceType">
-            <option value="120">Window Repair</option>
-            <option value="450">Window Upgrade</option>
-            <option value="900">Window Replacement</option>
-            <option value="180">Door Repair</option>
-            <option value="550">Door Upgrade</option>
-            <option value="1200">Door Replacement</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="unitCount">Estimated Quantity</label>
-          <input id="unitCount" type="number" min="1" value="1" />
-        </div>
-      </div>
-
-      <div class="quote-result" id="quoteResult">Estimated Total: $120</div>
-
-      <div class="quote-note">
-        Estimates are for reference only. Final pricing and solutions are confirmed through professional assessment and on-site measurement.
-      </div>
-    </section>
-
-    <!-- Visualizer -->
-    <section class="section-box hidden" id="visual">
-      <div class="visual-wrap">
-        <div class="window-3d">
-          <div class="frame outer-frame">
-            <div class="frame inner-frame">
-              <div class="glass-panel left-panel"></div>
-              <div class="glass-panel right-panel"></div>
-              <div class="window-divider"></div>
-            </div>
-          </div>
-        </div>
-        <div class="visual-hint">3D preview reference</div>
-      </div>
-    </section>
-
-    <!-- 底部固定三图 -->
-    <div class="image-grid">
-      <img src="../assets/windows-hero.jpg" alt="Premium windows and doors main visual">
-      <img src="../assets/windows-preview.jpg" alt="Before and after window upgrade">
-      <img src="../assets/window-styles-overview.jpg" alt="Window styles overview">
-    </div>
-
-    <div class="cta-wrap">
-      <a class="cta-btn" href="https://cal.com/bb369tech/service-decision-review">Book a Decision Review</a>
-      <div class="cta-note">
-        Estimates are for reference only. Final decisions are confirmed through professional assessment.
-      </div>
-    </div>
-
-    <div class="footer">
-      <div>BB369 Platform</div>
-      <div>Structured decision systems for service businesses.</div>
-      <div class="provenance">Based on a structured decision approach · Research-informed</div>
-    </div>
-
   </div>
+</section>
 
-  <script>
-    const tabs = document.querySelectorAll('.tab-btn');
-    const sections = {
-      solutions: document.getElementById('solutions'),
-      quote: document.getElementById('quote'),
-      visual: document.getElementById('visual')
-    };
+<!-- Quote -->
+<section id="quote" class="section-box hidden">
+  <select id="serviceType">
+    <option value="120">Repair</option>
+    <option value="450">Upgrade</option>
+  </select>
 
-    tabs.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        btn.classList.add('active');
+  <input id="unitCount" type="number" value="1">
 
-        Object.values(sections).forEach(sec => sec.classList.add('hidden'));
-        sections[btn.dataset.tab].classList.remove('hidden');
-      });
-    });
+  <div id="quoteResult">$120</div>
+</section>
 
-    const serviceType = document.getElementById('serviceType');
-    const unitCount = document.getElementById('unitCount');
-    const quoteResult = document.getElementById('quoteResult');
+<!-- 3D -->
+<section id="visual" class="section-box hidden">
+  <div class="visual-wrap">3D Preview</div>
+</section>
 
-    function updateQuote() {
-      const base = parseFloat(serviceType.value) || 0;
-      const qty = parseInt(unitCount.value, 10) || 1;
-      const total = base * qty;
-      quoteResult.textContent = `Estimated Total: $${total.toLocaleString()}`;
-    }
+<!-- 图片 -->
+<div class="image-grid">
+  <img src="../assets/windows-hero.jpg">
+  <img src="../assets/windows-preview.jpg">
+  <img src="../assets/window-styles-overview.jpg">
+</div>
 
-    serviceType.addEventListener('change', updateQuote);
-    unitCount.addEventListener('input', updateQuote);
-    updateQuote();
-  </script>
+<!-- 按钮 -->
+<div class="cta-wrap">
+  <a class="cta-btn" href="#">Book a Decision Review</a>
+</div>
+
+</div>
+
+<script>
+const tabs = document.querySelectorAll('.tab-btn');
+const sections = {
+  solutions: document.getElementById('solutions'),
+  quote: document.getElementById('quote'),
+  visual: document.getElementById('visual')
+};
+
+tabs.forEach(btn=>{
+  btn.onclick=()=>{
+    tabs.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+
+    Object.values(sections).forEach(s=>s.classList.add('hidden'));
+    sections[btn.dataset.tab].classList.remove('hidden');
+  }
+});
+</script>
+
 </body>
 </html>
