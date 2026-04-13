@@ -2,365 +2,383 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Premium Windows & Doors</title>
-  <link rel="stylesheet" href="../style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BB369 Platform</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background: #ffffff;
-      color: #111111;
+      color: #111;
     }
 
-    .page {
-      max-width: 1400px;
+    .container {
+      max-width: 1100px;
       margin: 0 auto;
-      padding-bottom: 40px;
+      padding: 40px 20px 80px;
     }
 
-    .topbar {
+    /* HERO */
+    .hero {
+      background: linear-gradient(to bottom, #ffffff, #f3f3f3);
+      border: 1px solid #ececec;
+      border-radius: 24px;
+      padding: 70px 30px;
+      color: #111;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .btn {
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .btn-dark {
+      background: #111;
+      color: white;
+    }
+
+    .btn-light {
+      background: white;
+      color: #111;
+      border: 1px solid #ddd;
+    }
+
+    /* VISUAL SECTION */
+    .visual-section {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .visual-title {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .visual-note {
+      color: #666;
+      max-width: 760px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    .main-visual-wrap {
+      background: #f8f8f8;
+      border: 1px solid #ececec;
+      border-radius: 24px;
+      padding: 28px;
+      margin-bottom: 28px;
+    }
+
+    .main-visual {
+      width: 100%;
+      max-width: 900px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .sub-visual-wrap {
+      background: #f8f8f8;
+      border: 1px solid #ececec;
+      border-radius: 24px;
+      padding: 22px;
+      margin-bottom: 22px;
+    }
+
+    .sub-visual {
+      width: 100%;
+      max-width: 760px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 18px;
+    }
+
+    /* MODULES */
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .section-note {
+      color: #666;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .module-card {
+      border: 1px solid #eaeaea;
+      border-radius: 20px;
+      background: #fafafa;
+      text-decoration: none;
+      color: #111;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .module-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+    }
+
+    .module-image {
+      height: 80px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 18px 24px;
-      border-bottom: 1px solid #ececec;
-      font-size: 0.95rem;
+      justify-content: center;
+      border-bottom: 1px solid #eee;
+      background: #f5f5f5;
     }
 
-    .back-link {
-      color: #111;
-      text-decoration: none;
-    }
-
-    .page-title {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
-    .hero-image {
-      margin: 26px 24px 20px;
-      height: 84px;
-      border-radius: 16px;
-      background: #e9e9e9 center/cover no-repeat;
-      background-image: url('../assets/windows-hero.jpg');
-    }
-
-    .tabs {
-      display: flex;
-      gap: 14px;
-      padding: 0 24px 24px;
-      flex-wrap: wrap;
-    }
-
-    .tab-btn {
-      padding: 12px 22px;
-      border-radius: 999px;
-      border: 1px solid #111;
-      background: #fff;
-      color: #111;
-      font-size: 0.95rem;
-      cursor: pointer;
-    }
-
-    .tab-btn.active {
-      background: #111;
-      color: #fff;
-    }
-
-    .section-box {
-      margin: 0 24px 24px;
-      border-radius: 22px;
-      background: #f3f3f3;
-      min-height: 220px;
-      padding: 22px;
-    }
-
-    .solutions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-
-    .solution-card {
-      background: #ffffff;
-      border: 1px solid #e5e5e5;
-      border-radius: 18px;
+    .module-content {
       padding: 18px;
     }
 
-    .solution-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
+    .module-content h3 {
+      margin: 0 0 6px;
+      font-size: 1.1rem;
     }
 
-    .solution-card p {
-      margin: 0 0 10px;
+    .module-content p {
+      margin: 0;
       color: #666;
-      line-height: 1.5;
-    }
-
-    .price {
-      font-weight: 600;
-    }
-
-    .quote-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      max-width: 760px;
-    }
-
-    .field label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.92rem;
-      color: #444;
-    }
-
-    .field input,
-    .field select {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid #ddd;
       font-size: 0.95rem;
-      box-sizing: border-box;
-      background: #fff;
-    }
-
-    .quote-result {
-      margin-top: 22px;
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-
-    .quote-note {
-      margin-top: 10px;
-      color: #777;
-      font-size: 0.88rem;
-      max-width: 760px;
       line-height: 1.5;
     }
 
-    .visual-wrap {
-      position: relative;
-      height: 160px;
-      max-width: 620px;
-      margin: 0 auto;
-      border-radius: 16px;
-      background: #ececec center/cover no-repeat;
-      background-image: url('../assets/windows-preview.jpg');
-      overflow: hidden;
-    }
-
-    .visual-wrap::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.06);
-    }
-
-    .visual-hint {
-      position: absolute;
-      left: 14px;
-      bottom: 14px;
-      background: rgba(255,255,255,0.9);
-      color: #444;
-      font-size: 0.75rem;
-      padding: 6px 10px;
-      border-radius: 10px;
-      opacity: 0.8;
-      z-index: 1;
-    }
-
-    .cta-wrap {
+    /* CTA */
+    .bottom-cta {
+      border-top: 1px solid #eee;
+      padding-top: 40px;
       text-align: center;
-      padding: 10px 0 0;
     }
 
-    .cta-btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      background: #111;
-      color: #fff;
-      margin-bottom: 14px;
+    .bottom-cta p {
+      color: #666;
+      margin-bottom: 12px;
     }
 
-    .cta-note {
-      max-width: 620px;
-      margin: 12px auto 0;
-      color: #888;
+    /* DISCLAIMER */
+    .footer-note {
       font-size: 0.85rem;
-      line-height: 1.5;
+      color: #888;
+      text-align: center;
+      margin-top: 20px;
+      line-height: 1.6;
     }
 
+    /* FOOTER */
     .footer {
-      margin: 42px 24px 0;
-      padding-top: 18px;
-      border-top: 1px solid #ececec;
+      margin-top: 50px;
       text-align: center;
       color: #888;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
 
     .provenance {
-      margin-top: 8px;
       font-size: 10px;
       color: #aaa;
-      opacity: 0.75;
+      margin-top: 8px;
+      opacity: 0.7;
     }
 
-    .hidden {
-      display: none;
-    }
-
-    @media (max-width: 640px) {
-      .hero-image {
-        height: 72px;
-        margin: 20px 16px 18px;
+    @media (max-width: 768px) {
+      .hero {
+        padding: 50px 20px;
       }
 
-      .tabs {
-        padding: 0 16px 20px;
+      .hero h1 {
+        font-size: 2.2rem;
       }
 
-      .section-box {
-        margin: 0 16px 20px;
-        min-height: 200px;
-      }
-
-      .visual-wrap {
-        height: 132px;
+      .main-visual-wrap,
+      .sub-visual-wrap {
+        padding: 16px;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="page">
 
-    <div class="topbar">
-      <a class="back-link" href="../index.html">← Home</a>
-      <div class="page-title">Premium Windows & Doors</div>
-      <div style="width:60px;"></div>
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>BB369 Platform</h1>
+
+    <p>
+      Structured decision support for home service projects, space upgrades, and business decision needs.
+      Compare clear options, understand likely ranges, and move forward with confidence.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-light" href="#modules">Explore Modules</a>
+
+      <a class="btn btn-dark"
+         href="https://cal.com/bb369tech/space-upgrade-decision-consultation-%E7%A9%BA%E9%97%B4%E5%8D%87%E7%BA%A7%E5%86%B3%E7%AD%96%E5%92%A8%E8%AF%A2">
+        Book a Decision Review
+      </a>
     </div>
 
-    <div class="hero-image"></div>
+    <p style="margin-top:15px; font-size:0.95rem;">
+      For home upgrades, service decisions, and business consulting.
+    </p>
+  </section>
 
-    <div class="tabs">
-      <button class="tab-btn" data-tab="solutions">Solutions</button>
-      <button class="tab-btn" data-tab="quote">Quote Tool</button>
-      <button class="tab-btn active" data-tab="visual">3D Visualizer</button>
+  <!-- VISUALS -->
+  <section class="visual-section">
+    <h2 class="visual-title">Visual References</h2>
+
+    <p class="visual-note">
+      Review a clean main visual, a real before-and-after example, and a style overview before moving to the next step.
+    </p>
+
+    <div class="main-visual-wrap">
+      <img src="assets/windows-hero.jpg" alt="Main visual for windows and doors" class="main-visual">
     </div>
 
-    <!-- Solutions -->
-    <section class="section-box hidden" id="solutions">
-      <div class="solutions-grid">
-        <div class="solution-card">
-          <h3>Option A — Basic Repair</h3>
-          <p>Simple fixes and targeted improvement for existing windows or doors.</p>
-          <div class="price">$25 – $260</div>
-        </div>
-
-        <div class="solution-card">
-          <h3>Option B — Standard Upgrade</h3>
-          <p>Improved materials, better efficiency, and a cleaner finished look.</p>
-          <div class="price">$300 – $700</div>
-        </div>
-
-        <div class="solution-card">
-          <h3>Option C — Premium Replacement</h3>
-          <p>Full replacement path for long-term performance and visual upgrade.</p>
-          <div class="price">$700 – $1,500+</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Quote Tool -->
-    <section class="section-box hidden" id="quote">
-      <div class="quote-grid">
-        <div class="field">
-          <label for="serviceType">Service Type</label>
-          <select id="serviceType">
-            <option value="120">Window Repair</option>
-            <option value="450">Window Upgrade</option>
-            <option value="900">Window Replacement</option>
-            <option value="180">Door Repair</option>
-            <option value="550">Door Upgrade</option>
-            <option value="1200">Door Replacement</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="unitCount">Estimated Quantity</label>
-          <input id="unitCount" type="number" min="1" value="1" />
-        </div>
-      </div>
-
-      <div class="quote-result" id="quoteResult">Estimated Total: $120</div>
-
-      <div class="quote-note">
-        Estimates are for reference only. Final pricing and solutions are confirmed through professional assessment and on-site measurement.
-      </div>
-    </section>
-
-    <!-- Visualizer -->
-    <section class="section-box" id="visual">
-      <div class="visual-wrap">
-        <div class="visual-hint">Drag to Rotate • Pinch to Zoom</div>
-      </div>
-    </section>
-
-    <div class="cta-wrap">
-      <a class="cta-btn" href="https://cal.com/bb369tech/service-decision-review">Book a Decision Review</a>
-      <div class="cta-note">
-        Estimates are for reference only. Final decisions are confirmed through professional assessment.
-      </div>
+    <div class="sub-visual-wrap">
+      <img src="assets/windows-preview.jpg" alt="Before and after window upgrade" class="sub-visual">
     </div>
 
-    <div class="footer">
-      <div>BB369 Platform</div>
-      <div>Structured decision systems for service businesses.</div>
-      <div class="provenance">Based on a structured decision approach · Research-informed</div>
+    <div class="sub-visual-wrap">
+      <img src="assets/window-styles-overview.jpg" alt="Window styles overview" class="sub-visual">
     </div>
+  </section>
 
+  <!-- MODULES -->
+  <section id="modules">
+    <h2 class="section-title">Service Modules</h2>
+
+    <p class="section-note">
+      Each module helps users compare options, understand estimated ranges, and move toward a structured next step.
+    </p>
+
+    <div class="module-grid">
+
+      <!-- WINDOWS -->
+      <a class="module-card" href="industries/windows.html">
+        <div class="module-image">
+          <svg width="40" height="40" fill="none" stroke="#777" stroke-width="1.5">
+            <rect x="6" y="6" width="12" height="12"/>
+            <line x1="12" y1="6" x2="12" y2="18"/>
+            <line x1="6" y1="12" x2="18" y2="12"/>
+          </svg>
+        </div>
+        <div class="module-content">
+          <h3>Windows & Doors</h3>
+          <p>Repair, upgrade, and replacement decision paths.</p>
+        </div>
+      </a>
+
+      <!-- CURTAINS -->
+      <a class="module-card" href="industries/curtains.html">
+        <div class="module-image">
+          <svg width="40" height="40" fill="none" stroke="#999" stroke-width="1.5">
+            <line x1="4" y1="8" x2="20" y2="8"/>
+            <line x1="7" y1="8" x2="7" y2="20"/>
+            <line x1="17" y1="8" x2="17" y2="20"/>
+          </svg>
+        </div>
+        <div class="module-content">
+          <h3>Curtains</h3>
+          <p>Installation, upgrade, and custom drapery options.</p>
+        </div>
+      </a>
+
+      <!-- CABINETS -->
+      <a class="module-card" href="industries/cabinets.html">
+        <div class="module-image">
+          <svg width="40" height="40" fill="none" stroke="#888" stroke-width="1.5">
+            <rect x="6" y="6" width="12" height="12"/>
+            <line x1="12" y1="6" x2="12" y2="18"/>
+          </svg>
+        </div>
+        <div class="module-content">
+          <h3>Cabinets & Storage</h3>
+          <p>Storage improvements, layout upgrades, and built-in solutions.</p>
+        </div>
+      </a>
+
+      <!-- FLOORING -->
+      <a class="module-card" href="industries/flooring.html">
+        <div class="module-image">
+          <svg width="40" height="40" fill="none" stroke="#bbb" stroke-width="1.5">
+            <line x1="5" y1="18" x2="19" y2="18"/>
+            <line x1="7" y1="18" x2="10" y2="8"/>
+            <line x1="12" y1="18" x2="14" y2="8"/>
+          </svg>
+        </div>
+        <div class="module-content">
+          <h3>Flooring</h3>
+          <p>Refresh, upgrade, and premium finish pathways.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bottom-cta">
+    <p>Need help making the right next decision?</p>
+
+    <a class="btn btn-dark"
+       href="https://cal.com/bb369tech/space-upgrade-decision-consultation-%E7%A9%BA%E9%97%B4%E5%8D%87%E7%BA%A7%E5%86%B3%E7%AD%96%E5%92%A8%E8%AF%A2">
+      Book a Decision Review
+    </a>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <div class="footer-note">
+    Estimates are for reference only. Final decisions are confirmed through professional assessment.
   </div>
 
-  <script>
-    const tabs = document.querySelectorAll('.tab-btn');
-    const sections = {
-      solutions: document.getElementById('solutions'),
-      quote: document.getElementById('quote'),
-      visual: document.getElementById('visual')
-    };
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>BB369 Platform</div>
+    <div>Structured decision systems for service businesses.</div>
 
-    tabs.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        btn.classList.add('active');
+    <div class="provenance">
+      Based on a structured decision approach · Research-informed
+    </div>
+  </div>
 
-        Object.values(sections).forEach(sec => sec.classList.add('hidden'));
-        sections[btn.dataset.tab].classList.remove('hidden');
-      });
-    });
+</div>
 
-    const serviceType = document.getElementById('serviceType');
-    const unitCount = document.getElementById('unitCount');
-    const quoteResult = document.getElementById('quoteResult');
-
-    function updateQuote() {
-      const base = parseFloat(serviceType.value) || 0;
-      const qty = parseInt(unitCount.value, 10) || 1;
-      const total = base * qty;
-      quoteResult.textContent = `Estimated Total: $${total.toLocaleString()}`;
-    }
-
-    serviceType.addEventListener('change', updateQuote);
-    unitCount.addEventListener('input', updateQuote);
-    updateQuote();
-  </script>
 </body>
 </html>
