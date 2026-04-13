@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Premium Windows & Doors</title>
   <link rel="stylesheet" href="../style.css">
-
   <style>
     body {
       margin: 0;
@@ -39,12 +38,10 @@
       font-weight: 600;
     }
 
-    /* ❌ 横图已删除 */
-
     .tabs {
       display: flex;
       gap: 14px;
-      padding: 0 24px 24px;
+      padding: 20px 24px 24px;
       flex-wrap: wrap;
     }
 
@@ -61,21 +58,6 @@
     .tab-btn.active {
       background: #111;
       color: #fff;
-    }
-
-    /* ✅ 新增：三图并排 */
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      padding: 0 24px 20px;
-    }
-
-    .image-grid img {
-      width: 100%;
-      border-radius: 16px;
-      object-fit: cover;
-      aspect-ratio: 1 / 1;
     }
 
     .section-box {
@@ -153,7 +135,23 @@
       line-height: 1.5;
     }
 
-    /* 3D区域去掉图片干扰 */
+    /* 三图并排，放在价格下面 */
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 0 40px 30px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      transform: scale(0.96);
+      display: block;
+    }
+
     .visual-wrap {
       position: relative;
       height: 160px;
@@ -220,9 +218,38 @@
     .hidden {
       display: none;
     }
+
+    @media (max-width: 900px) {
+      .image-grid {
+        grid-template-columns: 1fr;
+        padding: 0 24px 24px;
+      }
+
+      .image-grid img {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .tabs {
+        padding: 16px 16px 20px;
+      }
+
+      .section-box {
+        margin: 0 16px 20px;
+        min-height: 200px;
+      }
+
+      .visual-wrap {
+        height: 132px;
+      }
+
+      .image-grid {
+        padding: 0 16px 24px;
+      }
+    }
   </style>
 </head>
-
 <body>
   <div class="page">
 
@@ -232,19 +259,10 @@
       <div style="width:60px;"></div>
     </div>
 
-    <!-- ❌ 横图删除 -->
-
     <div class="tabs">
       <button class="tab-btn" data-tab="solutions">Solutions</button>
       <button class="tab-btn" data-tab="quote">Quote Tool</button>
       <button class="tab-btn active" data-tab="visual">3D Visualizer</button>
-    </div>
-
-    <!-- ✅ 三图并排 -->
-    <div class="image-grid">
-      <img src="../assets/windows-hero.jpg">
-      <img src="../assets/windows-preview.jpg">
-      <img src="../assets/window-styles-overview.jpg">
     </div>
 
     <!-- Solutions -->
@@ -270,6 +288,13 @@
       </div>
     </section>
 
+    <!-- 三图并排，放在价格下面 -->
+    <div class="image-grid">
+      <img src="../assets/windows-hero.jpg" alt="Premium windows and doors main visual">
+      <img src="../assets/windows-preview.jpg" alt="Before and after window upgrade">
+      <img src="../assets/window-styles-overview.jpg" alt="Window styles overview">
+    </div>
+
     <!-- Quote Tool -->
     <section class="section-box hidden" id="quote">
       <div class="quote-grid">
@@ -292,9 +317,13 @@
       </div>
 
       <div class="quote-result" id="quoteResult">Estimated Total: $120</div>
+
+      <div class="quote-note">
+        Estimates are for reference only. Final pricing and solutions are confirmed through professional assessment and on-site measurement.
+      </div>
     </section>
 
-    <!-- Visual -->
+    <!-- Visualizer -->
     <section class="section-box" id="visual">
       <div class="visual-wrap">
         <div class="visual-hint">Preview reference</div>
@@ -303,6 +332,15 @@
 
     <div class="cta-wrap">
       <a class="cta-btn" href="https://cal.com/bb369tech/service-decision-review">Book a Decision Review</a>
+      <div class="cta-note">
+        Estimates are for reference only. Final decisions are confirmed through professional assessment.
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>BB369 Platform</div>
+      <div>Structured decision systems for service businesses.</div>
+      <div class="provenance">Based on a structured decision approach · Research-informed</div>
     </div>
 
   </div>
@@ -319,6 +357,7 @@
       btn.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
         btn.classList.add('active');
+
         Object.values(sections).forEach(sec => sec.classList.add('hidden'));
         sections[btn.dataset.tab].classList.remove('hidden');
       });
