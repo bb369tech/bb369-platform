@@ -19,12 +19,21 @@ This platform helps turn complex customer requests into clear options, allowing 
 
 Upload → Select Problem → Compare Options → Book Service  
 
+This flow standardizes how customer requests are translated into structured decisions.
+
 ---
 
-## Use Cases
+## Industry Modules
 
-This platform is designed for service businesses such as:
+The platform is organized into modular service units.
 
+Each industry module follows the same decision structure:
+- problem identification  
+- A/B/C option comparison  
+- reference price ranges  
+- next-step booking  
+
+Examples include:
 - windows and doors  
 - cabinets and storage  
 - home upgrade services  
@@ -41,7 +50,7 @@ It focuses on real-world implementation and customer-facing service flows.
 
 ## Research Foundation
 
-This platform is developed based on a structured decision approach.
+This platform is informed by a structured decision approach developed in the canonical research repository.
 
 Canonical research reference:  
 https://github.com/xufentu-creator/judgment-as-structural-constraint
