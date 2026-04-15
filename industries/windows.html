@@ -2,9 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Premium Windows & Doors</title>
-  <link rel="stylesheet" href="../style.css">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
+
+  <title>Windows & Doors Module | BB369 Platform</title>
+
+  <meta
+    name="description"
+    content="Windows and doors decision module within the BB369 Platform. Upload a photo or describe your issue to generate structured A/B/C options, compare likely ranges, and book the next step."
+  />
+  <meta
+    name="keywords"
+    content="BB369 Platform, structured decision, decision module, windows and doors, service scenario, compare options, estimate range, upload problem, AI-assisted decision, decision review"
+  />
+  <meta name="robots" content="index,follow" />
+
+  <meta property="og:title" content="Windows & Doors Module | BB369 Platform" />
+  <meta
+    property="og:description"
+    content="A structured decision module for windows and doors. Upload or describe the problem, generate A/B/C options, compare likely ranges, and book the next step."
+  />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Windows & Doors Module | BB369 Platform",
+    "description": "A structured decision module for service scenarios involving windows and doors.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "BB369 Platform"
+    },
+    "about": [
+      "Structured Decision",
+      "Decision Module",
+      "Service Scenario",
+      "Compare Options",
+      "Estimate Range",
+      "Next-Step Booking"
+    ]
+  }
+  </script>
+
   <style>
     body {
       margin: 0;
@@ -33,12 +77,11 @@
       text-decoration: none;
     }
 
-    .page-title {
-      font-size: 1rem;
-      font-weight: 600;
+    .topbar-note {
+      font-size: 0.85rem;
+      color: #888;
     }
 
-    /* 顶部柔和说明区 */
     .hero-soft {
       margin: 20px 24px 10px;
       padding: 36px 24px;
@@ -67,14 +110,14 @@
 
     .hero-soft h1 {
       margin: 0 0 10px;
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: 600;
       color: #111;
     }
 
     .hero-soft p {
       margin: 0 auto;
-      max-width: 680px;
+      max-width: 760px;
       color: #666;
       font-size: 0.95rem;
       line-height: 1.6;
@@ -84,6 +127,32 @@
       margin-top: 12px;
       font-size: 13px;
       color: #888;
+      line-height: 1.5;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #111;
+      cursor: pointer;
+      background: #fff;
+      color: #111;
+    }
+
+    .btn-dark {
+      background: #111;
+      color: #fff;
     }
 
     .tabs {
@@ -116,6 +185,19 @@
       padding: 22px;
     }
 
+    .section-title {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+    }
+
+    .section-note {
+      margin: 0 0 18px;
+      color: #666;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      max-width: 880px;
+    }
+
     .solutions-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -127,6 +209,12 @@
       border: 1px solid #e5e5e5;
       border-radius: 18px;
       padding: 18px;
+      transition: 0.2s ease;
+    }
+
+    .solution-card.selected {
+      border-color: #111;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
     }
 
     .solution-card h3 {
@@ -142,6 +230,7 @@
 
     .price {
       font-weight: 600;
+      margin-bottom: 6px;
     }
 
     .decision-note {
@@ -159,6 +248,21 @@
       padding: 4px 10px;
       border-radius: 999px;
       margin-bottom: 8px;
+    }
+
+    .card-actions {
+      margin-top: 14px;
+    }
+
+    .select-btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid #111;
+      background: #fff;
+      color: #111;
+      font-weight: 600;
+      cursor: pointer;
     }
 
     .case-box {
@@ -188,11 +292,12 @@
       margin-top: 6px;
     }
 
+    .input-grid,
     .quote-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 18px;
-      max-width: 760px;
+      max-width: 900px;
     }
 
     .field label {
@@ -200,10 +305,12 @@
       margin-bottom: 8px;
       font-size: 0.92rem;
       color: #444;
+      font-weight: 600;
     }
 
     .field input,
-    .field select {
+    .field select,
+    .field textarea {
       width: 100%;
       padding: 12px 14px;
       border-radius: 12px;
@@ -211,6 +318,48 @@
       font-size: 0.95rem;
       box-sizing: border-box;
       background: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .upload-note,
+    .quote-note,
+    .result-note {
+      margin-top: 10px;
+      color: #777;
+      font-size: 0.88rem;
+      max-width: 760px;
+      line-height: 1.5;
+    }
+
+    .generate-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .generated-box {
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+    }
+
+    .generated-box.hidden {
+      display: none;
+    }
+
+    .generated-summary {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 12px;
     }
 
     .quote-result {
@@ -219,15 +368,6 @@
       font-weight: 600;
     }
 
-    .quote-note {
-      margin-top: 10px;
-      color: #777;
-      font-size: 0.88rem;
-      max-width: 760px;
-      line-height: 1.5;
-    }
-
-    /* 3D 可视区：纯代码生成 */
     .visual-wrap {
       position: relative;
       height: 300px;
@@ -307,7 +447,6 @@
       z-index: 1;
     }
 
-    /* 底部固定三图 */
     .image-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -348,7 +487,7 @@
     }
 
     .cta-note {
-      max-width: 620px;
+      max-width: 760px;
       margin: 12px auto 0;
       color: #888;
       font-size: 0.85rem;
@@ -375,6 +514,7 @@
       font-size: 10px;
       color: #aaa;
       opacity: 0.75;
+      line-height: 1.5;
     }
 
     .hidden {
@@ -423,6 +563,10 @@
       .image-grid {
         padding: 0 16px 24px;
       }
+
+      .topbar {
+        padding: 16px;
+      }
     }
   </style>
 </head>
@@ -431,51 +575,125 @@
 
     <div class="topbar">
       <a class="back-link" href="../index.html">← Home</a>
-      <div style="width:60px;"></div>
+      <div class="topbar-note">BB369 Platform Module</div>
     </div>
 
     <div class="hero-soft">
-      <h1>Premium Window Systems</h1>
-    <p>
-  Upgrade your windows with clearer options, better performance, and a cleaner result.
-</p>
-     
+      <h1>Windows & Doors</h1>
+      <p>
+        Upload a photo or describe your issue to generate structured options,
+        compare likely ranges, and move toward the next step with more clarity.
+      </p>
+      <div class="hero-soft-sub">
+        Part of the BB369 Platform. This page functions as a structured decision module
+        for a service scenario and supports input → comparison → selection → booking.
+      </div>
+
+      <div class="hero-actions">
+        <button class="btn btn-dark" onclick="goToTab('input')">Upload or Describe Problem</button>
+        <a class="btn" href="#solutions">View Typical Options</a>
+      </div>
     </div>
-    
+
     <div class="tabs">
-      <button class="tab-btn active" data-tab="solutions">Solutions</button>
-      <button class="tab-btn" data-tab="quote">Quote Tool</button>
+      <button class="tab-btn active" data-tab="input">Input</button>
+      <button class="tab-btn" data-tab="solutions">Solutions</button>
+      <button class="tab-btn" data-tab="quote">Estimate</button>
       <button class="tab-btn" data-tab="visual">3D Visualizer</button>
     </div>
 
+    <!-- Input -->
+    <section class="section-box" id="input">
+      <h2 class="section-title">Describe the Problem or Upload a Photo</h2>
+      <p class="section-note">
+        This module uses a structured decision flow to translate customer input into
+        clearer A/B/C options. You can start with a short description, a photo, or both.
+      </p>
+
+      <div class="input-grid">
+        <div class="field" style="grid-column: 1 / -1;">
+          <label for="issueDescription">Describe your issue</label>
+          <textarea id="issueDescription" placeholder="Example: My old sliding window is noisy, drafty, and difficult to open. I want a cleaner look and better insulation."></textarea>
+        </div>
+
+        <div class="field">
+          <label for="issueType">Scenario type</label>
+          <select id="issueType">
+            <option value="window">Window issue</option>
+            <option value="door">Door issue</option>
+            <option value="upgrade">Upgrade request</option>
+            <option value="replacement">Replacement request</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="photoUpload">Upload a reference photo</label>
+          <input id="photoUpload" type="file" accept="image/*" />
+        </div>
+      </div>
+
+      <div class="upload-note">
+        The current version generates structured options based on common service scenarios.
+        You can later connect this step to a real AI image or analysis workflow.
+      </div>
+
+      <div class="generate-actions">
+        <button class="btn btn-dark" type="button" onclick="generateOptions()">Generate A/B/C Options</button>
+        <button class="btn" type="button" onclick="goToTab('solutions')">See Standard Options</button>
+      </div>
+
+      <div id="generatedBox" class="generated-box hidden">
+        <div class="generated-summary" id="generatedSummary"></div>
+        <div class="result-note">
+          Generated options are structured references designed to support clearer decision-making.
+          Final scope and pricing should be confirmed through on-site review.
+        </div>
+      </div>
+    </section>
+
     <!-- Solutions -->
-    <section class="section-box" id="solutions">
+    <section class="section-box hidden" id="solutions">
+      <h2 class="section-title">Structured Option Comparison</h2>
+      <p class="section-note">
+        This module compares three common paths for windows and doors. The goal is not to automate
+        the final decision, but to make the next step easier to understand.
+      </p>
+
       <div class="solutions-grid">
-        <div class="solution-card">
+        <div class="solution-card" id="cardA">
           <h3>Option A — Basic Repair</h3>
           <p>Simple fixes and targeted improvement for existing windows or doors.</p>
           <div class="price">$25 – $260</div>
           <div class="decision-note">
-            Best for quick fixes and lower-cost improvements.
+            Best for quick fixes, small adjustments, and lower-cost improvements.
+          </div>
+          <div class="card-actions">
+            <button class="select-btn" onclick="selectOption('A')">Choose Option A</button>
           </div>
         </div>
 
-        <div class="solution-card">
+        <div class="solution-card" id="cardB">
           <div class="popular-badge">Most Popular</div>
           <h3>Option B — Standard Upgrade</h3>
           <p>Improved materials, better efficiency, and a cleaner finished look.</p>
           <div class="price">$300 – $700</div>
           <div class="decision-note">
-            Most customers choose this for balanced performance and cost.
+            Best for balanced performance, appearance, and cost.
+          </div>
+          <div class="card-actions">
+            <button class="select-btn" onclick="selectOption('B')">Choose Option B</button>
           </div>
         </div>
 
-        <div class="solution-card">
+        <div class="solution-card" id="cardC">
           <h3>Option C — Premium Replacement</h3>
           <p>Full replacement path for long-term performance and visual upgrade.</p>
           <div class="price">$700 – $1,500+</div>
           <div class="decision-note">
             Best for older units, larger upgrades, and long-term value.
+          </div>
+          <div class="card-actions">
+            <button class="select-btn" onclick="selectOption('C')">Choose Option C</button>
           </div>
         </div>
       </div>
@@ -489,13 +707,18 @@
           Completed in 1 day. Improved insulation and reduced outside noise significantly.
         </div>
         <div class="case-foot">
-          Similar projects available · Free consultation
+          Scenario reference only · Similar projects available · Free consultation
         </div>
       </div>
     </section>
 
-    <!-- Quote Tool -->
+    <!-- Estimate -->
     <section class="section-box hidden" id="quote">
+      <h2 class="section-title">Estimate Range</h2>
+      <p class="section-note">
+        Use this estimate tool to understand a likely reference range before booking a review.
+      </p>
+
       <div class="quote-grid">
         <div class="field">
           <label for="serviceType">Service Type</label>
@@ -518,12 +741,17 @@
       <div class="quote-result" id="quoteResult">Estimated Total: $120</div>
 
       <div class="quote-note">
-        Estimates are based on typical projects. Final pricing is confirmed after on-site measurement.
+        Estimates are based on typical service scenarios. Final pricing is confirmed after on-site measurement.
       </div>
     </section>
 
     <!-- Visualizer -->
     <section class="section-box hidden" id="visual">
+      <h2 class="section-title">3D Visual Reference</h2>
+      <p class="section-note">
+        This view is a visual reference for the module workflow. It can later be connected to generated previews or before/after image outputs.
+      </p>
+
       <div class="visual-wrap">
         <div class="window-3d">
           <div class="frame outer-frame">
@@ -534,52 +762,73 @@
             </div>
           </div>
         </div>
-        <div class="visual-hint">3D preview reference</div>
+        <div class="visual-hint">Visual scenario reference</div>
       </div>
     </section>
 
-    <!-- 底部固定三图 -->
     <div class="image-grid">
-      <img src="../assets/windows-hero.jpg" alt="Premium windows and doors main visual">
-      <img src="../assets/windows-preview.jpg" alt="Before and after window upgrade">
-      <img src="../assets/window-styles-overview.jpg" alt="Window styles overview">
+      <img src="../assets/windows-hero.jpg" alt="Windows and doors service scenario" />
+      <img src="../assets/windows-preview.jpg" alt="Before and after window upgrade example" />
+      <img src="../assets/window-styles-overview.jpg" alt="Window styles and replacement reference" />
     </div>
 
     <p class="image-grid-note">
-      Real projects · Before & after · Available styles
+      Service scenario · Before & after reference · Available styles
     </p>
 
     <div class="cta-wrap">
-      <a class="cta-btn" href="https://cal.com/bb369tech/service-decision-review">Book a Decision Review</a>
-      <div class="cta-safe">Free consultation · No pressure · Fast response</div>
+      <a
+        class="cta-btn"
+        id="bookingLink"
+        href="https://cal.com/bb369tech/service-decision-review?module=windows-and-doors"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Book a Decision Review
+      </a>
+
+      <div class="cta-safe" id="selectedOptionText">
+        No option selected yet · You can still book a general review
+      </div>
+
       <div class="cta-note">
-        Estimates are for reference only. Final decisions are confirmed through professional assessment.
+        This page is part of the BB369 Platform decision module system. It is informed by a structured
+        decision approach and designed for clearer service comparison, estimate guidance, and next-step booking.
       </div>
     </div>
 
     <div class="footer">
       <div>BB369 Platform</div>
       <div>Structured decision systems for service businesses.</div>
-      <div class="provenance">Based on a structured decision approach · Research-informed</div>
+      <div class="provenance">
+        Module type: Windows &amp; Doors · Platform role: application-facing decision module<br />
+        Research-informed structure · Canonical research reference:
+        xufentu-creator/judgment-as-structural-constraint
+      </div>
     </div>
-
   </div>
 
   <script>
     const tabs = document.querySelectorAll('.tab-btn');
     const sections = {
+      input: document.getElementById('input'),
       solutions: document.getElementById('solutions'),
       quote: document.getElementById('quote'),
       visual: document.getElementById('visual')
     };
 
+    function goToTab(tabName) {
+      tabs.forEach(t => t.classList.remove('active'));
+      document.querySelector(`.tab-btn[data-tab="${tabName}"]`)?.classList.add('active');
+
+      Object.values(sections).forEach(sec => sec.classList.add('hidden'));
+      sections[tabName].classList.remove('hidden');
+      sections[tabName].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
     tabs.forEach(btn => {
       btn.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        btn.classList.add('active');
-
-        Object.values(sections).forEach(sec => sec.classList.add('hidden'));
-        sections[btn.dataset.tab].classList.remove('hidden');
+        goToTab(btn.dataset.tab);
       });
     });
 
@@ -597,6 +846,93 @@
     serviceType.addEventListener('change', updateQuote);
     unitCount.addEventListener('input', updateQuote);
     updateQuote();
+
+    const generatedBox = document.getElementById('generatedBox');
+    const generatedSummary = document.getElementById('generatedSummary');
+    const issueDescription = document.getElementById('issueDescription');
+    const issueType = document.getElementById('issueType');
+    const photoUpload = document.getElementById('photoUpload');
+
+    function generateOptions() {
+      const text = issueDescription.value.trim().toLowerCase();
+      const scenario = issueType.value;
+      const hasPhoto = photoUpload.files && photoUpload.files.length > 0;
+
+      let recommendation = "B";
+      let summary = "Generated a balanced comparison for a standard upgrade scenario.";
+
+      const repairSignals = ["repair", "small", "fix", "noise", "draft", "stuck", "seal", "handle"];
+      const replacementSignals = ["replace", "replacement", "old", "broken", "full", "new look", "double pane", "upgrade all"];
+
+      const repairMatch = repairSignals.some(word => text.includes(word));
+      const replaceMatch = replacementSignals.some(word => text.includes(word));
+
+      if (scenario === "window" || scenario === "door") {
+        recommendation = "A";
+        summary = "Detected a focused service issue. Generated options with a lighter repair-first starting point.";
+      }
+
+      if (scenario === "upgrade") {
+        recommendation = "B";
+        summary = "Detected an upgrade-oriented request. Generated options centered on better performance and appearance.";
+      }
+
+      if (scenario === "replacement") {
+        recommendation = "C";
+        summary = "Detected a replacement-oriented request. Generated options centered on long-term value and full replacement paths.";
+      }
+
+      if (repairMatch && !replaceMatch) {
+        recommendation = "A";
+        summary = "Your description suggests a targeted issue. Option A may be the fastest and lightest path, while B and C remain available for comparison.";
+      }
+
+      if (replaceMatch) {
+        recommendation = "C";
+        summary = "Your description suggests an older or more extensive issue. Option C may be more appropriate for long-term performance, while A and B remain available for comparison.";
+      }
+
+      if (hasPhoto && recommendation === "B") {
+        summary += " A photo was uploaded, which supports better scenario review and next-step discussion.";
+      } else if (hasPhoto) {
+        summary += " A photo was uploaded and can help confirm details during the review.";
+      }
+
+      generatedSummary.innerHTML = `
+        <strong>Generated Result:</strong> ${summary}<br><br>
+        <strong>Suggested starting point:</strong> Option ${recommendation}<br>
+        <strong>Flow:</strong> Input → Generate Options → Compare → Select → Book
+      `;
+
+      generatedBox.classList.remove('hidden');
+
+      goToTab('solutions');
+      selectOption(recommendation);
+    }
+
+    const bookingLink = document.getElementById('bookingLink');
+    const selectedOptionText = document.getElementById('selectedOptionText');
+    let selectedOption = "";
+
+    function selectOption(option) {
+      selectedOption = option;
+
+      document.getElementById('cardA').classList.remove('selected');
+      document.getElementById('cardB').classList.remove('selected');
+      document.getElementById('cardC').classList.remove('selected');
+
+      document.getElementById(`card${option}`).classList.add('selected');
+
+      selectedOptionText.textContent = `Selected option: ${option} · Ready to book a focused review`;
+
+      const description = encodeURIComponent(issueDescription.value.trim() || "windows and doors review");
+      const scenario = encodeURIComponent(issueType.value);
+      const url =
+        `https://cal.com/bb369tech/service-decision-review?module=windows-and-doors&option=${option}&scenario=${scenario}&summary=${description}`;
+
+      bookingLink.href = url;
+      bookingLink.textContent = `Book Review for Option ${option}`;
+    }
   </script>
 </body>
 </html>
