@@ -6,23 +6,22 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
   />
-
   <title>Windows & Doors Module | BB369 Platform</title>
 
   <meta
     name="description"
-    content="Windows and doors decision module within the BB369 Platform. Upload a photo or describe your issue to generate structured A/B/C options, compare likely ranges, and book the next step."
+    content="Windows and doors decision module within the BB369 Platform. Describe your issue, generate structured A/B/C options, compare likely ranges, and book the next step."
   />
   <meta
     name="keywords"
-    content="BB369 Platform, structured decision, decision module, windows and doors, service scenario, compare options, estimate range, upload problem, AI-assisted decision, decision review"
+    content="BB369 Platform, structured decision, decision module, windows and doors, service scenario, compare options, estimate range, decision review, next-step booking"
   />
   <meta name="robots" content="index,follow" />
 
   <meta property="og:title" content="Windows & Doors Module | BB369 Platform" />
   <meta
     property="og:description"
-    content="A structured decision module for windows and doors. Upload or describe the problem, generate A/B/C options, compare likely ranges, and book the next step."
+    content="A structured decision module for windows and doors. Describe the issue, generate A/B/C options, compare likely ranges, and book the next step."
   />
   <meta property="og:type" content="website" />
 
@@ -130,6 +129,13 @@
       line-height: 1.5;
     }
 
+    .hero-flow {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #777;
+      line-height: 1.5;
+    }
+
     .hero-actions {
       display: flex;
       gap: 12px;
@@ -198,106 +204,49 @@
       max-width: 880px;
     }
 
+    .system-message {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      color: #444;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .system-message.hidden {
+      display: none;
+    }
+
+    .system-message.error {
+      border-color: #e3c2c2;
+      background: #fff8f8;
+      color: #8a3a3a;
+    }
+
+    .system-message.success {
+      border-color: #d8e6d8;
+      background: #f8fff8;
+      color: #2f5f2f;
+    }
+
+    .input-grid,
+    .quote-grid,
     .solutions-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 18px;
     }
 
-    .solution-card {
-      background: #ffffff;
-      border: 1px solid #e5e5e5;
-      border-radius: 18px;
-      padding: 18px;
-      transition: 0.2s ease;
-    }
-
-    .solution-card.selected {
-      border-color: #111;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-    }
-
-    .solution-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
-    }
-
-    .solution-card p {
-      margin: 0 0 10px;
-      color: #666;
-      line-height: 1.5;
-    }
-
-    .price {
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .decision-note {
-      font-size: 12px;
-      color: #888;
-      margin-top: 6px;
-      line-height: 1.5;
-    }
-
-    .popular-badge {
-      font-size: 12px;
-      color: #fff;
-      background: #111;
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 8px;
-    }
-
-    .card-actions {
-      margin-top: 14px;
-    }
-
-    .select-btn {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid #111;
-      background: #fff;
-      color: #111;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .case-box {
-      margin-top: 20px;
-      padding: 18px;
-      border-radius: 16px;
-      background: #fff;
-      border: 1px solid #e8e8e8;
-    }
-
-    .case-title {
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: #111;
-    }
-
-    .case-text {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 6px;
-    }
-
-    .case-foot {
-      font-size: 12px;
-      color: #999;
-      margin-top: 6px;
-    }
-
-    .input-grid,
-    .quote-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
+    .input-grid {
       max-width: 900px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .quote-grid {
+      max-width: 900px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
 
     .field label {
@@ -360,6 +309,67 @@
       color: #444;
       line-height: 1.6;
       margin-bottom: 12px;
+    }
+
+    .solution-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 18px;
+      padding: 18px;
+      transition: 0.2s ease;
+    }
+
+    .solution-card.selected {
+      border-color: #111;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+    }
+
+    .solution-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+    }
+
+    .solution-card p {
+      margin: 0 0 10px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .price {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .decision-note {
+      font-size: 12px;
+      color: #888;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    .popular-badge {
+      font-size: 12px;
+      color: #fff;
+      background: #111;
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .card-actions {
+      margin-top: 14px;
+    }
+
+    .select-btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid #111;
+      background: #fff;
+      color: #111;
+      font-weight: 600;
+      cursor: pointer;
     }
 
     .quote-result {
@@ -581,16 +591,19 @@
     <div class="hero-soft">
       <h1>Windows & Doors</h1>
       <p>
-        Upload a photo or describe your issue to generate structured options,
-        compare likely ranges, and move toward the next step with more clarity.
+        Describe your issue to generate structured options, compare likely ranges,
+        and move toward the next step with more clarity.
       </p>
       <div class="hero-soft-sub">
         Part of the BB369 Platform. This page functions as a structured decision module
-        for a service scenario and supports input → comparison → selection → booking.
+        for a service scenario.
+      </div>
+      <div class="hero-flow">
+        Step 1: Describe → Step 2: Generate Options → Step 3: Compare A/B/C → Step 4: Select → Step 5: Book
       </div>
 
       <div class="hero-actions">
-        <button class="btn btn-dark" onclick="goToTab('input')">Upload or Describe Problem</button>
+        <button class="btn btn-dark" onclick="goToTab('input')">Start Here</button>
         <a class="btn" href="#solutions">View Typical Options</a>
       </div>
     </div>
@@ -599,15 +612,13 @@
       <button class="tab-btn active" data-tab="input">Input</button>
       <button class="tab-btn" data-tab="solutions">Solutions</button>
       <button class="tab-btn" data-tab="quote">Estimate</button>
-      <button class="tab-btn" data-tab="visual">3D Visualizer</button>
+      <button class="tab-btn" data-tab="visual">Visual Reference</button>
     </div>
 
-    <!-- Input -->
     <section class="section-box" id="input">
-      <h2 class="section-title">Describe the Problem or Upload a Photo</h2>
+      <h2 class="section-title">Describe the Problem</h2>
       <p class="section-note">
-        This module uses a structured decision flow to translate customer input into
-        clearer A/B/C options. You can start with a short description, a photo, or both.
+        Start with a short description. The module will translate your input into a clearer A/B/C comparison.
       </p>
 
       <div class="input-grid">
@@ -625,17 +636,13 @@
             <option value="replacement">Replacement request</option>
           </select>
         </div>
-
-        <div class="field">
-          <label for="photoUpload">Upload a reference photo</label>
-          <input id="photoUpload" type="file" accept="image/*" />
-        </div>
       </div>
 
       <div class="upload-note">
-        The current version generates structured options based on common service scenarios.
-        You can later connect this step to a real AI image or analysis workflow.
+        This version uses structured scenario logic to generate options for review.
       </div>
+
+      <div id="systemMessage" class="system-message hidden"></div>
 
       <div class="generate-actions">
         <button class="btn btn-dark" type="button" onclick="generateOptions()">Generate A/B/C Options</button>
@@ -651,12 +658,10 @@
       </div>
     </section>
 
-    <!-- Solutions -->
     <section class="section-box hidden" id="solutions">
       <h2 class="section-title">Structured Option Comparison</h2>
       <p class="section-note">
-        This module compares three common paths for windows and doors. The goal is not to automate
-        the final decision, but to make the next step easier to understand.
+        Compare three common paths for windows and doors. The goal is to make the next step easier to understand.
       </p>
 
       <div class="solutions-grid">
@@ -697,26 +702,12 @@
           </div>
         </div>
       </div>
-
-      <div class="case-box">
-        <div class="case-title">Recent Project · Los Angeles</div>
-        <div class="case-text">
-          Replaced old sliding windows with energy-efficient double-pane windows.
-        </div>
-        <div class="case-text">
-          Completed in 1 day. Improved insulation and reduced outside noise significantly.
-        </div>
-        <div class="case-foot">
-          Scenario reference only · Similar projects available · Free consultation
-        </div>
-      </div>
     </section>
 
-    <!-- Estimate -->
     <section class="section-box hidden" id="quote">
       <h2 class="section-title">Estimate Range</h2>
       <p class="section-note">
-        Use this estimate tool to understand a likely reference range before booking a review.
+        Use this tool to understand a likely reference range before booking a review.
       </p>
 
       <div class="quote-grid">
@@ -741,15 +732,14 @@
       <div class="quote-result" id="quoteResult">Estimated Total: $120</div>
 
       <div class="quote-note">
-        Estimates are based on typical service scenarios. Final pricing is confirmed after on-site measurement.
+        Estimates are reference only. Final pricing is confirmed after review and measurement.
       </div>
     </section>
 
-    <!-- Visualizer -->
     <section class="section-box hidden" id="visual">
-      <h2 class="section-title">3D Visual Reference</h2>
+      <h2 class="section-title">Visual Reference</h2>
       <p class="section-note">
-        This view is a visual reference for the module workflow. It can later be connected to generated previews or before/after image outputs.
+        A simple visual reference for the module scenario.
       </p>
 
       <div class="visual-wrap">
@@ -767,9 +757,9 @@
     </section>
 
     <div class="image-grid">
-      <img src="../assets/windows-hero.jpg" alt="Windows and doors service scenario" />
-      <img src="../assets/windows-preview.jpg" alt="Before and after window upgrade example" />
-      <img src="../assets/window-styles-overview.jpg" alt="Window styles and replacement reference" />
+      <img src="../assets/windows-hero.jpg" alt="Windows and doors decision module service scenario" />
+      <img src="../assets/windows-preview.jpg" alt="Windows and doors before and after service reference" />
+      <img src="../assets/window-styles-overview.jpg" alt="Windows and doors styles comparison and replacement reference" />
     </div>
 
     <p class="image-grid-note">
@@ -817,6 +807,20 @@
       visual: document.getElementById('visual')
     };
 
+    const serviceType = document.getElementById('serviceType');
+    const unitCount = document.getElementById('unitCount');
+    const quoteResult = document.getElementById('quoteResult');
+
+    const generatedBox = document.getElementById('generatedBox');
+    const generatedSummary = document.getElementById('generatedSummary');
+    const issueDescription = document.getElementById('issueDescription');
+    const issueType = document.getElementById('issueType');
+    const bookingLink = document.getElementById('bookingLink');
+    const selectedOptionText = document.getElementById('selectedOptionText');
+    const systemMessage = document.getElementById('systemMessage');
+
+    let selectedOption = "";
+
     function goToTab(tabName) {
       tabs.forEach(t => t.classList.remove('active'));
       document.querySelector(`.tab-btn[data-tab="${tabName}"]`)?.classList.add('active');
@@ -832,10 +836,6 @@
       });
     });
 
-    const serviceType = document.getElementById('serviceType');
-    const unitCount = document.getElementById('unitCount');
-    const quoteResult = document.getElementById('quoteResult');
-
     function updateQuote() {
       const base = parseFloat(serviceType.value) || 0;
       const qty = parseInt(unitCount.value, 10) || 1;
@@ -847,16 +847,34 @@
     unitCount.addEventListener('input', updateQuote);
     updateQuote();
 
-    const generatedBox = document.getElementById('generatedBox');
-    const generatedSummary = document.getElementById('generatedSummary');
-    const issueDescription = document.getElementById('issueDescription');
-    const issueType = document.getElementById('issueType');
-    const photoUpload = document.getElementById('photoUpload');
+    function showMessage(message, type = "success") {
+      systemMessage.textContent = message;
+      systemMessage.classList.remove('hidden', 'error', 'success');
+      systemMessage.classList.add(type);
+    }
+
+    function clearMessage() {
+      systemMessage.textContent = "";
+      systemMessage.classList.add('hidden');
+      systemMessage.classList.remove('error', 'success');
+    }
+
+    function sanitizeForUrl(text, maxLength = 80) {
+      return encodeURIComponent((text || "").trim().replace(/\s+/g, ' ').slice(0, maxLength));
+    }
 
     function generateOptions() {
-      const text = issueDescription.value.trim().toLowerCase();
+      clearMessage();
+
+      const rawText = issueDescription.value.trim();
+      const text = rawText.toLowerCase();
       const scenario = issueType.value;
-      const hasPhoto = photoUpload.files && photoUpload.files.length > 0;
+
+      if (!rawText) {
+        showMessage("Please describe the issue before generating options.", "error");
+        goToTab('input');
+        return;
+      }
 
       let recommendation = "B";
       let summary = "Generated a balanced comparison for a standard upgrade scenario.";
@@ -892,27 +910,18 @@
         summary = "Your description suggests an older or more extensive issue. Option C may be more appropriate for long-term performance, while A and B remain available for comparison.";
       }
 
-      if (hasPhoto && recommendation === "B") {
-        summary += " A photo was uploaded, which supports better scenario review and next-step discussion.";
-      } else if (hasPhoto) {
-        summary += " A photo was uploaded and can help confirm details during the review.";
-      }
-
       generatedSummary.innerHTML = `
         <strong>Generated Result:</strong> ${summary}<br><br>
         <strong>Suggested starting point:</strong> Option ${recommendation}<br>
-        <strong>Flow:</strong> Input → Generate Options → Compare → Select → Book
+        <strong>Flow:</strong> Describe → Generate Options → Compare → Select → Book
       `;
 
       generatedBox.classList.remove('hidden');
+      showMessage("Options generated. Review the suggested path below.", "success");
 
       goToTab('solutions');
       selectOption(recommendation);
     }
-
-    const bookingLink = document.getElementById('bookingLink');
-    const selectedOptionText = document.getElementById('selectedOptionText');
-    let selectedOption = "";
 
     function selectOption(option) {
       selectedOption = option;
@@ -925,12 +934,12 @@
 
       selectedOptionText.textContent = `Selected option: ${option} · Ready to book a focused review`;
 
-      const description = encodeURIComponent(issueDescription.value.trim() || "windows and doors review");
       const scenario = encodeURIComponent(issueType.value);
-      const url =
-        `https://cal.com/bb369tech/service-decision-review?module=windows-and-doors&option=${option}&scenario=${scenario}&summary=${description}`;
+      const shortSummary = sanitizeForUrl(issueDescription.value, 60);
 
-      bookingLink.href = url;
+      bookingLink.href =
+        `https://cal.com/bb369tech/service-decision-review?module=windows-and-doors&option=${option}&scenario=${scenario}&note=${shortSummary}`;
+
       bookingLink.textContent = `Book Review for Option ${option}`;
     }
   </script>
