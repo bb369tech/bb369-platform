@@ -10,18 +10,18 @@
 
   <meta
     name="description"
-    content="Windows and doors decision module within the BB369 Platform. Describe your issue, generate structured A/B/C options, compare likely ranges, and book the next step."
+    content="Windows and doors decision module within the BB369 Platform. Upload photos, describe your needs, receive a proposal by email, and book the next step."
   />
   <meta
     name="keywords"
-    content="BB369 Platform, structured decision, decision module, windows and doors, service scenario, compare options, estimate range, decision review, next-step booking"
+    content="BB369 Platform, structured decision, decision module, windows and doors, service scenario, compare options, estimate range, design review, next-step booking"
   />
   <meta name="robots" content="index,follow" />
 
   <meta property="og:title" content="Windows & Doors Module | BB369 Platform" />
   <meta
     property="og:description"
-    content="A structured decision module for windows and doors. Describe the issue, generate A/B/C options, compare likely ranges, and book the next step."
+    content="Upload photos, describe your needs, receive a proposal by email, and book the next step."
   />
   <meta property="og:type" content="website" />
 
@@ -240,7 +240,7 @@
     }
 
     .input-grid {
-      max-width: 900px;
+      max-width: 1000px;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
 
@@ -591,15 +591,15 @@
     <div class="hero-soft">
       <h1>Windows & Doors</h1>
       <p>
-        Describe your issue to generate structured options, compare likely ranges,
-        and move toward the next step with more clarity.
+        Upload photos, describe your needs, receive a proposal by email,
+        and move to the next step with more clarity.
       </p>
       <div class="hero-soft-sub">
         Part of the BB369 Platform. This page functions as a structured decision module
         for a service scenario.
       </div>
       <div class="hero-flow">
-        Step 1: Describe → Step 2: Generate Options → Step 3: Compare A/B/C → Step 4: Select → Step 5: Book
+        Step 1: Upload & Describe → Step 2: We Review → Step 3: Receive Proposal by Email → Step 4: Book
       </div>
 
       <div class="hero-actions">
@@ -609,59 +609,74 @@
     </div>
 
     <div class="tabs">
-      <button class="tab-btn active" data-tab="input">Input</button>
-      <button class="tab-btn" data-tab="solutions">Solutions</button>
+      <button class="tab-btn active" data-tab="input">Request</button>
+      <button class="tab-btn" data-tab="solutions">Options</button>
       <button class="tab-btn" data-tab="quote">Estimate</button>
       <button class="tab-btn" data-tab="visual">Visual Reference</button>
     </div>
 
     <section class="section-box" id="input">
-      <h2 class="section-title">Describe the Problem</h2>
+      <h2 class="section-title">Upload Photos and Describe Your Needs</h2>
       <p class="section-note">
-        Start with a short description. The module will translate your input into a clearer A/B/C comparison.
+        Submit your request and our team will review your photo and requirements.
+        We will prepare a proposal and send it to your email.
       </p>
 
-      <div class="input-grid">
-        <div class="field" style="grid-column: 1 / -1;">
-          <label for="issueDescription">Describe your issue</label>
-          <textarea id="issueDescription" placeholder="Example: My old sliding window is noisy, drafty, and difficult to open. I want a cleaner look and better insulation."></textarea>
+      <form id="designForm">
+        <div class="input-grid">
+          <div class="field">
+            <label for="name">Your Name</label>
+            <input id="name" type="text" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" required />
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" type="text" />
+          </div>
+
+          <div class="field">
+            <label for="issueType">Scenario Type</label>
+            <select id="issueType">
+              <option value="window">Window issue</option>
+              <option value="door">Door issue</option>
+              <option value="upgrade">Upgrade request</option>
+              <option value="replacement">Replacement request</option>
+            </select>
+          </div>
+
+          <div class="field" style="grid-column: 1 / -1;">
+            <label for="message">Describe Your Needs</label>
+            <textarea id="message" required placeholder="Example: My old sliding window is noisy and drafty. I want a cleaner look and better insulation."></textarea>
+          </div>
+
+          <div class="field" style="grid-column: 1 / -1;">
+            <label for="photo">Upload a Photo</label>
+            <input id="photo" type="file" accept="image/*" />
+          </div>
         </div>
 
-        <div class="field">
-          <label for="issueType">Scenario type</label>
-          <select id="issueType">
-            <option value="window">Window issue</option>
-            <option value="door">Door issue</option>
-            <option value="upgrade">Upgrade request</option>
-            <option value="replacement">Replacement request</option>
-          </select>
+        <div class="upload-note">
+          After submission, our team will review your request and send a proposal to your email.
         </div>
-      </div>
 
-      <div class="upload-note">
-        This version uses structured scenario logic to generate options for review.
-      </div>
+        <div id="systemMessage" class="system-message hidden"></div>
 
-      <div id="systemMessage" class="system-message hidden"></div>
-
-      <div class="generate-actions">
-        <button class="btn btn-dark" type="button" onclick="generateOptions()">Generate A/B/C Options</button>
-        <button class="btn" type="button" onclick="goToTab('solutions')">See Standard Options</button>
-      </div>
-
-      <div id="generatedBox" class="generated-box hidden">
-        <div class="generated-summary" id="generatedSummary"></div>
-        <div class="result-note">
-          Generated options are structured references designed to support clearer decision-making.
-          Final scope and pricing should be confirmed through on-site review.
+        <div class="generate-actions">
+          <button class="btn btn-dark" type="submit">Submit for Design Review</button>
+          <button class="btn" type="button" onclick="goToTab('solutions')">See Standard Options</button>
         </div>
-      </div>
+      </form>
     </section>
 
     <section class="section-box hidden" id="solutions">
-      <h2 class="section-title">Structured Option Comparison</h2>
+      <h2 class="section-title">Typical Option Paths</h2>
       <p class="section-note">
-        Compare three common paths for windows and doors. The goal is to make the next step easier to understand.
+        These are common reference paths for windows and doors. Final scope and pricing are confirmed through human review and measurement.
       </p>
 
       <div class="solutions-grid">
@@ -810,20 +825,13 @@
     const serviceType = document.getElementById('serviceType');
     const unitCount = document.getElementById('unitCount');
     const quoteResult = document.getElementById('quoteResult');
-
-    const generatedBox = document.getElementById('generatedBox');
-    const generatedSummary = document.getElementById('generatedSummary');
-    const issueDescription = document.getElementById('issueDescription');
-    const issueType = document.getElementById('issueType');
+    const systemMessage = document.getElementById('systemMessage');
     const bookingLink = document.getElementById('bookingLink');
     const selectedOptionText = document.getElementById('selectedOptionText');
-    const systemMessage = document.getElementById('systemMessage');
-
-    let selectedOption = "";
 
     function goToTab(tabName) {
       tabs.forEach(t => t.classList.remove('active'));
-      document.querySelector(`.tab-btn[data-tab="${tabName}"]`)?.classList.add('active');
+      document.querySelector(.tab-btn[data-tab="${tabName}"])?.classList.add('active');
 
       Object.values(sections).forEach(sec => sec.classList.add('hidden'));
       sections[tabName].classList.remove('hidden');
@@ -840,7 +848,7 @@
       const base = parseFloat(serviceType.value) || 0;
       const qty = parseInt(unitCount.value, 10) || 1;
       const total = base * qty;
-      quoteResult.textContent = `Estimated Total: $${total.toLocaleString()}`;
+      quoteResult.textContent = Estimated Total: $${total.toLocaleString()};
     }
 
     serviceType.addEventListener('change', updateQuote);
@@ -853,94 +861,51 @@
       systemMessage.classList.add(type);
     }
 
-    function clearMessage() {
-      systemMessage.textContent = "";
-      systemMessage.classList.add('hidden');
-      systemMessage.classList.remove('error', 'success');
-    }
+    const form = document.getElementById('designForm');
 
-    function sanitizeForUrl(text, maxLength = 80) {
-      return encodeURIComponent((text || "").trim().replace(/\s+/g, ' ').slice(0, maxLength));
-    }
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    function generateOptions() {
-      clearMessage();
+      const formData = new FormData();
+      formData.append('name', document.getElementById('name').value);
+      formData.append('email', document.getElementById('email').value);
+      formData.append('message', document.getElementById('message').value);
 
-      const rawText = issueDescription.value.trim();
-      const text = rawText.toLowerCase();
-      const scenario = issueType.value;
-
-      if (!rawText) {
-        showMessage("Please describe the issue before generating options.", "error");
-        goToTab('input');
-        return;
+      const photoFile = document.getElementById('photo').files[0];
+      if (photoFile) {
+        formData.append('photo', photoFile);
       }
 
-      let recommendation = "B";
-      let summary = "Generated a balanced comparison for a standard upgrade scenario.";
+      showMessage('Submitting your request...', 'success');
 
-      const repairSignals = ["repair", "small", "fix", "noise", "draft", "stuck", "seal", "handle"];
-      const replacementSignals = ["replace", "replacement", "old", "broken", "full", "new look", "double pane", "upgrade all"];
+      try {
+        const res = await fetch('http://localhost:3000/submit', {
+          method: 'POST',
+          body: formData
+        });
 
-      const repairMatch = repairSignals.some(word => text.includes(word));
-      const replaceMatch = replacementSignals.some(word => text.includes(word));
+        const data = await res.json();
 
-      if (scenario === "window" || scenario === "door") {
-        recommendation = "A";
-        summary = "Detected a focused service issue. Generated options with a lighter repair-first starting point.";
+        if (data.success) {
+          showMessage('Your request was submitted successfully. We will review it and send a proposal to your email.', 'success');
+          form.reset();
+        } else {
+          showMessage('Submission failed. Please try again.', 'error');
+        }
+      } catch (err) {
+        showMessage('Request error. Please check whether the backend server is running.', 'error');
+        console.error(err);
       }
-
-      if (scenario === "upgrade") {
-        recommendation = "B";
-        summary = "Detected an upgrade-oriented request. Generated options centered on better performance and appearance.";
-      }
-
-      if (scenario === "replacement") {
-        recommendation = "C";
-        summary = "Detected a replacement-oriented request. Generated options centered on long-term value and full replacement paths.";
-      }
-
-      if (repairMatch && !replaceMatch) {
-        recommendation = "A";
-        summary = "Your description suggests a targeted issue. Option A may be the fastest and lightest path, while B and C remain available for comparison.";
-      }
-
-      if (replaceMatch) {
-        recommendation = "C";
-        summary = "Your description suggests an older or more extensive issue. Option C may be more appropriate for long-term performance, while A and B remain available for comparison.";
-      }
-
-      generatedSummary.innerHTML = `
-        <strong>Generated Result:</strong> ${summary}<br><br>
-        <strong>Suggested starting point:</strong> Option ${recommendation}<br>
-        <strong>Flow:</strong> Describe → Generate Options → Compare → Select → Book
-      `;
-
-      generatedBox.classList.remove('hidden');
-      showMessage("Options generated. Review the suggested path below.", "success");
-
-      goToTab('solutions');
-      selectOption(recommendation);
-    }
+    });
 
     function selectOption(option) {
-      selectedOption = option;
-
       document.getElementById('cardA').classList.remove('selected');
       document.getElementById('cardB').classList.remove('selected');
       document.getElementById('cardC').classList.remove('selected');
 
-      document.getElementById(`card${option}`).classList.add('selected');
-
-      selectedOptionText.textContent = `Selected option: ${option} · Ready to book a focused review`;
-
-      const scenario = encodeURIComponent(issueType.value);
-      const shortSummary = sanitizeForUrl(issueDescription.value, 60);
-
-      bookingLink.href =
-        `https://cal.com/bb369tech/service-decision-review?module=windows-and-doors&option=${option}&scenario=${scenario}&note=${shortSummary}`;
-
-      bookingLink.textContent = `Book Review for Option ${option}`;
+      document.getElementById(card${option}).classList.add('selected');
+      selectedOptionText.textContent = Selected option: ${option} · Ready to book a focused review;
+      bookingLink.textContent = Book Review for Option ${option};
     }
   </script>
 </body>
