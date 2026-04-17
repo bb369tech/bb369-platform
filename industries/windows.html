@@ -836,12 +836,11 @@
   </div>
 
   <script>
-    const CONFIG = {
-      formEndpoint: "",
-      maxPhotoSizeMB: 8,
-      allowedImageTypes: ["image/jpeg", "image/png", "image/webp", "image/jpg"]
-    };
-
+const CONFIG = {
+  formEndpoint: "https://bb369-sendgrid-api.onrender.com/submit",
+  maxPhotoSizeMB: 8,
+  allowedImageTypes: ["image/jpeg", "image/png", "image/webp", "image/jpg"]
+};
     const tabs = document.querySelectorAll('.tab-btn');
     const sections = {
       input: document.getElementById('input'),
