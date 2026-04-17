@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta
@@ -596,159 +596,156 @@
     <div class="hero-soft">
       <h1>Windows & Doors</h1>
       <p>
-        上传照片并描述您的需求。我们的团队会审核您的照片和说明，准备提案并发送到您的邮箱。
+        Upload photos and describe your needs. Our team will review your submission and prepare a proposal to be sent to your email.
       </p>
       <div class="hero-soft-sub">
-        这是 BB369 Platform 的一个结构化决策模块。您可以先了解方案选项和预算参考，再决定是否提交需求。
+        This is a structured decision module within the BB369 Platform. You can explore options and estimated ranges before deciding whether to submit a request.
       </div>
       <div class="hero-flow">
-        第一步：开始提交 → 第二步：查看方案选项 → 第三步：查看预算参考 → 第四步：收到提案 → 第五步：预约上门测量
+        Step 1: Start Your Request → Step 2: Explore Options → Step 3: Review Cost Estimates → Step 4: Receive a Proposal → Step 5: Schedule On-Site Measurement
       </div>
 
       <div class="hero-actions">
-        <button class="btn btn-dark" type="button" onclick="startRequestFlow()">开始提交</button>
-        <button class="btn" type="button" onclick="goToTab('solutions')">查看方案选项</button>
+        <button class="btn btn-dark" type="button" onclick="startRequestFlow()">Start Your Request</button>
+        <button class="btn" type="button" onclick="goToTab('solutions')">Explore Options</button>
       </div>
     </div>
 
     <div class="tabs">
-      <button class="tab-btn active" data-tab="input" type="button">开始提交</button>
-      <button class="tab-btn" data-tab="solutions" type="button">方案选项</button>
-      <button class="tab-btn" data-tab="quote" type="button">预算参考</button>
-      <button class="tab-btn" data-tab="visual" type="button">视觉参考</button>
+      <button class="tab-btn active" data-tab="input" type="button">Start Request</button>
+      <button class="tab-btn" data-tab="solutions" type="button">Options</button>
+      <button class="tab-btn" data-tab="quote" type="button">Cost Estimate</button>
+      <button class="tab-btn" data-tab="visual" type="button">Visual Reference</button>
     </div>
 
     <section class="section-box" id="input">
-      <h2 class="section-title">上传照片并描述您的需求</h2>
+      <h2 class="section-title">Upload Photos and Describe Your Needs</h2>
       <p class="section-note">
-        您可以先查看方案选项和预算参考，也可以直接提交需求。我们的团队会审核您的照片和说明，
-        准备一份提案并发送到您的邮箱；如您满意，再预约上门测量。
+        You may explore options and estimated ranges first, or submit your request directly. Our team will review your photos and description, prepare a proposal, and send it to your email. If the proposal fits your needs, you can then schedule an on-site measurement.
       </p>
 
       <div class="system-message success" style="display:block;">
-        操作说明：先点击下方“填写需求信息”，再填写姓名、邮箱、电话、需求描述并上传照片。
+        How it works: click “Fill Out Request Form” below first, then enter your name, email, phone number, project details, and upload photos.
       </div>
 
       <div class="generate-actions" style="margin-bottom:18px;">
-        <button class="btn btn-dark" type="button" onclick="toggleRequestForm()">填写需求信息</button>
-        <button class="btn" type="button" onclick="goToTab('solutions')">先看方案选项</button>
-        <button class="btn" type="button" onclick="goToTab('quote')">先看预算参考</button>
+        <button class="btn btn-dark" type="button" onclick="toggleRequestForm()">Fill Out Request Form</button>
+        <button class="btn" type="button" onclick="goToTab('solutions')">Explore Options First</button>
+        <button class="btn" type="button" onclick="goToTab('quote')">Review Cost Estimate First</button>
       </div>
 
       <div id="requestFormWrap" class="hidden">
         <div class="input-grid">
           <div class="field">
-            <label for="customerName">你的名字</label>
-            <input id="customerName" type="text" placeholder="请输入你的名字" />
+            <label for="customerName">Your Name</label>
+            <input id="customerName" type="text" placeholder="Enter your name" />
           </div>
 
           <div class="field">
-            <label for="customerEmail">电子邮件</label>
-            <input id="customerEmail" type="email" placeholder="请输入接收提案的邮箱" />
+            <label for="customerEmail">Email Address</label>
+            <input id="customerEmail" type="email" placeholder="Enter the email address to receive your proposal" />
           </div>
 
           <div class="field">
-            <label for="customerPhone">电话</label>
-            <input id="customerPhone" type="text" placeholder="请输入联系电话（选填）" />
+            <label for="customerPhone">Phone Number</label>
+            <input id="customerPhone" type="text" placeholder="Enter your phone number (optional)" />
           </div>
 
           <div class="field">
-            <label for="issueType">场景类型</label>
+            <label for="issueType">Project Type</label>
             <select id="issueType">
-              <option value="window">窗户问题</option>
-              <option value="door">门的问题</option>
-              <option value="upgrade">升级需求</option>
-              <option value="replacement">更换需求</option>
+              <option value="window">Window Issue</option>
+              <option value="door">Door Issue</option>
+              <option value="upgrade">Upgrade Request</option>
+              <option value="replacement">Replacement Request</option>
             </select>
           </div>
 
           <div class="field" style="grid-column: 1 / -1;">
-            <label for="issueDescription">描述你的需求</label>
-            <textarea id="issueDescription" placeholder="举个例子：我以前的滑动窗很吵又有风。我想要更干净的外观和更好的隔热效果。"></textarea>
+            <label for="issueDescription">Tell Us What You Need</label>
+            <textarea id="issueDescription" placeholder="Example: My old sliding window is noisy and lets air in. I want a cleaner look and better insulation."></textarea>
           </div>
 
           <div class="field" style="grid-column: 1 / -1;">
-            <label for="photoUpload">上传照片</label>
+            <label for="photoUpload">Upload Photos</label>
             <input id="photoUpload" type="file" accept="image/*" />
           </div>
         </div>
 
         <div class="upload-note">
-          提交后，我们会根据您的照片和需求准备人工方案，并通过邮箱发送给您。
+          After submission, we will prepare a manual proposal based on your photos and project details and send it to you by email.
         </div>
 
         <div id="systemMessage" class="system-message hidden"></div>
 
         <div class="generate-actions">
-          <button class="btn btn-dark" type="button" onclick="submitToBackend()">提交需求</button>
-          <button class="btn" type="button" onclick="generateOptions()">生成参考选项</button>
+          <button class="btn btn-dark" type="button" onclick="submitToBackend()">Submit Request</button>
+          <button class="btn" type="button" onclick="generateOptions()">Generate Suggested Options</button>
         </div>
 
         <div id="generatedBox" class="generated-box hidden">
           <div class="generated-summary" id="generatedSummary"></div>
           <div class="result-note">
-            这里的选项是结构化参考，不是最终报价。最终方案与价格仍以人工审核和现场测量为准。
+            These options are for structured reference only and do not represent a final quote. Final recommendations and pricing remain subject to manual review and on-site measurement.
           </div>
         </div>
       </div>
 
       <div class="system-message" style="display:block; margin-top:18px;">
-        免责说明：本页面提供的信息、预算范围、视觉示意和结构化选项仅供一般参考，不构成最终报价、
-        施工承诺、专业工程意见或法律责任保证。最终方案、材料、尺寸、可行性、施工范围与价格，
-        均以人工审核、现场测量和双方最终确认结果为准。
+        Disclaimer: The information, estimated ranges, visual references, and structured options provided on this page are for general reference only. They do not constitute a final quote, construction commitment, professional engineering opinion, or legal guarantee. Final scope, materials, dimensions, feasibility, work details, and pricing are subject to manual review, on-site measurement, and final confirmation between both parties.
       </div>
     </section>
 
     <section class="section-box hidden" id="solutions">
-      <h2 class="section-title">方案选项</h2>
+      <h2 class="section-title">Options</h2>
       <p class="section-note">
-        这里展示三种常见路径，帮助您快速理解修复、升级和更换之间的大致区别。
+        These three common paths are intended to help you quickly understand the general differences between repair, upgrade, and replacement.
       </p>
 
       <div class="solutions-grid">
         <div class="solution-card" id="cardA">
           <h3>Option A — Basic Repair</h3>
-          <p>适合现有窗户或门的局部修复与基础改善。</p>
+          <p>Suitable for localized repairs and basic improvements to existing windows or doors.</p>
           <div class="price">$25 – $260</div>
           <div class="decision-note">
-            适合小范围问题、快速调整和较低预算场景。
+            Best for smaller issues, quick adjustments, and lower-budget situations.
           </div>
           <div class="card-actions">
-            <button class="select-btn" type="button" onclick="selectOption('A')">选择 Option A</button>
+            <button class="select-btn" type="button" onclick="selectOption('A')">Choose Option A</button>
           </div>
         </div>
 
         <div class="solution-card" id="cardB">
           <div class="popular-badge">Most Popular</div>
           <h3>Option B — Standard Upgrade</h3>
-          <p>适合希望改善外观、隔热、性能和平衡预算的场景。</p>
+          <p>Suitable for projects seeking improved appearance, insulation, performance, and balanced budgeting.</p>
           <div class="price">$300 – $700</div>
           <div class="decision-note">
-            适合性能、外观和成本之间相对均衡的路径。
+            Best for projects looking for a balanced path across performance, appearance, and cost.
           </div>
           <div class="card-actions">
-            <button class="select-btn" type="button" onclick="selectOption('B')">选择 Option B</button>
+            <button class="select-btn" type="button" onclick="selectOption('B')">Choose Option B</button>
           </div>
         </div>
 
         <div class="solution-card" id="cardC">
           <h3>Option C — Premium Replacement</h3>
-          <p>适合老旧系统、全面更换以及追求长期效果的场景。</p>
+          <p>Suitable for older systems, full replacement projects, and long-term performance goals.</p>
           <div class="price">$700 – $1,500+</div>
           <div class="decision-note">
-            适合较大范围升级、更换和长期价值考虑。
+            Best for broader upgrades, replacement work, and long-term value considerations.
           </div>
           <div class="card-actions">
-            <button class="select-btn" type="button" onclick="selectOption('C')">选择 Option C</button>
+            <button class="select-btn" type="button" onclick="selectOption('C')">Choose Option C</button>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section-box hidden" id="quote">
-      <h2 class="section-title">预算参考</h2>
+      <h2 class="section-title">Cost Estimate</h2>
       <p class="section-note">
-        您可以先通过预算参考了解大致区间，最终价格仍以人工审核与现场测量结果为准。
+        You may review this estimated range first to understand a likely starting point. Final pricing remains subject to manual review and on-site measurement.
       </p>
 
       <div class="quote-grid">
@@ -765,22 +762,22 @@
         </div>
 
         <div class="field">
-          <label for="unitCount">Estimated Quantity</label>
+          <label for="unitCount">Number of Units</label>
           <input id="unitCount" type="number" min="1" value="1" />
         </div>
       </div>
 
-      <div class="quote-result" id="quoteResult">Estimated Total: $120</div>
+      <div class="quote-result" id="quoteResult">Estimated Cost: $120</div>
 
       <div class="quote-note">
-        预算区间仅供参考，不能替代人工审核、现场测量、材料确认和最终正式报价。
+        This estimate is for general reference only and does not replace manual review, on-site measurement, material confirmation, or a final formal quote.
       </div>
     </section>
 
     <section class="section-box hidden" id="visual">
-      <h2 class="section-title">视觉参考</h2>
+      <h2 class="section-title">Visual Reference</h2>
       <p class="section-note">
-        这里展示的是场景参考和视觉示意，不代表最终交付效果。最终提案会根据您提交的照片和需求进行人工整理。
+        The visuals shown here are scenario references and illustrative examples only. They do not represent a final deliverable. Your actual proposal will be manually prepared based on the photos and project details you submit.
       </p>
 
       <div class="visual-wrap">
@@ -803,7 +800,7 @@
       </div>
 
       <p class="image-grid-note">
-        Service scenario · Before & after reference · Available styles
+        Service scenario · Before and after reference · Available style overview
       </p>
     </section>
 
@@ -815,7 +812,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        Book a Decision Review
+        Book a Structured Review
       </a>
 
       <div class="cta-safe" id="selectedOptionText">
@@ -823,8 +820,7 @@
       </div>
 
       <div class="cta-note">
-        This page is part of the BB369 Platform decision module system. It is informed by a structured
-        decision approach and designed for clearer service comparison, estimate guidance, and next-step booking.
+        This page is part of the BB369 Platform decision module system. It is informed by a structured decision approach and designed for clearer service comparison, estimate guidance, and next-step booking.
       </div>
     </div>
 
@@ -907,12 +903,12 @@
       if (!file) return { ok: true };
 
       if (!CONFIG.allowedImageTypes.includes(file.type)) {
-        return { ok: false, message: "请上传 JPG、PNG 或 WEBP 图片。" };
+        return { ok: false, message: "Please upload a JPG, PNG, or WEBP image." };
       }
 
       const maxBytes = CONFIG.maxPhotoSizeMB * 1024 * 1024;
       if (file.size > maxBytes) {
-        return { ok: false, message: `图片不能超过 ${CONFIG.maxPhotoSizeMB}MB。` };
+        return { ok: false, message: `The image must be smaller than ${CONFIG.maxPhotoSizeMB}MB.` };
       }
 
       return { ok: true };
@@ -965,7 +961,7 @@
       const qty = parseInt(unitCount?.value || "1", 10) || 1;
       const total = base * qty;
       if (quoteResult) {
-        quoteResult.textContent = `Estimated Total: $${total.toLocaleString()}`;
+        quoteResult.textContent = `Estimated Cost: $${total.toLocaleString()}`;
       }
     }
 
@@ -995,14 +991,14 @@
       const scenario = issueType.value;
 
       if (!rawText) {
-        showMessage("请先填写需求描述，再生成参考选项。", "error");
+        showMessage("Please describe your project needs before generating suggested options.", "error");
         goToTab('input');
         if (requestFormWrap) requestFormWrap.classList.remove('hidden');
         return;
       }
 
       let recommendation = "B";
-      let summary = "已根据当前描述生成一个偏平衡的参考路径。";
+      let summary = "A balanced starting path has been generated based on your current project description.";
 
       const repairSignals = ["repair", "small", "fix", "noise", "draft", "stuck", "seal", "handle", "修", "漏风", "很吵"];
       const replacementSignals = ["replace", "replacement", "old", "broken", "full", "double pane", "upgrade all", "更换", "老旧", "全部"];
@@ -1012,37 +1008,37 @@
 
       if (scenario === "window" || scenario === "door") {
         recommendation = "A";
-        summary = "当前更像是一个聚焦问题场景，适合先从较轻量的修复路径开始参考。";
+        summary = "This appears to be a focused issue scenario, so a lighter repair path is a suitable place to begin.";
       }
 
       if (scenario === "upgrade") {
         recommendation = "B";
-        summary = "当前更像是升级需求，适合先从性能、外观和预算平衡的路径开始参考。";
+        summary = "This appears to be an upgrade request, so a balanced path across performance, appearance, and budget is a suitable place to begin.";
       }
 
       if (scenario === "replacement") {
         recommendation = "C";
-        summary = "当前更像是更换需求，适合先从全面更换和长期效果路径开始参考。";
+        summary = "This appears to be a replacement request, so a full replacement path focused on long-term results is a suitable place to begin.";
       }
 
       if (repairMatch && !replaceMatch) {
         recommendation = "A";
-        summary = "描述更接近局部问题或修复需求，可先参考 Option A，同时保留 B 和 C 作为对比。";
+        summary = "Your description is closer to a localized issue or repair need, so Option A is a suitable starting point while keeping B and C available for comparison.";
       }
 
       if (replaceMatch) {
         recommendation = "C";
-        summary = "描述更接近老旧系统或较大范围更换需求，可先参考 Option C，同时保留 A 和 B 作为对比。";
+        summary = "Your description is closer to an older system or a broader replacement need, so Option C is a suitable starting point while keeping A and B available for comparison.";
       }
 
       generatedSummary.innerHTML = `
-        <strong>参考结果：</strong> ${summary}<br><br>
-        <strong>建议起点：</strong> Option ${recommendation}<br>
-        <strong>路径：</strong> 提交需求 → 参考选项 → 对比 → 人工提案 → 预约测量
+        <strong>Suggested Result:</strong> ${summary}<br><br>
+        <strong>Recommended Starting Point:</strong> Option ${recommendation}<br>
+        <strong>Path:</strong> Submit Request → Review Options → Compare → Manual Proposal → Schedule Measurement
       `;
 
       generatedBox.classList.remove('hidden');
-      showMessage("参考选项已生成，请查看下方建议路径。", "success");
+      showMessage("Suggested options have been generated. Please review the recommended path below.", "success");
 
       goToTab('solutions');
       selectOption(recommendation);
@@ -1059,7 +1055,7 @@
       const activeCard = document.getElementById(`card${option}`);
       if (activeCard) activeCard.classList.add('selected');
 
-      selectedOptionText.textContent = `Selected option: ${option} · Ready to book a focused review`;
+      selectedOptionText.textContent = `Selected Option: ${option} · Ready to book a focused review`;
 
       const scenario = encodeURIComponent(issueType.value);
       const shortSummary = sanitizeForUrl(issueDescription.value, 60);
@@ -1083,7 +1079,7 @@
       selectedOption = "";
       selectedOptionText.textContent = "No option selected yet · You can still book a general review";
       bookingLink.href = "https://cal.com/bb369tech/service-decision-review?module=windows-and-doors";
-      bookingLink.textContent = "Book a Decision Review";
+      bookingLink.textContent = "Book a Structured Review";
 
       ['A', 'B', 'C'].forEach(key => {
         const card = document.getElementById(`card${key}`);
@@ -1095,7 +1091,7 @@
       clearMessage();
 
       if (isSubmitting) {
-        showMessage("正在提交，请稍候...", "success");
+        showMessage("Your request is being submitted. Please wait a moment...", "success");
         return;
       }
 
@@ -1107,14 +1103,14 @@
       const photoFile = photoUpload.files?.[0];
 
       if (!name || !email || !message) {
-        showMessage("请先填写姓名、邮箱和需求描述。", "error");
+        showMessage("Please enter your name, email address, and project details before submitting.", "error");
         goToTab('input');
         if (requestFormWrap) requestFormWrap.classList.remove('hidden');
         return;
       }
 
       if (!isValidEmail(email)) {
-        showMessage("请输入正确的邮箱地址。", "error");
+        showMessage("Please enter a valid email address.", "error");
         goToTab('input');
         if (requestFormWrap) requestFormWrap.classList.remove('hidden');
         customerEmail.focus();
@@ -1122,7 +1118,7 @@
       }
 
       if (!isValidPhone(phone)) {
-        showMessage("请输入正确的电话号码，或留空。", "error");
+        showMessage("Please enter a valid phone number, or leave the field blank.", "error");
         goToTab('input');
         if (requestFormWrap) requestFormWrap.classList.remove('hidden');
         customerPhone.focus();
@@ -1138,7 +1134,7 @@
       }
 
       if (!CONFIG.formEndpoint) {
-        showMessage("页面已经可以上线展示，但还没有配置线上提交接口。等你有真实接口地址后，把 CONFIG.formEndpoint 改成你的接口地址即可。", "error");
+        showMessage("This page is ready for display, but the live submission endpoint has not been connected yet. Once you have a real endpoint address, update CONFIG.formEndpoint.", "error");
         return;
       }
 
@@ -1156,7 +1152,7 @@
       }
 
       isSubmitting = true;
-      showMessage("正在提交，请稍候...", "success");
+      showMessage("Submitting your request. Please wait a moment...", "success");
 
       try {
         const res = await fetch(CONFIG.formEndpoint, {
@@ -1175,15 +1171,15 @@
         }
 
         if (res.ok && (data.success === true || data.success === undefined)) {
-          showMessage("提交成功。我们会审核您的需求并通过邮箱发送提案。", "success");
+          showMessage("Your request has been submitted successfully. We will review it and send a proposal to your email.", "success");
           if (requestFormWrap) requestFormWrap.classList.add('hidden');
           resetFormAfterSuccess();
         } else {
-          showMessage(data.message || "提交失败，请稍后再试。", "error");
+          showMessage(data.message || "The submission could not be completed. Please try again later.", "error");
         }
       } catch (err) {
         console.error(err);
-        showMessage("无法连接线上提交接口，请检查接口地址、跨域设置和服务是否已部署。", "error");
+        showMessage("The live submission endpoint could not be reached. Please check the endpoint address, CORS settings, and deployment status.", "error");
       } finally {
         isSubmitting = false;
       }
