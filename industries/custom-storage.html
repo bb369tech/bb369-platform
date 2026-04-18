@@ -27,31 +27,6 @@
 
   <link rel="stylesheet" href="../style.css" />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Custom Storage & Cabinets Module | BB369 Platform",
-    "description": "A structured custom storage and cabinets selection system for wardrobes, closets, shoe cabinets, kitchen cabinets, and full-home built-in storage.",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "BB369 Platform"
-    },
-    "about": [
-      "Custom Storage",
-      "Wardrobe",
-      "Closet",
-      "Kitchen Cabinets",
-      "Shoe Cabinet",
-      "Built-In Storage",
-      "Structured Decision",
-      "Compare Options",
-      "Estimate Range",
-      "Book Measurement"
-    ]
-  }
-  </script>
-
   <style>
     body {
       margin: 0;
@@ -220,7 +195,7 @@
     }
 
     .system-message.hidden {
-      display: none;
+      display: none !important;
     }
 
     .system-message.error {
@@ -305,7 +280,7 @@
     }
 
     .generated-box.hidden {
-      display: none;
+      display: none !important;
     }
 
     .generated-summary {
@@ -540,6 +515,7 @@
     #previewContainer {
       margin-top: 15px;
       padding: 0;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     }
 
     #previewContainer img {
@@ -767,7 +743,7 @@
         <div id="systemMessage" class="system-message hidden"></div>
 
         <div class="generate-actions">
-          <button class="btn btn-dark" type="button" onclick="submitToBackend()">Submit Request</button>
+          <button class="btn btn-dark" type="button" onclick="submitToBackend(); return false;">Submit Request</button>
           <button class="btn" type="button" onclick="generateOptions()">Generate Suggested Options</button>
         </div>
 
@@ -928,35 +904,35 @@
       allowedImageTypes: ["image/jpeg", "image/png", "image/webp", "image/jpg"]
     };
 
-    const tabs = document.querySelectorAll('.tab-btn');
+    const tabs = document.querySelectorAll(".tab-btn");
     const sections = {
-      input: document.getElementById('input'),
-      solutions: document.getElementById('solutions'),
-      quote: document.getElementById('quote'),
-      visual: document.getElementById('visual')
+      input: document.getElementById("input"),
+      solutions: document.getElementById("solutions"),
+      quote: document.getElementById("quote"),
+      visual: document.getElementById("visual")
     };
 
-    const serviceType = document.getElementById('serviceType');
-    const unitCount = document.getElementById('unitCount');
-    const quoteResult = document.getElementById('quoteResult');
+    const serviceType = document.getElementById("serviceType");
+    const unitCount = document.getElementById("unitCount");
+    const quoteResult = document.getElementById("quoteResult");
 
-    const generatedBox = document.getElementById('generatedBox');
-    const generatedSummary = document.getElementById('generatedSummary');
-    const issueDescription = document.getElementById('issueDescription');
-    const projectType = document.getElementById('projectType');
-    const spaceType = document.getElementById('spaceType');
-    const materialType = document.getElementById('materialType');
-    const finishStyle = document.getElementById('finishStyle');
-    const bookingLink = document.getElementById('bookingLink');
-    const selectedOptionText = document.getElementById('selectedOptionText');
-    const systemMessage = document.getElementById('systemMessage');
+    const generatedBox = document.getElementById("generatedBox");
+    const generatedSummary = document.getElementById("generatedSummary");
+    const issueDescription = document.getElementById("issueDescription");
+    const projectType = document.getElementById("projectType");
+    const spaceType = document.getElementById("spaceType");
+    const materialType = document.getElementById("materialType");
+    const finishStyle = document.getElementById("finishStyle");
+    const bookingLink = document.getElementById("bookingLink");
+    const selectedOptionText = document.getElementById("selectedOptionText");
+    const systemMessage = document.getElementById("systemMessage");
 
-    const requestFormWrap = document.getElementById('requestFormWrap');
-    const customerName = document.getElementById('customerName');
-    const customerEmail = document.getElementById('customerEmail');
-    const customerPhone = document.getElementById('customerPhone');
-    const photoUpload = document.getElementById('photoUpload');
-    const previewContainer = document.getElementById('previewContainer');
+    const requestFormWrap = document.getElementById("requestFormWrap");
+    const customerName = document.getElementById("customerName");
+    const customerEmail = document.getElementById("customerEmail");
+    const customerPhone = document.getElementById("customerPhone");
+    const photoUpload = document.getElementById("photoUpload");
+    const previewContainer = document.getElementById("previewContainer");
 
     let selectedOption = "";
     let isSubmitting = false;
@@ -964,7 +940,7 @@
     function showMessage(message, type = "success") {
       if (!systemMessage) return;
       systemMessage.textContent = message;
-      systemMessage.classList.remove('hidden', 'error', 'success');
+      systemMessage.classList.remove("hidden", "error", "success");
       systemMessage.classList.add(type);
       systemMessage.style.display = "block";
     }
@@ -972,12 +948,12 @@
     function clearMessage() {
       if (!systemMessage) return;
       systemMessage.textContent = "";
-      systemMessage.classList.add('hidden');
-      systemMessage.classList.remove('error', 'success');
+      systemMessage.classList.add("hidden");
+      systemMessage.classList.remove("error", "success");
     }
 
     function sanitizeForUrl(text, maxLength = 80) {
-      return encodeURIComponent((text || "").trim().replace(/\s+/g, ' ').slice(0, maxLength));
+      return encodeURIComponent((text || "").trim().replace(/\s+/g, " ").slice(0, maxLength));
     }
 
     function isValidEmail(email) {
@@ -1007,41 +983,41 @@
     function goToTab(tabName) {
       if (!sections[tabName]) return;
 
-      tabs.forEach(t => t.classList.remove('active'));
+      tabs.forEach((t) => t.classList.remove("active"));
 
       const activeTab = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
-      if (activeTab) activeTab.classList.add('active');
+      if (activeTab) activeTab.classList.add("active");
 
-      Object.values(sections).forEach(sec => {
-        if (sec) sec.classList.add('hidden');
+      Object.values(sections).forEach((sec) => {
+        if (sec) sec.classList.add("hidden");
       });
 
-      sections[tabName].classList.remove('hidden');
-      sections[tabName].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      sections[tabName].classList.remove("hidden");
+      sections[tabName].scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
     function startRequestFlow() {
-      goToTab('input');
-      if (requestFormWrap) requestFormWrap.classList.remove('hidden');
+      goToTab("input");
+      if (requestFormWrap) requestFormWrap.classList.remove("hidden");
       if (customerName) customerName.focus();
     }
 
     function toggleRequestForm() {
       if (!requestFormWrap) return;
-      requestFormWrap.classList.toggle('hidden');
+      requestFormWrap.classList.toggle("hidden");
 
-      if (!requestFormWrap.classList.contains('hidden') && customerName) {
+      if (!requestFormWrap.classList.contains("hidden") && customerName) {
         customerName.focus();
       }
     }
 
-    tabs.forEach(btn => {
-      btn.addEventListener('click', () => {
+    tabs.forEach((btn) => {
+      btn.addEventListener("click", () => {
         const tabName = btn.dataset.tab;
         goToTab(tabName);
 
-        if (tabName === 'input' && requestFormWrap) {
-          requestFormWrap.classList.remove('hidden');
+        if (tabName === "input" && requestFormWrap) {
+          requestFormWrap.classList.remove("hidden");
         }
       });
     });
@@ -1055,16 +1031,15 @@
       }
     }
 
-    if (serviceType) serviceType.addEventListener('change', updateQuote);
-    if (unitCount) unitCount.addEventListener('input', updateQuote);
+    if (serviceType) serviceType.addEventListener("change", updateQuote);
+    if (unitCount) unitCount.addEventListener("input", updateQuote);
 
     if (photoUpload) {
-      photoUpload.addEventListener('change', () => {
+      photoUpload.addEventListener("change", () => {
         clearMessage();
         if (previewContainer) previewContainer.innerHTML = "";
 
         const files = Array.from(photoUpload.files || []);
-
         if (!files.length) return;
 
         for (const file of files) {
@@ -1077,16 +1052,14 @@
           }
         }
 
-        files.forEach(file => {
+        files.forEach((file) => {
           const reader = new FileReader();
-
           reader.onload = function (e) {
             const img = document.createElement("img");
             img.src = e.target.result;
             img.alt = "Uploaded storage project photo";
             previewContainer.appendChild(img);
           };
-
           reader.readAsDataURL(file);
         });
       });
@@ -1106,8 +1079,8 @@
 
       if (!rawText) {
         showMessage("Please describe your storage project needs before generating suggested options.", "error");
-        goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
+        goToTab("input");
+        if (requestFormWrap) requestFormWrap.classList.remove("hidden");
         return;
       }
 
@@ -1119,10 +1092,10 @@
       const kitchenSignals = ["kitchen", "cabinet", "pantry"];
       const familySignals = ["easy to clean", "storage", "kids", "family"];
 
-      const basicMatch = basicSignals.some(word => text.includes(word));
-      const premiumMatch = premiumSignals.some(word => text.includes(word));
-      const kitchenMatch = kitchenSignals.some(word => text.includes(word));
-      const familyMatch = familySignals.some(word => text.includes(word));
+      const basicMatch = basicSignals.some((word) => text.includes(word));
+      const premiumMatch = premiumSignals.some((word) => text.includes(word));
+      const kitchenMatch = kitchenSignals.some((word) => text.includes(word));
+      const familyMatch = familySignals.some((word) => text.includes(word));
 
       if (project === "full-home-storage") {
         recommendation = "C";
@@ -1165,23 +1138,23 @@
         <strong>Path:</strong> Submit Request → Review Options → Compare → Manual Proposal → Schedule Measurement
       `;
 
-      generatedBox.classList.remove('hidden');
+      generatedBox.classList.remove("hidden");
       showMessage("Suggested options have been generated. Please review the recommended path below.", "success");
 
-      goToTab('solutions');
+      goToTab("solutions");
       selectOption(recommendation);
     }
 
     function selectOption(option) {
       selectedOption = option;
 
-      ['A', 'B', 'C'].forEach(key => {
+      ["A", "B", "C"].forEach((key) => {
         const card = document.getElementById(`card${key}`);
-        if (card) card.classList.remove('selected');
+        if (card) card.classList.remove("selected");
       });
 
       const activeCard = document.getElementById(`card${option}`);
-      if (activeCard) activeCard.classList.add('selected');
+      if (activeCard) activeCard.classList.add("selected");
 
       selectedOptionText.textContent = `Selected Option: ${option} · Ready to book a focused review`;
 
@@ -1208,7 +1181,7 @@
       issueDescription.value = "";
       photoUpload.value = "";
       if (previewContainer) previewContainer.innerHTML = "";
-      generatedBox.classList.add('hidden');
+      generatedBox.classList.add("hidden");
       updateQuote();
 
       selectedOption = "";
@@ -1216,88 +1189,88 @@
       bookingLink.href = "https://cal.com/bb369tech/service-decision-review?module=custom-storage";
       bookingLink.textContent = "Schedule On-Site Measurement";
 
-      ['A', 'B', 'C'].forEach(key => {
+      ["A", "B", "C"].forEach((key) => {
         const card = document.getElementById(`card${key}`);
-        if (card) card.classList.remove('selected');
+        if (card) card.classList.remove("selected");
       });
     }
 
     async function submitToBackend() {
-      clearMessage();
+      try {
+        clearMessage();
 
-      if (isSubmitting) {
-        showMessage("Your request is being submitted. Please wait a moment...", "success");
-        return;
-      }
-
-      const name = customerName.value.trim();
-      const email = customerEmail.value.trim();
-      const phone = customerPhone.value.trim();
-      const project = projectType.value;
-      const space = spaceType.value;
-      const material = materialType.value;
-      const style = finishStyle.value;
-      const message = issueDescription.value.trim();
-      const photoFiles = Array.from(photoUpload.files || []);
-
-      if (!name || !email || !message) {
-        showMessage("Please enter your name, email address, and project details before submitting.", "error");
-        goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
-        return;
-      }
-
-      if (!isValidEmail(email)) {
-        showMessage("Please enter a valid email address.", "error");
-        goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
-        customerEmail.focus();
-        return;
-      }
-
-      if (!isValidPhone(phone)) {
-        showMessage("Please enter a valid phone number, or leave the field blank.", "error");
-        goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
-        customerPhone.focus();
-        return;
-      }
-
-      for (const file of photoFiles) {
-        const photoValidation = validatePhoto(file);
-        if (!photoValidation.ok) {
-          showMessage(photoValidation.message, "error");
-          goToTab('input');
-          if (requestFormWrap) requestFormWrap.classList.remove('hidden');
+        if (isSubmitting) {
+          showMessage("Your request is being submitted. Please wait a moment...", "success");
           return;
         }
-      }
 
-      if (!CONFIG.formEndpoint) {
-        showMessage("This page is ready for display, but the live submission endpoint has not been connected yet. Once you have a real endpoint address, update CONFIG.formEndpoint.", "error");
-        return;
-      }
+        const name = customerName.value.trim();
+        const email = customerEmail.value.trim();
+        const phone = customerPhone.value.trim();
+        const project = projectType.value;
+        const space = spaceType.value;
+        const material = materialType.value;
+        const style = finishStyle.value;
+        const message = issueDescription.value.trim();
+        const photoFiles = Array.from(photoUpload.files || []);
 
-      const formData = new FormData();
-      formData.append("name", name);
-      formData.append("email", email);
-      formData.append("phone", phone);
-      formData.append("message", message);
-      formData.append("projectType", project);
-      formData.append("spaceType", space);
-      formData.append("materialType", material);
-      formData.append("finishStyle", style);
-      formData.append("selectedOption", selectedOption || "");
-      formData.append("page", "custom-storage");
+        if (!name || !email || !message) {
+          showMessage("Please enter your name, email address, and project details before submitting.", "error");
+          goToTab("input");
+          if (requestFormWrap) requestFormWrap.classList.remove("hidden");
+          return;
+        }
 
-      photoFiles.forEach(file => {
-        formData.append("photos", file);
-      });
+        if (!isValidEmail(email)) {
+          showMessage("Please enter a valid email address.", "error");
+          goToTab("input");
+          if (requestFormWrap) requestFormWrap.classList.remove("hidden");
+          customerEmail.focus();
+          return;
+        }
 
-      isSubmitting = true;
-      showMessage("Submitting your request. Please wait a moment...", "success");
+        if (!isValidPhone(phone)) {
+          showMessage("Please enter a valid phone number, or leave the field blank.", "error");
+          goToTab("input");
+          if (requestFormWrap) requestFormWrap.classList.remove("hidden");
+          customerPhone.focus();
+          return;
+        }
 
-      try {
+        for (const file of photoFiles) {
+          const photoValidation = validatePhoto(file);
+          if (!photoValidation.ok) {
+            showMessage(photoValidation.message, "error");
+            goToTab("input");
+            if (requestFormWrap) requestFormWrap.classList.remove("hidden");
+            return;
+          }
+        }
+
+        if (!CONFIG.formEndpoint) {
+          showMessage("The submission endpoint is missing.", "error");
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        formData.append("phone", phone);
+        formData.append("message", message);
+        formData.append("projectType", project);
+        formData.append("spaceType", space);
+        formData.append("materialType", material);
+        formData.append("finishStyle", style);
+        formData.append("selectedOption", selectedOption || "");
+        formData.append("page", "custom-storage");
+
+        photoFiles.forEach((file) => {
+          formData.append("photos", file);
+        });
+
+        isSubmitting = true;
+        showMessage("Submitting your request. Please wait a moment...", "success");
+
         const res = await fetch(CONFIG.formEndpoint, {
           method: "POST",
           body: formData
@@ -1315,13 +1288,12 @@
 
         if (res.ok && (data.success === true || data.success === undefined)) {
           showMessage("Your request has been submitted successfully. Please check your email for confirmation.", "success");
-          if (requestFormWrap) requestFormWrap.classList.add('hidden');
           resetFormAfterSuccess();
         } else {
           showMessage(data.message || "The submission could not be completed. Please try again later.", "error");
         }
       } catch (err) {
-        console.error(err);
+        console.error("submitToBackend error:", err);
         showMessage("The live submission endpoint could not be reached. Please check the endpoint address, CORS settings, and deployment status.", "error");
       } finally {
         isSubmitting = false;
