@@ -36,7 +36,7 @@
     }
 
     .page {
-      max-width: 1180px;
+      max-width: 1120px;
       margin: 0 auto;
       padding-bottom: 40px;
     }
@@ -200,9 +200,6 @@
 
     .step-actions {
       margin-top: 18px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
     }
 
     .solution-card {
@@ -466,7 +463,7 @@
         We help you compare wardrobes, shoe cabinets, kitchen cabinets, TV storage, and built-in storage options before you move forward.
       </p>
       <div class="hero-sub">
-        Clear process · simple options · estimated ranges · easy next step
+        Clear process · material selection · estimated ranges · easy next step
       </div>
 
       <div class="hero-actions">
@@ -477,15 +474,11 @@
     <section class="section-box" id="input">
       <h2 class="section-title">Step 1 · Tell Us About Your Project</h2>
       <p class="section-note">
-        Start with the basics. Once you fill out the request form, the next step will guide you to options and estimated ranges.
+        Start with the basics. Then continue to material selection, photo upload, suggested options, and estimated pricing.
       </p>
 
       <div id="requestIntro" class="system-message success" style="display:block;">
-        One simple step at a time. Start your request first, then review suggested options and estimated pricing.
-      </div>
-
-      <div class="step-actions" id="introActions">
-        <button class="btn btn-dark" type="button" onclick="toggleRequestForm()">Start Request</button>
+        One simple step at a time. Start your request first, then review options and estimated pricing before submitting.
       </div>
 
       <div id="requestFormWrap" class="hidden">
@@ -517,7 +510,7 @@
             </select>
           </div>
 
-          <div class="field hidden" id="materialField">
+          <div class="field" id="materialField">
             <label for="materialType">Material Preference</label>
             <select id="materialType">
               <option value="not-sure">Not Sure Yet</option>
@@ -536,28 +529,32 @@
             <textarea id="issueDescription" placeholder="Example: I want a modern wardrobe with more storage, soft-close doors, easy-to-clean finish, and better use of the wall space."></textarea>
           </div>
 
-          <div class="field hidden" id="photoField" style="grid-column: 1 / -1;">
+          <div class="field" id="photoField" style="grid-column: 1 / -1;">
             <label for="photoUpload">Upload Space Photos</label>
             <input id="photoUpload" type="file" accept="image/*" multiple />
           </div>
         </div>
 
-        <div class="upload-note hidden" id="uploadNote">
+        <div class="upload-note" id="uploadNote">
           Please upload:
           <br>• Full room or wall view
           <br>• Existing cabinet or storage area (if any)
           <br>• Close-up of the area where you want the storage installed
         </div>
 
+        <div class="system-message" style="display:block; margin-top:14px;">
+          Upload your photos. We will provide a free storage suggestion, estimated range, and suitable options before you decide to move forward.
+        </div>
+
+        <div class="system-message" style="margin-top:10px;">
+          No pressure — you can review everything before submitting.
+        </div>
+
         <div id="previewContainer" class="image-grid hidden"></div>
         <div id="systemMessage" class="system-message hidden"></div>
 
-        <div class="step-actions" id="step1Actions">
-          <button class="btn btn-dark" type="button" onclick="showMoreFields()">Continue</button>
-        </div>
-
-        <div class="step-actions hidden" id="step2Actions">
-          <button class="btn btn-dark" type="button" onclick="generateOptions()">Continue to Options</button>
+        <div class="step-actions" id="mainActionWrap">
+          <button class="btn btn-dark" type="button" id="mainActionBtn" onclick="handleMainStep()">Continue to Suggested Options</button>
         </div>
 
         <div id="generatedBox" class="generated-box hidden">
@@ -566,6 +563,10 @@
             These options are for structured reference only and do not represent a final quote.
           </div>
         </div>
+      </div>
+
+      <div class="step-actions" id="startActionWrap">
+        <button class="btn btn-dark" type="button" onclick="startRequestFlow()">Start Your Request</button>
       </div>
 
       <div class="system-message" style="display:block; margin-top:18px;">
@@ -712,7 +713,6 @@
       allowedImageTypes: ["image/jpeg", "image/png", "image/webp", "image/jpg"]
     };
 
-    const tabs = [];
     const sections = {
       input: document.getElementById('input'),
       solutions: document.getElementById('solutions'),
@@ -740,14 +740,12 @@
     const photoUpload = document.getElementById('photoUpload');
     const previewContainer = document.getElementById('previewContainer');
 
-    const materialField = document.getElementById('materialField');
-    const photoField = document.getElementById('photoField');
-    const uploadNote = document.getElementById('uploadNote');
-    const step1Actions = document.getElementById('step1Actions');
-    const step2Actions = document.getElementById('step2Actions');
+    const startActionWrap = document.getElementById('startActionWrap');
+    const mainActionBtn = document.getElementById('mainActionBtn');
 
     let selectedOption = "";
     let isSubmitting = false;
+    let hasGeneratedOptions = false;
 
     function showMessage(message, type = "success") {
       if (!systemMessage) return;
@@ -805,36 +803,16 @@
     function startRequestFlow() {
       goToTab('input');
       requestFormWrap.classList.remove('hidden');
+      startActionWrap.classList.add('hidden');
       customerName.focus();
     }
 
-    function toggleRequestForm() {
-      requestFormWrap.classList.remove('hidden');
-      customerName.focus();
-    }
-
-    function showMoreFields() {
-      const name = customerName.value.trim();
-      const email = customerEmail.value.trim();
-      const message = issueDescription.value.trim();
-
-      clearMessage();
-
-      if (!name || !email || !message) {
-        showMessage("Please enter your name, email address, and project details before continuing.", "error");
-        return;
+    function handleMainStep() {
+      if (!hasGeneratedOptions) {
+        generateOptions();
+      } else {
+        goToTab('solutions');
       }
-
-      if (!isValidEmail(email)) {
-        showMessage("Please enter a valid email address.", "error");
-        return;
-      }
-
-      materialField.classList.remove('hidden');
-      photoField.classList.remove('hidden');
-      uploadNote.classList.remove('hidden');
-      step1Actions.classList.add('hidden');
-      step2Actions.classList.remove('hidden');
     }
 
     function updateQuote() {
@@ -892,13 +870,23 @@
     function generateOptions() {
       clearMessage();
 
+      const name = customerName.value.trim();
+      const email = customerEmail.value.trim();
       const rawText = issueDescription.value.trim();
       const text = rawText.toLowerCase();
       const scenario = issueType.value;
       const material = materialType.value;
 
-      if (!rawText) {
-        showMessage("Please describe your project needs before generating suggested options.", "error");
+      if (!name || !email || !rawText) {
+        showMessage("Please enter your name, email address, and project details before continuing.", "error");
+        goToTab('input');
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        showMessage("Please enter a valid email address.", "error");
+        goToTab('input');
+        customerEmail.focus();
         return;
       }
 
@@ -952,8 +940,9 @@
       `;
 
       generatedBox.classList.remove('hidden');
-      showMessage("Suggested options have been generated. Please review the recommended path below.", "success");
-      goToTab('solutions');
+      hasGeneratedOptions = true;
+      mainActionBtn.textContent = "Continue to Suggested Options";
+      showMessage("Suggested options have been generated. Please continue to review the recommended path.", "success");
       selectOption(recommendation);
     }
 
@@ -991,11 +980,10 @@
       previewContainer.innerHTML = "";
       previewContainer.classList.add('hidden');
       generatedBox.classList.add('hidden');
-      materialField.classList.add('hidden');
-      photoField.classList.add('hidden');
-      uploadNote.classList.add('hidden');
-      step1Actions.classList.remove('hidden');
-      step2Actions.classList.add('hidden');
+      startActionWrap.classList.remove('hidden');
+      requestFormWrap.classList.add('hidden');
+      hasGeneratedOptions = false;
+      mainActionBtn.textContent = "Continue to Suggested Options";
       updateQuote();
 
       selectedOption = "";
