@@ -1,879 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="yes">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-  />
-  <title>Windows & Doors Module | BB369 Platform</title>
-
-  <meta
-    name="description"
-    content="Windows and doors decision module within the BB369 Platform. Upload photos, describe your needs, review structured options, estimate likely ranges, and request a proposal by email."
-  />
-  <meta
-    name="keywords"
-    content="BB369 Platform, structured decision, decision module, windows and doors, service scenario, compare options, estimate range, design review, next-step booking"
-  />
-  <meta name="robots" content="index,follow" />
-
-  <meta property="og:title" content="Windows & Doors Module | BB369 Platform" />
-  <meta
-    property="og:description"
-    content="A structured decision module for windows and doors. Upload photos, describe your needs, review structured options, estimate likely ranges, and request a proposal by email."
-  />
-  <meta property="og:type" content="website" />
-
+  <meta http-equiv="Content-Language" content="en" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Windows & Doors | BB369 Platform</title>
+  <meta name="description" content="Get a window or door recommendation, or estimate your project budget before moving forward." />
   <link rel="stylesheet" href="../style.css" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Windows & Doors Module | BB369 Platform",
-    "description": "A structured decision module for service scenarios involving windows and doors.",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "BB369 Platform"
-    },
-    "about": [
-      "Structured Decision",
-      "Decision Module",
-      "Service Scenario",
-      "Compare Options",
-      "Estimate Range",
-      "Next-Step Booking"
-    ]
-  }
-  </script>
-
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #111111;
-    }
-
-    .page {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding-bottom: 40px;
-    }
-
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 24px;
-      border-bottom: 1px solid #ececec;
-      font-size: 0.95rem;
-    }
-
-    .back-link {
-      color: #111;
-      text-decoration: none;
-    }
-
-    .topbar-note {
-      font-size: 0.85rem;
-      color: #888;
-    }
-
-    .hero-soft {
-      margin: 20px 24px 10px;
-      padding: 36px 24px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
-      border: 1px solid #ececec;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-soft::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url("../assets/windows-hero.jpg") center/cover no-repeat;
-      opacity: 0.04;
-      z-index: 0;
-    }
-
-    .hero-soft * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-soft h1 {
-      margin: 0 0 10px;
-      font-size: 1.7rem;
-      font-weight: 600;
-      color: #111;
-    }
-
-    .hero-soft p {
-      margin: 0 auto;
-      max-width: 760px;
-      color: #666;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .hero-soft-sub {
-      margin-top: 12px;
-      font-size: 13px;
-      color: #888;
-      line-height: 1.5;
-    }
-
-    .hero-flow {
-      margin-top: 12px;
-      font-size: 12px;
-      color: #777;
-      line-height: 1.5;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid #111;
-      cursor: pointer;
-      background: #fff;
-      color: #111;
-    }
-
-    .btn-dark {
-      background: #111;
-      color: #fff;
-    }
-
-    .tabs {
-      display: flex;
-      gap: 14px;
-      padding: 16px 24px 24px;
-      flex-wrap: wrap;
-    }
-
-    .tab-btn {
-      padding: 12px 22px;
-      border-radius: 999px;
-      border: 1px solid #111;
-      background: #fff;
-      color: #111;
-      font-size: 0.95rem;
-      cursor: pointer;
-    }
-
-    .tab-btn.active {
-      background: #111;
-      color: #fff;
-    }
-
-    .section-box {
-      margin: 0 24px 24px;
-      border-radius: 22px;
-      background: #f3f3f3;
-      min-height: 220px;
-      padding: 22px;
-    }
-
-    .section-title {
-      margin: 0 0 8px;
-      font-size: 1.15rem;
-    }
-
-    .section-note {
-      margin: 0 0 18px;
-      color: #666;
-      line-height: 1.6;
-      font-size: 0.95rem;
-      max-width: 880px;
-    }
-
-    .system-message {
-      margin-top: 16px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      background: #fff;
-      border: 1px solid #e5e5e5;
-      color: #444;
-      font-size: 0.92rem;
-      line-height: 1.5;
-    }
-
-    .system-message.hidden {
-      display: none;
-    }
-
-    .system-message.error {
-      border-color: #e3c2c2;
-      background: #fff8f8;
-      color: #8a3a3a;
-    }
-
-    .system-message.success {
-      border-color: #d8e6d8;
-      background: #f8fff8;
-      color: #2f5f2f;
-    }
-
-    .input-grid,
-    .quote-grid,
-    .solutions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-
-    .input-grid {
-      max-width: 100%;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-
-    .quote-grid {
-      max-width: 900px;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-
-    .field label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.92rem;
-      color: #444;
-      font-weight: 600;
-    }
-
-    .field input,
-    .field select,
-    .field textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid #ddd;
-      font-size: 0.95rem;
-      box-sizing: border-box;
-      background: #fff;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .field textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .upload-note,
-    .quote-note,
-    .result-note {
-      margin-top: 10px;
-      color: #777;
-      font-size: 0.88rem;
-      max-width: 760px;
-      line-height: 1.5;
-    }
-
-    .generate-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .generated-box {
-      margin-top: 22px;
-      padding: 18px;
-      border-radius: 16px;
-      background: #fff;
-      border: 1px solid #e5e5e5;
-    }
-
-    .generated-box.hidden {
-      display: none;
-    }
-
-    .generated-summary {
-      font-size: 0.95rem;
-      color: #444;
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-
-    .solution-card {
-      background: #ffffff;
-      border: 1px solid #e5e5e5;
-      border-radius: 18px;
-      padding: 18px;
-      transition: 0.2s ease;
-    }
-
-    .solution-card.selected {
-      border-color: #111;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-    }
-
-    .solution-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
-    }
-
-    .solution-card p {
-      margin: 0 0 10px;
-      color: #666;
-      line-height: 1.5;
-    }
-
-    .price {
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .decision-note {
-      font-size: 12px;
-      color: #888;
-      margin-top: 6px;
-      line-height: 1.5;
-    }
-
-    .popular-badge {
-      font-size: 12px;
-      color: #fff;
-      background: #111;
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 8px;
-    }
-
-    .card-actions {
-      margin-top: 14px;
-    }
-
-    .select-btn {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid #111;
-      background: #fff;
-      color: #111;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .quote-result {
-      margin-top: 22px;
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-
-    .visual-wrap {
-      position: relative;
-      max-width: 860px;
-      margin: 0 auto 24px;
-      border-radius: 18px;
-      background: linear-gradient(180deg, #f4f4f4 0%, #e9e9e9 100%);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 300px;
-    }
-
-    .window-3d {
-      width: 360px;
-      height: 220px;
-      perspective: 900px;
-      transform: rotateX(8deg) rotateY(-16deg);
-    }
-
-    .frame.outer-frame {
-      width: 100%;
-      height: 100%;
-      background: #1f1f1f;
-      border-radius: 8px;
-      padding: 12px;
-      box-shadow: 0 18px 35px rgba(0,0,0,0.18);
-      box-sizing: border-box;
-    }
-
-    .frame.inner-frame {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      background: #2c2c2c;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-
-    .glass-panel {
-      position: absolute;
-      top: 10px;
-      bottom: 10px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(180,210,235,0.18));
-      border: 1px solid rgba(255,255,255,0.35);
-    }
-
-    .left-panel {
-      left: 10px;
-      width: calc(50% - 15px);
-    }
-
-    .right-panel {
-      right: 10px;
-      width: calc(50% - 15px);
-    }
-
-    .window-divider {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 8px;
-      transform: translateX(-50%);
-      background: #1d1d1d;
-    }
-
-    .visual-hint {
-      position: absolute;
-      left: 14px;
-      bottom: 14px;
-      background: rgba(255,255,255,0.92);
-      color: #444;
-      font-size: 0.75rem;
-      padding: 6px 10px;
-      border-radius: 10px;
-      opacity: 0.9;
-      z-index: 1;
-    }
-
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding: 0 40px 30px;
-    }
-
-    .image-grid img {
-      width: 100%;
-      border-radius: 16px;
-      object-fit: cover;
-      aspect-ratio: 1 / 1;
-      transform: scale(0.96);
-      display: block;
-    }
-
-    .image-grid-note {
-      text-align: center;
-      color: #666;
-      margin: 2px 24px 22px;
-      font-size: 14px;
-    }
-
-    .cta-wrap {
-      text-align: center;
-      padding: 10px 0 0;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      background: #111;
-      color: #fff;
-      margin-bottom: 14px;
-    }
-
-    .cta-note {
-      max-width: 760px;
-      margin: 12px auto 0;
-      color: #888;
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
-
-    .cta-safe {
-      font-size: 12px;
-      color: #888;
-      margin-top: 8px;
-    }
-
-    .footer {
-      margin: 42px 24px 0;
-      padding-top: 18px;
-      border-top: 1px solid #ececec;
-      text-align: center;
-      color: #888;
-      font-size: 0.92rem;
-    }
-
-    .provenance {
-      margin-top: 8px;
-      font-size: 10px;
-      color: #aaa;
-      opacity: 0.75;
-      line-height: 1.5;
-    }
-
-    #requestFormWrap {
-      margin-top: 16px;
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    @media (max-width: 900px) {
-      .image-grid {
-        grid-template-columns: 1fr;
-        padding: 0 24px 24px;
-      }
-
-      .image-grid img {
-        transform: none;
-      }
-    }
-
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #fff; color: #111; }
+    .page { max-width: 1120px; margin: 0 auto; padding-bottom: 40px; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; padding:18px 24px; border-bottom:1px solid #ececec; font-size:.95rem; }
+    .back-link { color:#111; text-decoration:none; }
+    .topbar-note { font-size:.85rem; color:#888; }
+    .hero { margin:20px 24px 14px; padding:34px 24px; border-radius:22px; background:#f6f6f6; border:1px solid #ececec; }
+    .hero h1 { margin:0 0 10px; font-size:1.7rem; line-height:1.2; }
+    .hero p { margin:0; max-width:760px; color:#666; font-size:.97rem; line-height:1.65; }
+    .hero-sub { margin-top:12px; color:#888; font-size:.9rem; }
+    .hero-actions { margin-top:18px; }
+    .btn { display:inline-block; padding:12px 22px; border-radius:999px; text-decoration:none; font-weight:600; border:1px solid #111; cursor:pointer; background:#fff; color:#111; font-size:.95rem; }
+    .btn-dark { background:#111; color:#fff; }
+    .btn-light { background:#fff; color:#111; }
+    .section-box { margin:0 24px 24px; border-radius:22px; background:#f3f3f3; padding:22px; }
+    .section-title { margin:0 0 8px; font-size:1.12rem; }
+    .section-note { margin:0 0 18px; color:#666; line-height:1.6; font-size:.95rem; max-width:860px; }
+    .system-message { margin-top:14px; padding:12px 14px; border-radius:12px; background:#fff; border:1px solid #e5e5e5; color:#444; font-size:.92rem; line-height:1.5; }
+    .system-message.hidden { display:none !important; }
+    .system-message.error { border-color:#e3c2c2; background:#fff8f8; color:#8a3a3a; }
+    .system-message.success { border-color:#d8e6d8; background:#f8fff8; color:#2f5f2f; }
+    .hidden { display:none !important; }
+    .choice-grid, .input-grid, .solutions-grid, .quote-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
+    .choice-card, .solution-card { background:#fff; border:1px solid #e5e5e5; border-radius:18px; padding:20px; }
+    .choice-card h3, .solution-card h3 { margin:0 0 10px; font-size:1.04rem; }
+    .choice-card p, .solution-card p { margin:0 0 12px; color:#666; line-height:1.55; }
+    .solution-card.selected { border-color:#111; box-shadow:0 10px 20px rgba(0,0,0,.06); }
+    .popular-badge { font-size:12px; color:#fff; background:#111; display:inline-block; padding:4px 10px; border-radius:999px; margin-bottom:8px; }
+    .price { font-weight:600; margin-bottom:6px; }
+    .decision-note { font-size:12px; color:#888; line-height:1.5; }
+    .field label { display:block; margin-bottom:8px; font-size:.92rem; color:#444; font-weight:600; }
+    .field input, .field select, .field textarea { width:100%; padding:12px 14px; border-radius:12px; border:1px solid #ddd; font-size:.95rem; box-sizing:border-box; background:#fff; font-family:Arial, Helvetica, sans-serif; }
+    .field textarea { min-height:120px; resize:vertical; }
+    .step-actions { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
+    .upload-note, .quote-note { margin-top:10px; color:#777; font-size:.88rem; line-height:1.5; max-width:760px; }
+    .quote-result { margin-top:18px; font-size:1.05rem; font-weight:600; }
+    .image-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px; }
+    .image-grid img { width:100%; border-radius:14px; object-fit:cover; aspect-ratio:1/1; border:1px solid #ececec; background:#fff; }
+    #previewContainer { grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); }
+    #previewContainer img { height:120px; aspect-ratio:auto; }
+    .cta-wrap { text-align:center; padding:10px 24px 0; }
+    .cta-btn { display:inline-block; padding:14px 28px; border-radius:999px; text-decoration:none; font-weight:600; background:#111; color:#fff; margin-bottom:14px; }
+    .cta-safe { font-size:12px; color:#888; margin-top:8px; }
+    .cta-note { max-width:760px; margin:12px auto 0; color:#888; font-size:.85rem; line-height:1.5; }
+    .footer { margin:42px 24px 0; padding-top:18px; border-top:1px solid #ececec; text-align:center; color:#888; font-size:.92rem; }
+    .provenance { margin-top:8px; font-size:10px; color:#aaa; opacity:.75; line-height:1.5; }
+    @media (max-width: 900px) { .image-grid { grid-template-columns:1fr; } }
     @media (max-width: 640px) {
-      .hero-soft {
-        margin: 16px 16px 8px;
-        padding: 26px 18px;
-      }
-
-      .hero-soft h1 {
-        font-size: 1.35rem;
-      }
-
-      .tabs {
-        padding: 14px 16px 20px;
-      }
-
-      .section-box {
-        margin: 0 16px 20px;
-        min-height: 200px;
-      }
-
-      .visual-wrap {
-        min-height: 220px;
-      }
-
-      .window-3d {
-        width: 250px;
-        height: 150px;
-      }
-
-      .image-grid {
-        padding: 0 16px 24px;
-      }
-
-      .topbar {
-        padding: 16px;
-      }
+      .topbar { padding:16px; }
+      .hero { margin:16px 16px 10px; padding:24px 18px; }
+      .hero h1 { font-size:1.35rem; }
+      .section-box { margin:0 16px 20px; }
     }
   </style>
 </head>
 <body>
   <div class="page">
-
     <div class="topbar">
       <a class="back-link" href="../index.html">← Home</a>
       <div class="topbar-note">BB369 Platform Module</div>
     </div>
 
-    <div class="hero-soft">
+    <div class="hero">
       <h1>Windows & Doors</h1>
-      <p>
-        Upload photos and describe your needs. Our team will review your submission and prepare a proposal to be sent to your email.
-      </p>
-      <div class="hero-soft-sub">
-        This is a structured decision module within the BB369 Platform. You can explore options and estimated ranges before deciding whether to submit a request.
-      </div>
-      <div class="hero-flow">
-        Step 1: Start Your Request → Step 2: Explore Options → Step 3: Review Cost Estimates → Step 4: Receive a Proposal → Step 5: Schedule On-Site Measurement
-      </div>
-
+      <p>Need to repair, replace, or upgrade your windows and doors? Start with one simple step.</p>
+      <div class="hero-sub">Free recommendation or quick budget estimate</div>
       <div class="hero-actions">
-        <button class="btn btn-dark" type="button" onclick="startRequestFlow()">Start Your Request</button>
-        <button class="btn" type="button" onclick="goToTab('solutions')">Explore Options</button>
+        <button class="btn btn-dark" type="button" onclick="openStartChoices()">Get Started</button>
       </div>
     </div>
 
-    <div class="tabs">
-      <button class="tab-btn active" data-tab="input" type="button">Start Request</button>
-      <button class="tab-btn" data-tab="solutions" type="button">Options</button>
-      <button class="tab-btn" data-tab="quote" type="button">Cost Estimate</button>
-      <button class="tab-btn" data-tab="visual" type="button">Visual Reference</button>
-    </div>
-
-    <section class="section-box" id="input">
-      <h2 class="section-title">Upload Photos and Describe Your Needs</h2>
-      <p class="section-note">
-        You may explore options and estimated ranges first, or submit your request directly. Our team will review your photos and description, prepare a proposal, and send it to your email. If the proposal fits your needs, you can then schedule an on-site measurement.
-      </p>
-
-      <div class="system-message success" style="display:block;">
-        How it works: click “Fill Out Request Form” below first, then enter your name, email, phone number, project details, and upload photos.
-      </div>
-
-      <div class="generate-actions" style="margin-bottom:18px;">
-        <button class="btn btn-dark" type="button" onclick="toggleRequestForm()">Fill Out Request Form</button>
-        <button class="btn" type="button" onclick="goToTab('solutions')">Explore Options First</button>
-        <button class="btn" type="button" onclick="goToTab('quote')">Review Cost Estimate First</button>
-      </div>
-
-      <div id="requestFormWrap" class="hidden">
-        <div class="input-grid">
-          <div class="field">
-            <label for="customerName">Your Name</label>
-            <input id="customerName" type="text" placeholder="Enter your name" />
-          </div>
-
-          <div class="field">
-            <label for="customerEmail">Email Address</label>
-            <input id="customerEmail" type="email" placeholder="Enter the email address to receive your proposal" />
-          </div>
-
-          <div class="field">
-            <label for="customerPhone">Phone Number</label>
-            <input id="customerPhone" type="text" placeholder="Enter your phone number (optional)" />
-          </div>
-
-          <div class="field">
-            <label for="issueType">Project Type</label>
-            <select id="issueType">
-              <option value="window">Window Issue</option>
-              <option value="door">Door Issue</option>
-              <option value="upgrade">Upgrade Request</option>
-              <option value="replacement">Replacement Request</option>
-            </select>
-          </div>
-
-          <div class="field" style="grid-column: 1 / -1;">
-            <label for="issueDescription">Tell Us What You Need</label>
-            <textarea id="issueDescription" placeholder="Example: My old sliding window is noisy and lets air in. I want a cleaner look and better insulation."></textarea>
-          </div>
-
-          <div class="field" style="grid-column: 1 / -1;">
-            <label for="photoUpload">Upload Photos</label>
-            <input id="photoUpload" type="file" accept="image/*" />
-          </div>
+    <section class="section-box hidden" id="startChoices">
+      <h2 class="section-title">Choose One</h2>
+      <p class="section-note">Start with a free recommendation, or review your likely budget first.</p>
+      <div class="choice-grid">
+        <div class="choice-card">
+          <h3>Get Window Recommendation</h3>
+          <p>Upload your photos and tell us what you need. We’ll review your request and send next-step suggestions to your email.</p>
+          <button class="btn btn-dark" type="button" onclick="goToDesignFlow()">Start Free Review</button>
         </div>
-
-        <div class="upload-note">
-          After submission, we will prepare a manual proposal based on your photos and project details and send it to you by email.
+        <div class="choice-card">
+          <h3>Estimate Window Budget</h3>
+          <p>Compare common options and estimated price ranges before submitting anything.</p>
+          <button class="btn btn-dark" type="button" onclick="goToBudgetFlow()">Start Budget Estimate</button>
         </div>
-
-        <div id="systemMessage" class="system-message hidden"></div>
-
-        <div class="generate-actions">
-          <button class="btn btn-dark" type="button" onclick="submitToBackend()">Submit Request</button>
-          <button class="btn" type="button" onclick="generateOptions()">Generate Suggested Options</button>
-        </div>
-
-        <div id="generatedBox" class="generated-box hidden">
-          <div class="generated-summary" id="generatedSummary"></div>
-          <div class="result-note">
-            These options are for structured reference only and do not represent a final quote. Final recommendations and pricing remain subject to manual review and on-site measurement.
-          </div>
-        </div>
-      </div>
-
-      <div class="system-message" style="display:block; margin-top:18px;">
-        Disclaimer: The information, estimated ranges, visual references, and structured options provided on this page are for general reference only. They do not constitute a final quote, construction commitment, professional engineering opinion, or legal guarantee. Final scope, materials, dimensions, feasibility, work details, and pricing are subject to manual review, on-site measurement, and final confirmation between both parties.
       </div>
     </section>
 
-    <section class="section-box hidden" id="solutions">
-      <h2 class="section-title">Options</h2>
-      <p class="section-note">
-        These three common paths are intended to help you quickly understand the general differences between repair, upgrade, and replacement.
-      </p>
+    <section class="section-box hidden" id="designFlow">
+      <h2 class="section-title">Free Recommendation</h2>
+      <p class="section-note">Upload your photos and tell us what you need. We’ll review the request and reply with the next step.</p>
+
+      <div class="input-grid">
+        <div class="field">
+          <label for="customerName">Your Name</label>
+          <input id="customerName" type="text" placeholder="Enter your name" />
+        </div>
+        <div class="field">
+          <label for="customerEmail">Email Address</label>
+          <input id="customerEmail" type="email" placeholder="Enter the email address to receive your proposal" />
+        </div>
+        <div class="field">
+          <label for="customerPhone">Phone Number</label>
+          <input id="customerPhone" type="text" placeholder="Enter your phone number (optional)" />
+        </div>
+        <div class="field">
+          <label for="issueType">Project Type</label>
+          <select id="issueType">
+            <option value="window-repair">Window Repair</option>
+            <option value="glass-replacement">Glass Replacement</option>
+            <option value="window-replacement">Full Window Replacement</option>
+            <option value="door-installation">Door Installation</option>
+          </select>
+        </div>
+        <div class="field" style="grid-column:1 / -1;">
+          <label for="issueDescription">Tell Us What You Need</label>
+          <textarea id="issueDescription" placeholder="Example: I need to replace an old sliding window that lets air in and no longer closes well."></textarea>
+        </div>
+        <div class="field" style="grid-column:1 / -1;">
+          <label for="photoUpload">Upload Photos</label>
+          <input id="photoUpload" type="file" accept="image/*" multiple />
+        </div>
+      </div>
+
+      <div class="upload-note">
+        Please upload:
+        <br>• Full window or door view
+        <br>• Close-up of the damaged or old area
+        <br>• Any related frame, glass, or hardware detail
+      </div>
+
+      <div class="system-message" style="display:block; margin-top:14px;">
+        Upload your photos. We will provide a clear next-step suggestion before you decide to move forward.
+      </div>
+
+      <div id="previewContainer" class="image-grid hidden"></div>
+      <div id="systemMessage" class="system-message hidden"></div>
+
+      <div class="step-actions">
+        <button class="btn btn-light" type="button" onclick="backToChoices()">Go Back</button>
+        <button class="btn btn-dark" type="button" onclick="submitToBackend()">Submit My Request</button>
+      </div>
+    </section>
+
+    <section class="section-box hidden" id="budgetFlow">
+      <h2 class="section-title">Estimate My Budget</h2>
+      <p class="section-note">Review common options and estimated price ranges before deciding what fits your project.</p>
 
       <div class="solutions-grid">
         <div class="solution-card" id="cardA">
           <h3>Option A — Basic Repair</h3>
-          <p>Suitable for localized repairs and basic improvements to existing windows or doors.</p>
-          <div class="price">$25 – $260</div>
-          <div class="decision-note">
-            Best for smaller issues, quick adjustments, and lower-budget situations.
-          </div>
-          <div class="card-actions">
-            <button class="select-btn" type="button" onclick="selectOption('A')">Choose Option A</button>
-          </div>
+          <p>Suitable for smaller repairs, hardware fixes, and simple adjustments.</p>
+          <div class="price">$120 – $350</div>
+          <div class="decision-note">Best for focused issues and lower-budget situations.</div>
+          <button class="btn btn-light" type="button" onclick="selectOption('A')">Choose Option A</button>
         </div>
-
         <div class="solution-card" id="cardB">
           <div class="popular-badge">Most Popular</div>
-          <h3>Option B — Standard Upgrade</h3>
-          <p>Suitable for projects seeking improved appearance, insulation, performance, and balanced budgeting.</p>
-          <div class="price">$300 – $700</div>
-          <div class="decision-note">
-            Best for projects looking for a balanced path across performance, appearance, and cost.
-          </div>
-          <div class="card-actions">
-            <button class="select-btn" type="button" onclick="selectOption('B')">Choose Option B</button>
-          </div>
+          <h3>Option B — Standard Replacement</h3>
+          <p>Suitable for replacing old windows or doors with a balanced result across price and performance.</p>
+          <div class="price">$450 – $1,500</div>
+          <div class="decision-note">Best for a practical upgrade with better daily use.</div>
+          <button class="btn btn-light" type="button" onclick="selectOption('B')">Choose Option B</button>
         </div>
-
         <div class="solution-card" id="cardC">
-          <h3>Option C — Premium Replacement</h3>
-          <p>Suitable for older systems, full replacement projects, and long-term performance goals.</p>
-          <div class="price">$700 – $1,500+</div>
-          <div class="decision-note">
-            Best for broader upgrades, replacement work, and long-term value considerations.
-          </div>
-          <div class="card-actions">
-            <button class="select-btn" type="button" onclick="selectOption('C')">Choose Option C</button>
-          </div>
+          <h3>Option C — Custom Installation</h3>
+          <p>Suitable for custom sizing, larger openings, and more complete upgrade work.</p>
+          <div class="price">$1,500 – $5,000+</div>
+          <div class="decision-note">Best for long-term value and more complete replacement work.</div>
+          <button class="btn btn-light" type="button" onclick="selectOption('C')">Choose Option C</button>
         </div>
       </div>
-    </section>
 
-    <section class="section-box hidden" id="quote">
-      <h2 class="section-title">Cost Estimate</h2>
-      <p class="section-note">
-        You may review this estimated range first to understand a likely starting point. Final pricing remains subject to manual review and on-site measurement.
-      </p>
-
-      <div class="quote-grid">
+      <div class="quote-grid" style="margin-top:18px;">
         <div class="field">
-          <label for="serviceType">Service Type</label>
+          <label for="serviceType">Common Project Type</label>
           <select id="serviceType">
-            <option value="120">Window Repair</option>
-            <option value="450">Window Upgrade</option>
-            <option value="900">Window Replacement</option>
-            <option value="180">Door Repair</option>
-            <option value="550">Door Upgrade</option>
-            <option value="1200">Door Replacement</option>
+            <option value="180">Window Repair</option>
+            <option value="600">Glass Replacement</option>
+            <option value="1200">Window Replacement</option>
+            <option value="1500">Door Installation</option>
           </select>
         </div>
-
+        <div class="field">
+          <label for="budgetMaterial">Material Level</label>
+          <select id="budgetMaterial">
+            <option value="1">Basic</option>
+            <option value="1.2">Standard</option>
+            <option value="1.45">Premium</option>
+          </select>
+        </div>
         <div class="field">
           <label for="unitCount">Number of Units</label>
           <input id="unitCount" type="number" min="1" value="1" />
         </div>
       </div>
 
-      <div class="quote-result" id="quoteResult">Estimated Cost: $120</div>
+      <div class="quote-result" id="quoteResult">Estimated Cost: $180</div>
+      <div class="quote-note">This estimate is for general reference only. Final pricing depends on size, materials, measurements, and installation conditions.</div>
 
-      <div class="quote-note">
-        This estimate is for general reference only and does not replace manual review, on-site measurement, material confirmation, or a final formal quote.
+      <div class="step-actions">
+        <button class="btn btn-light" type="button" onclick="backToChoices()">Go Back</button>
+        <button class="btn btn-dark" type="button" onclick="goToDesignFlow()">Continue with Free Review</button>
       </div>
-    </section>
-
-    <section class="section-box hidden" id="visual">
-      <h2 class="section-title">Visual Reference</h2>
-      <p class="section-note">
-        The visuals shown here are scenario references and illustrative examples only. They do not represent a final deliverable. Your actual proposal will be manually prepared based on the photos and project details you submit.
-      </p>
-
-      <div class="visual-wrap">
-        <div class="window-3d">
-          <div class="frame outer-frame">
-            <div class="frame inner-frame">
-              <div class="glass-panel left-panel"></div>
-              <div class="glass-panel right-panel"></div>
-              <div class="window-divider"></div>
-            </div>
-          </div>
-        </div>
-        <div class="visual-hint">Visual scenario reference</div>
-      </div>
-
-      <div class="image-grid">
-        <img src="../assets/windows-hero.jpg" alt="Windows and doors decision module service scenario" />
-        <img src="../assets/windows-preview.jpg" alt="Windows and doors before and after service reference" />
-        <img src="../assets/window-styles-overview.jpg" alt="Windows and doors styles comparison and replacement reference" />
-      </div>
-
-      <p class="image-grid-note">
-        Service scenario · Before and after reference · Available style overview
-      </p>
     </section>
 
     <div class="cta-wrap">
-
-      <a
-  class="cta-btn"
-  id="bookingLink"
-  href="https://cal.com/bb369tech/service-decision-review?module=windows-and-doors"
-  target="_blank"
->
-  Schedule On-Site Measurement
-</a>
-
-      <div class="cta-safe" id="selectedOptionText">
-        No option selected yet · You can still book a general review
-      </div>
-
-      <div class="cta-note">
-        This page is part of the BB369 Platform decision module system. It is informed by a structured decision approach and designed for clearer service comparison, estimate guidance, and next-step booking.
-      </div>
+      <a class="cta-btn" id="bookingLink" href="https://cal.com/bb369tech/service-decision-review?module=windows" target="_blank">Schedule On-Site Measurement</a>
+      <div class="cta-safe" id="selectedOptionText">No option selected yet · You can still book a general review</div>
+      <div class="cta-note">BB369 Platform · Structured service system</div>
     </div>
 
     <div class="footer">
       <div>BB369 Platform</div>
-      <div>Structured decision systems for service businesses.</div>
-      <div class="provenance">
-        Module type: Windows &amp; Doors · Platform role: application-facing decision module<br />
-        Research-informed structure · Canonical research reference:
-        xufentu-creator/judgment-as-structural-constraint
-      </div>
+      <div>Structured service system for home projects.</div>
+      <div class="provenance">Module type: Windows &amp; Doors</div>
     </div>
   </div>
 
   <script>
-const CONFIG = {
-  formEndpoint: "https://bb369-sendgrid-api.onrender.com/submit",
-  maxPhotoSizeMB: 8,
-  allowedImageTypes: ["image/jpeg", "image/png", "image/webp", "image/jpg"]
-};
-    const tabs = document.querySelectorAll('.tab-btn');
-    const sections = {
-      input: document.getElementById('input'),
-      solutions: document.getElementById('solutions'),
-      quote: document.getElementById('quote'),
-      visual: document.getElementById('visual')
+    const CONFIG = {
+      formEndpoint: "https://bb369-sendgrid-api.onrender.com/submit",
+      maxPhotoSizeMB: 8,
+      allowedImageTypes: ["image/jpeg", "image/png", "image/webp", "image/jpg"]
     };
 
-    const serviceType = document.getElementById('serviceType');
-    const unitCount = document.getElementById('unitCount');
-    const quoteResult = document.getElementById('quoteResult');
+    const startChoices = document.getElementById("startChoices");
+    const designFlow = document.getElementById("designFlow");
+    const budgetFlow = document.getElementById("budgetFlow");
 
-    const generatedBox = document.getElementById('generatedBox');
-    const generatedSummary = document.getElementById('generatedSummary');
-    const issueDescription = document.getElementById('issueDescription');
-    const issueType = document.getElementById('issueType');
-    const bookingLink = document.getElementById('bookingLink');
-    const selectedOptionText = document.getElementById('selectedOptionText');
-    const systemMessage = document.getElementById('systemMessage');
+    const serviceType = document.getElementById("serviceType");
+    const budgetMaterial = document.getElementById("budgetMaterial");
+    const unitCount = document.getElementById("unitCount");
+    const quoteResult = document.getElementById("quoteResult");
 
-    const requestFormWrap = document.getElementById('requestFormWrap');
-    const customerName = document.getElementById('customerName');
-    const customerEmail = document.getElementById('customerEmail');
-    const customerPhone = document.getElementById('customerPhone');
-    const photoUpload = document.getElementById('photoUpload');
+    const issueDescription = document.getElementById("issueDescription");
+    const issueType = document.getElementById("issueType");
+    const bookingLink = document.getElementById("bookingLink");
+    const selectedOptionText = document.getElementById("selectedOptionText");
+    const systemMessage = document.getElementById("systemMessage");
+
+    const customerName = document.getElementById("customerName");
+    const customerEmail = document.getElementById("customerEmail");
+    const customerPhone = document.getElementById("customerPhone");
+    const photoUpload = document.getElementById("photoUpload");
+    const previewContainer = document.getElementById("previewContainer");
 
     let selectedOption = "";
     let isSubmitting = false;
 
+    function openStartChoices() {
+      startChoices.classList.remove("hidden");
+      startChoices.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function hideAllFlows() {
+      startChoices.classList.add("hidden");
+      designFlow.classList.add("hidden");
+      budgetFlow.classList.add("hidden");
+    }
+
+    function goToDesignFlow() {
+      hideAllFlows();
+      designFlow.classList.remove("hidden");
+      designFlow.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function goToBudgetFlow() {
+      hideAllFlows();
+      budgetFlow.classList.remove("hidden");
+      budgetFlow.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function backToChoices() {
+      hideAllFlows();
+      startChoices.classList.remove("hidden");
+      startChoices.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
     function showMessage(message, type = "success") {
       if (!systemMessage) return;
       systemMessage.textContent = message;
-      systemMessage.classList.remove('hidden', 'error', 'success');
+      systemMessage.classList.remove("hidden", "error", "success");
       systemMessage.classList.add(type);
       systemMessage.style.display = "block";
     }
@@ -881,12 +297,12 @@ const CONFIG = {
     function clearMessage() {
       if (!systemMessage) return;
       systemMessage.textContent = "";
-      systemMessage.classList.add('hidden');
-      systemMessage.classList.remove('error', 'success');
+      systemMessage.classList.add("hidden");
+      systemMessage.classList.remove("error", "success");
     }
 
     function sanitizeForUrl(text, maxLength = 80) {
-      return encodeURIComponent((text || "").trim().replace(/\s+/g, ' ').slice(0, maxLength));
+      return encodeURIComponent((text || "").trim().replace(/\s+/g, " ").slice(0, maxLength));
     }
 
     function isValidEmail(email) {
@@ -900,168 +316,74 @@ const CONFIG = {
 
     function validatePhoto(file) {
       if (!file) return { ok: true };
-
       if (!CONFIG.allowedImageTypes.includes(file.type)) {
         return { ok: false, message: "Please upload a JPG, PNG, or WEBP image." };
       }
-
       const maxBytes = CONFIG.maxPhotoSizeMB * 1024 * 1024;
       if (file.size > maxBytes) {
-        return { ok: false, message: `The image must be smaller than ${CONFIG.maxPhotoSizeMB}MB.` };
+        return { ok: false, message: `Each image must be smaller than ${CONFIG.maxPhotoSizeMB}MB.` };
       }
-
       return { ok: true };
     }
 
-    function goToTab(tabName) {
-      if (!sections[tabName]) return;
-
-      tabs.forEach(t => t.classList.remove('active'));
-
-      const activeTab = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
-      if (activeTab) activeTab.classList.add('active');
-
-      Object.values(sections).forEach(sec => {
-        if (sec) sec.classList.add('hidden');
-      });
-
-      sections[tabName].classList.remove('hidden');
-      sections[tabName].scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    function startRequestFlow() {
-      goToTab('input');
-      if (requestFormWrap) requestFormWrap.classList.remove('hidden');
-      if (customerName) customerName.focus();
-    }
-
-    function toggleRequestForm() {
-      if (!requestFormWrap) return;
-      requestFormWrap.classList.toggle('hidden');
-
-      if (!requestFormWrap.classList.contains('hidden') && customerName) {
-        customerName.focus();
-      }
-    }
-
-    tabs.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const tabName = btn.dataset.tab;
-        goToTab(tabName);
-
-        if (tabName === 'input' && requestFormWrap) {
-          requestFormWrap.classList.remove('hidden');
-        }
-      });
-    });
-
     function updateQuote() {
       const base = parseFloat(serviceType?.value || "0") || 0;
+      const materialFactor = parseFloat(budgetMaterial?.value || "1") || 1;
       const qty = parseInt(unitCount?.value || "1", 10) || 1;
-      const total = base * qty;
-      if (quoteResult) {
-        quoteResult.textContent = `Estimated Cost: $${total.toLocaleString()}`;
-      }
+      const total = Math.round(base * materialFactor * qty);
+      quoteResult.textContent = `Estimated Cost: $${total.toLocaleString()}`;
     }
 
-    if (serviceType) serviceType.addEventListener('change', updateQuote);
-    if (unitCount) unitCount.addEventListener('input', updateQuote);
+    serviceType.addEventListener("change", updateQuote);
+    budgetMaterial.addEventListener("change", updateQuote);
+    unitCount.addEventListener("input", updateQuote);
+    updateQuote();
 
-    if (photoUpload) {
-      photoUpload.addEventListener('change', () => {
-        const file = photoUpload.files?.[0];
+    photoUpload.addEventListener("change", () => {
+      previewContainer.innerHTML = "";
+      const files = Array.from(photoUpload.files || []);
+      if (!files.length) {
+        previewContainer.classList.add("hidden");
+        clearMessage();
+        return;
+      }
+      for (const file of files) {
         const result = validatePhoto(file);
         if (!result.ok) {
           showMessage(result.message, "error");
           photoUpload.value = "";
-        } else {
-          clearMessage();
+          previewContainer.innerHTML = "";
+          previewContainer.classList.add("hidden");
+          return;
         }
-      });
-    }
-
-    updateQuote();
-
-    function generateOptions() {
+      }
       clearMessage();
-
-      const rawText = issueDescription.value.trim();
-      const text = rawText.toLowerCase();
-      const scenario = issueType.value;
-
-      if (!rawText) {
-        showMessage("Please describe your project needs before generating suggested options.", "error");
-        goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
-        return;
-      }
-
-      let recommendation = "B";
-      let summary = "A balanced starting path has been generated based on your current project description.";
-
-      const repairSignals = ["repair", "small", "fix", "noise", "draft", "stuck", "seal", "handle", "修", "漏风", "很吵"];
-      const replacementSignals = ["replace", "replacement", "old", "broken", "full", "double pane", "upgrade all", "更换", "老旧", "全部"];
-
-      const repairMatch = repairSignals.some(word => text.includes(word));
-      const replaceMatch = replacementSignals.some(word => text.includes(word));
-
-      if (scenario === "window" || scenario === "door") {
-        recommendation = "A";
-        summary = "This appears to be a focused issue scenario, so a lighter repair path is a suitable place to begin.";
-      }
-
-      if (scenario === "upgrade") {
-        recommendation = "B";
-        summary = "This appears to be an upgrade request, so a balanced path across performance, appearance, and budget is a suitable place to begin.";
-      }
-
-      if (scenario === "replacement") {
-        recommendation = "C";
-        summary = "This appears to be a replacement request, so a full replacement path focused on long-term results is a suitable place to begin.";
-      }
-
-      if (repairMatch && !replaceMatch) {
-        recommendation = "A";
-        summary = "Your description is closer to a localized issue or repair need, so Option A is a suitable starting point while keeping B and C available for comparison.";
-      }
-
-      if (replaceMatch) {
-        recommendation = "C";
-        summary = "Your description is closer to an older system or a broader replacement need, so Option C is a suitable starting point while keeping A and B available for comparison.";
-      }
-
-      generatedSummary.innerHTML = `
-        <strong>Suggested Result:</strong> ${summary}<br><br>
-        <strong>Recommended Starting Point:</strong> Option ${recommendation}<br>
-        <strong>Path:</strong> Submit Request → Review Options → Compare → Manual Proposal → Schedule Measurement
-      `;
-
-      generatedBox.classList.remove('hidden');
-      showMessage("Suggested options have been generated. Please review the recommended path below.", "success");
-
-      goToTab('solutions');
-      selectOption(recommendation);
-    }
+      previewContainer.classList.remove("hidden");
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = document.createElement("img");
+          img.src = e.target.result;
+          img.alt = "Uploaded project photo";
+          previewContainer.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+      });
+    });
 
     function selectOption(option) {
       selectedOption = option;
-
-      ['A', 'B', 'C'].forEach(key => {
+      ["A", "B", "C"].forEach(key => {
         const card = document.getElementById(`card${key}`);
-        if (card) card.classList.remove('selected');
+        if (card) card.classList.remove("selected");
       });
-
       const activeCard = document.getElementById(`card${option}`);
-      if (activeCard) activeCard.classList.add('selected');
+      if (activeCard) activeCard.classList.add("selected");
 
       selectedOptionText.textContent = `Selected Option: ${option} · Ready to book a focused review`;
-
-      const scenario = encodeURIComponent(issueType.value);
-      const shortSummary = sanitizeForUrl(issueDescription.value, 60);
-
-      bookingLink.href =
-        `https://cal.com/bb369tech/service-decision-review?module=windows-and-doors&option=${option}&scenario=${scenario}&note=${shortSummary}`;
-
+      const scenario = encodeURIComponent(issueType.value || "windows");
+      const shortSummary = sanitizeForUrl(issueDescription.value || "", 60);
+      bookingLink.href = `https://cal.com/bb369tech/service-decision-review?module=windows&option=${option}&scenario=${scenario}&note=${shortSummary}`;
       bookingLink.textContent = `Book Review for Option ${option}`;
     }
 
@@ -1069,26 +391,19 @@ const CONFIG = {
       customerName.value = "";
       customerEmail.value = "";
       customerPhone.value = "";
-      issueType.value = "window";
+      issueType.value = "window-repair";
       issueDescription.value = "";
       photoUpload.value = "";
-      generatedBox.classList.add('hidden');
-      updateQuote();
-
+      previewContainer.innerHTML = "";
+      previewContainer.classList.add("hidden");
       selectedOption = "";
       selectedOptionText.textContent = "No option selected yet · You can still book a general review";
-      bookingLink.href = "https://cal.com/bb369tech/service-decision-review?module=windows-and-doors";
-      bookingLink.textContent = "Book a Structured Review";
-
-      ['A', 'B', 'C'].forEach(key => {
-        const card = document.getElementById(`card${key}`);
-        if (card) card.classList.remove('selected');
-      });
+      bookingLink.href = "https://cal.com/bb369tech/service-decision-review?module=windows";
+      bookingLink.textContent = "Schedule On-Site Measurement";
     }
 
     async function submitToBackend() {
       clearMessage();
-
       if (isSubmitting) {
         showMessage("Your request is being submitted. Please wait a moment...", "success");
         return;
@@ -1099,42 +414,28 @@ const CONFIG = {
       const phone = customerPhone.value.trim();
       const scenario = issueType.value;
       const message = issueDescription.value.trim();
-      const photoFile = photoUpload.files?.[0];
+      const photoFiles = Array.from(photoUpload.files || []);
 
       if (!name || !email || !message) {
         showMessage("Please enter your name, email address, and project details before submitting.", "error");
-        goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
         return;
       }
-
       if (!isValidEmail(email)) {
         showMessage("Please enter a valid email address.", "error");
-        goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
         customerEmail.focus();
         return;
       }
-
       if (!isValidPhone(phone)) {
         showMessage("Please enter a valid phone number, or leave the field blank.", "error");
-        goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
         customerPhone.focus();
         return;
       }
-
-      const photoValidation = validatePhoto(photoFile);
-      if (!photoValidation.ok) {
-        showMessage(photoValidation.message, "error");
-        goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
-        return;
-      }
-
-      if (!CONFIG.formEndpoint) {
-        showMessage("This page is ready for display, but the live submission endpoint has not been connected yet. Once you have a real endpoint address, update CONFIG.formEndpoint.", "error");
-        return;
+      for (const file of photoFiles) {
+        const photoValidation = validatePhoto(file);
+        if (!photoValidation.ok) {
+          showMessage(photoValidation.message, "error");
+          return;
+        }
       }
 
       const formData = new FormData();
@@ -1144,34 +445,24 @@ const CONFIG = {
       formData.append("message", message);
       formData.append("scenario", scenario);
       formData.append("selectedOption", selectedOption || "");
-      formData.append("page", "windows-and-doors");
-
-      if (photoFile) {
-        formData.append("photo", photoFile);
-      }
+      formData.append("page", "windows");
+      photoFiles.forEach(file => formData.append("photos", file));
 
       isSubmitting = true;
       showMessage("Submitting your request. Please wait a moment...", "success");
 
       try {
-        const res = await fetch(CONFIG.formEndpoint, {
-          method: "POST",
-          body: formData
-        });
-
+        const res = await fetch(CONFIG.formEndpoint, { method: "POST", body: formData });
         let data = null;
         const contentType = res.headers.get("content-type") || "";
-
-        if (contentType.includes("application/json")) {
-          data = await res.json();
-        } else {
+        if (contentType.includes("application/json")) data = await res.json();
+        else {
           const text = await res.text();
           data = { success: res.ok, message: text };
         }
 
         if (res.ok && (data.success === true || data.success === undefined)) {
-          showMessage("Your request has been submitted successfully. We will review it and send a proposal to your email.", "success");
-          if (requestFormWrap) requestFormWrap.classList.add('hidden');
+          showMessage("Thanks! Your request has been received. We will reply within 24 hours.", "success");
           resetFormAfterSuccess();
         } else {
           showMessage(data.message || "The submission could not be completed. Please try again later.", "error");
