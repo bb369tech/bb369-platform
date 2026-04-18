@@ -453,7 +453,7 @@
 
         <div class="field" style="grid-column:1 / -1;">
           <label for="photoUpload">Upload Floor Photos</label>
-          <input id="photoUpload" type="file" accept="image/*" multiple />
+        <input id="photoUpload" type="file" accept="image/*" />
         </div>
       </div>
 
@@ -808,9 +808,11 @@
       formData.append("selectedOption", selectedOption || "");
       formData.append("page", "flooring");
 
-      photoFiles.forEach(file => {
-        formData.append("photos", file);
-      });
+
+   const photoFile = photoUpload.files?.[0];
+if (photoFile) {
+  formData.append("photo", photoFile);
+}
 
       isSubmitting = true;
       showMessage("Submitting your request. Please wait a moment...", "success");
