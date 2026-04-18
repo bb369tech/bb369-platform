@@ -1,890 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="yes">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-  />
-  <title>Curtains & Blinds Module | BB369 Platform</title>
-
-  <meta
-    name="description"
-    content="Curtains and blinds decision module within the BB369 Platform. Upload window photos, describe your needs, compare curtain options, review estimated ranges, and request a proposal by email."
-  />
-  <meta
-    name="keywords"
-    content="BB369 Platform, curtains, blinds, roller shades, motorized curtains, curtain installation, window treatment, structured decision, compare options, estimate range, book measurement"
-  />
-  <meta name="robots" content="index,follow" />
-
-  <meta property="og:title" content="Curtains & Blinds Module | BB369 Platform" />
-  <meta
-    property="og:description"
-    content="A structured curtain and blinds selection system. Upload window photos, compare options, review price ranges, and book a measurement."
-  />
-  <meta property="og:type" content="website" />
-
+  <meta http-equiv="Content-Language" content="en" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Curtains & Blinds | BB369 Platform</title>
+  <meta name="description" content="Get a curtain suggestion or estimate your curtain and blinds budget before moving forward." />
   <link rel="stylesheet" href="../style.css" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Curtains & Blinds Module | BB369 Platform",
-    "description": "A structured curtain and blinds selection system for homes, offices, and service scenarios.",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "BB369 Platform"
-    },
-    "about": [
-      "Curtains",
-      "Blinds",
-      "Roller Shades",
-      "Motorized Curtains",
-      "Window Treatment",
-      "Structured Decision",
-      "Compare Options",
-      "Estimate Range",
-      "Book Measurement"
-    ]
-  }
-  </script>
-
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #111111;
-    }
-
-    .page {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding-bottom: 40px;
-    }
-
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 24px;
-      border-bottom: 1px solid #ececec;
-      font-size: 0.95rem;
-    }
-
-    .back-link {
-      color: #111;
-      text-decoration: none;
-    }
-
-    .topbar-note {
-      font-size: 0.85rem;
-      color: #888;
-    }
-
-    .hero-soft {
-      margin: 20px 24px 10px;
-      padding: 36px 24px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
-      border: 1px solid #ececec;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-soft::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url("../assets/curtain-hero.jpg") center/cover no-repeat;
-      opacity: 0.05;
-      z-index: 0;
-    }
-
-    .hero-soft * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-soft h1 {
-      margin: 0 0 10px;
-      font-size: 1.7rem;
-      font-weight: 600;
-      color: #111;
-    }
-
-    .hero-soft p {
-      margin: 0 auto;
-      max-width: 760px;
-      color: #666;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .hero-soft-sub {
-      margin-top: 12px;
-      font-size: 13px;
-      color: #888;
-      line-height: 1.5;
-    }
-
-    .hero-flow {
-      margin-top: 12px;
-      font-size: 12px;
-      color: #777;
-      line-height: 1.5;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid #111;
-      cursor: pointer;
-      background: #fff;
-      color: #111;
-    }
-
-    .btn-dark {
-      background: #111;
-      color: #fff;
-    }
-
-    .tabs {
-      display: flex;
-      gap: 14px;
-      padding: 16px 24px 24px;
-      flex-wrap: wrap;
-    }
-
-    .tab-btn {
-      padding: 12px 22px;
-      border-radius: 999px;
-      border: 1px solid #111;
-      background: #fff;
-      color: #111;
-      font-size: 0.95rem;
-      cursor: pointer;
-    }
-
-    .tab-btn.active {
-      background: #111;
-      color: #fff;
-    }
-
-    .section-box {
-      margin: 0 24px 24px;
-      border-radius: 22px;
-      background: #f3f3f3;
-      min-height: 220px;
-      padding: 22px;
-    }
-
-    .section-title {
-      margin: 0 0 8px;
-      font-size: 1.15rem;
-    }
-
-    .section-note {
-      margin: 0 0 18px;
-      color: #666;
-      line-height: 1.6;
-      font-size: 0.95rem;
-      max-width: 880px;
-    }
-
-    .system-message {
-      margin-top: 16px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      background: #fff;
-      border: 1px solid #e5e5e5;
-      color: #444;
-      font-size: 0.92rem;
-      line-height: 1.5;
-    }
-
-    .system-message.hidden {
-      display: none;
-    }
-
-    .system-message.error {
-      border-color: #e3c2c2;
-      background: #fff8f8;
-      color: #8a3a3a;
-    }
-
-    .system-message.success {
-      border-color: #d8e6d8;
-      background: #f8fff8;
-      color: #2f5f2f;
-    }
-
-    .input-grid,
-    .quote-grid,
-    .solutions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-
-    .input-grid {
-      max-width: 100%;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-
-    .quote-grid {
-      max-width: 900px;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-
-    .field label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.92rem;
-      color: #444;
-      font-weight: 600;
-    }
-
-    .field input,
-    .field select,
-    .field textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid #ddd;
-      font-size: 0.95rem;
-      box-sizing: border-box;
-      background: #fff;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .field textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .upload-note,
-    .quote-note,
-    .result-note {
-      margin-top: 10px;
-      color: #777;
-      font-size: 0.88rem;
-      max-width: 760px;
-      line-height: 1.5;
-    }
-
-    .generate-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .generated-box {
-      margin-top: 22px;
-      padding: 18px;
-      border-radius: 16px;
-      background: #fff;
-      border: 1px solid #e5e5e5;
-    }
-
-    .generated-box.hidden {
-      display: none;
-    }
-
-    .generated-summary {
-      font-size: 0.95rem;
-      color: #444;
-      line-height: 1.6;
-      margin-bottom: 12px;
-    }
-
-    .solution-card {
-      background: #ffffff;
-      border: 1px solid #e5e5e5;
-      border-radius: 18px;
-      padding: 18px;
-      transition: 0.2s ease;
-    }
-
-    .solution-card.selected {
-      border-color: #111;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-    }
-
-    .solution-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.05rem;
-    }
-
-    .solution-card p {
-      margin: 0 0 10px;
-      color: #666;
-      line-height: 1.5;
-    }
-
-    .price {
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .decision-note {
-      font-size: 12px;
-      color: #888;
-      margin-top: 6px;
-      line-height: 1.5;
-    }
-
-    .popular-badge {
-      font-size: 12px;
-      color: #fff;
-      background: #111;
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      margin-bottom: 8px;
-    }
-
-    .card-actions {
-      margin-top: 14px;
-    }
-
-    .select-btn {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid #111;
-      background: #fff;
-      color: #111;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .quote-result {
-      margin-top: 22px;
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-
-    .visual-wrap {
-      position: relative;
-      max-width: 860px;
-      margin: 0 auto 24px;
-      border-radius: 18px;
-      background: linear-gradient(180deg, #f4f4f4 0%, #e9e9e9 100%);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 300px;
-    }
-
-    .curtain-preview {
-      width: 360px;
-      height: 240px;
-      position: relative;
-      background: linear-gradient(180deg, #d8d8d8 0%, #efefef 100%);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 18px 35px rgba(0,0,0,0.08);
-    }
-
-    .curtain-rail {
-      position: absolute;
-      top: 18px;
-      left: 20px;
-      right: 20px;
-      height: 10px;
-      background: #444;
-      border-radius: 999px;
-    }
-
-    .curtain-panel-left,
-    .curtain-panel-right {
-      position: absolute;
-      top: 28px;
-      bottom: 20px;
-      width: 42%;
-      background: linear-gradient(90deg, rgba(180,180,180,0.95), rgba(235,235,235,0.95));
-      border-radius: 0 0 10px 10px;
-    }
-
-    .curtain-panel-left {
-      left: 20px;
-    }
-
-    .curtain-panel-right {
-      right: 20px;
-    }
-
-    .window-light {
-      position: absolute;
-      top: 40px;
-      bottom: 22px;
-      left: 50%;
-      width: 18%;
-      transform: translateX(-50%);
-      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(210,225,240,0.9));
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.7);
-    }
-
-    .visual-hint {
-      position: absolute;
-      left: 14px;
-      bottom: 14px;
-      background: rgba(255,255,255,0.92);
-      color: #444;
-      font-size: 0.75rem;
-      padding: 6px 10px;
-      border-radius: 10px;
-      opacity: 0.9;
-      z-index: 1;
-    }
-
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding: 0 40px 30px;
-    }
-
-    .image-grid img {
-      width: 100%;
-      border-radius: 16px;
-      object-fit: cover;
-      aspect-ratio: 1 / 1;
-      transform: scale(0.96);
-      display: block;
-      background: #fff;
-      border: 1px solid #ececec;
-    }
-
-    .image-grid-note {
-      text-align: center;
-      color: #666;
-      margin: 2px 24px 22px;
-      font-size: 14px;
-    }
-
-    .cta-wrap {
-      text-align: center;
-      padding: 10px 0 0;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      background: #111;
-      color: #fff;
-      margin-bottom: 14px;
-    }
-
-    .cta-note {
-      max-width: 760px;
-      margin: 12px auto 0;
-      color: #888;
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
-
-    .cta-safe {
-      font-size: 12px;
-      color: #888;
-      margin-top: 8px;
-    }
-
-    .footer {
-      margin: 42px 24px 0;
-      padding-top: 18px;
-      border-top: 1px solid #ececec;
-      text-align: center;
-      color: #888;
-      font-size: 0.92rem;
-    }
-
-    .provenance {
-      margin-top: 8px;
-      font-size: 10px;
-      color: #aaa;
-      opacity: 0.75;
-      line-height: 1.5;
-    }
-
-    #requestFormWrap {
-      margin-top: 16px;
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    #previewContainer {
-      margin-top: 15px;
-      padding: 0;
-    }
-
-    #previewContainer img {
-      height: 120px;
-      object-fit: cover;
-      transform: none;
-    }
-
-    @media (max-width: 900px) {
-      .image-grid {
-        grid-template-columns: 1fr;
-        padding: 0 24px 24px;
-      }
-
-      .image-grid img {
-        transform: none;
-      }
-    }
-
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #fff; color: #111; }
+    .page { max-width: 1120px; margin: 0 auto; padding-bottom: 40px; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; padding:18px 24px; border-bottom:1px solid #ececec; font-size:.95rem; }
+    .back-link { color:#111; text-decoration:none; }
+    .topbar-note { font-size:.85rem; color:#888; }
+    .hero { margin:20px 24px 14px; padding:34px 24px; border-radius:22px; background:#f6f6f6; border:1px solid #ececec; }
+    .hero h1 { margin:0 0 10px; font-size:1.7rem; line-height:1.2; }
+    .hero p { margin:0; max-width:760px; color:#666; font-size:.97rem; line-height:1.65; }
+    .hero-sub { margin-top:12px; color:#888; font-size:.9rem; }
+    .hero-actions { margin-top:18px; }
+    .btn { display:inline-block; padding:12px 22px; border-radius:999px; text-decoration:none; font-weight:600; border:1px solid #111; cursor:pointer; background:#fff; color:#111; font-size:.95rem; }
+    .btn-dark { background:#111; color:#fff; }
+    .btn-light { background:#fff; color:#111; }
+    .section-box { margin:0 24px 24px; border-radius:22px; background:#f3f3f3; padding:22px; }
+    .section-title { margin:0 0 8px; font-size:1.12rem; }
+    .section-note { margin:0 0 18px; color:#666; line-height:1.6; font-size:.95rem; max-width:860px; }
+    .system-message { margin-top:14px; padding:12px 14px; border-radius:12px; background:#fff; border:1px solid #e5e5e5; color:#444; font-size:.92rem; line-height:1.5; }
+    .system-message.hidden { display:none !important; }
+    .system-message.error { border-color:#e3c2c2; background:#fff8f8; color:#8a3a3a; }
+    .system-message.success { border-color:#d8e6d8; background:#f8fff8; color:#2f5f2f; }
+    .hidden { display:none !important; }
+    .choice-grid, .input-grid, .solutions-grid, .quote-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
+    .choice-card, .solution-card { background:#fff; border:1px solid #e5e5e5; border-radius:18px; padding:20px; }
+    .choice-card h3, .solution-card h3 { margin:0 0 10px; font-size:1.04rem; }
+    .choice-card p, .solution-card p { margin:0 0 12px; color:#666; line-height:1.55; }
+    .solution-card.selected { border-color:#111; box-shadow:0 10px 20px rgba(0,0,0,.06); }
+    .popular-badge { font-size:12px; color:#fff; background:#111; display:inline-block; padding:4px 10px; border-radius:999px; margin-bottom:8px; }
+    .price { font-weight:600; margin-bottom:6px; }
+    .decision-note { font-size:12px; color:#888; line-height:1.5; }
+    .field label { display:block; margin-bottom:8px; font-size:.92rem; color:#444; font-weight:600; }
+    .field input, .field select, .field textarea { width:100%; padding:12px 14px; border-radius:12px; border:1px solid #ddd; font-size:.95rem; box-sizing:border-box; background:#fff; font-family:Arial, Helvetica, sans-serif; }
+    .field textarea { min-height:120px; resize:vertical; }
+    .step-actions { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
+    .upload-note, .quote-note { margin-top:10px; color:#777; font-size:.88rem; line-height:1.5; max-width:760px; }
+    .quote-result { margin-top:18px; font-size:1.05rem; font-weight:600; }
+    .image-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px; }
+    .image-grid img { width:100%; border-radius:14px; object-fit:cover; aspect-ratio:1/1; border:1px solid #ececec; background:#fff; }
+    #previewContainer { grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); }
+    #previewContainer img { height:120px; aspect-ratio:auto; }
+    .cta-wrap { text-align:center; padding:10px 24px 0; }
+    .cta-btn { display:inline-block; padding:14px 28px; border-radius:999px; text-decoration:none; font-weight:600; background:#111; color:#fff; margin-bottom:14px; }
+    .cta-safe { font-size:12px; color:#888; margin-top:8px; }
+    .cta-note { max-width:760px; margin:12px auto 0; color:#888; font-size:.85rem; line-height:1.5; }
+    .footer { margin:42px 24px 0; padding-top:18px; border-top:1px solid #ececec; text-align:center; color:#888; font-size:.92rem; }
+    .provenance { margin-top:8px; font-size:10px; color:#aaa; opacity:.75; line-height:1.5; }
+    @media (max-width: 900px) { .image-grid { grid-template-columns:1fr; } }
     @media (max-width: 640px) {
-      .hero-soft {
-        margin: 16px 16px 8px;
-        padding: 26px 18px;
-      }
-
-      .hero-soft h1 {
-        font-size: 1.35rem;
-      }
-
-      .tabs {
-        padding: 14px 16px 20px;
-      }
-
-      .section-box {
-        margin: 0 16px 20px;
-        min-height: 200px;
-      }
-
-      .visual-wrap {
-        min-height: 220px;
-      }
-
-      .curtain-preview {
-        width: 260px;
-        height: 180px;
-      }
-
-      .image-grid {
-        padding: 0 16px 24px;
-      }
-
-      .topbar {
-        padding: 16px;
-      }
+      .topbar { padding:16px; }
+      .hero { margin:16px 16px 10px; padding:24px 18px; }
+      .hero h1 { font-size:1.35rem; }
+      .section-box { margin:0 16px 20px; }
     }
   </style>
 </head>
 <body>
   <div class="page">
-
     <div class="topbar">
       <a class="back-link" href="../index.html">← Home</a>
       <div class="topbar-note">BB369 Platform Module</div>
     </div>
 
-    <div class="hero-soft">
+    <div class="hero">
       <h1>Curtains & Blinds</h1>
-      <p>
-        Upload your window photos and describe your needs.
-        We help you choose curtain styles, materials, and installation options —
-        with clear price ranges and next steps.
-      </p>
-      <div class="hero-soft-sub">
-        This is a curtain selection system. You can understand curtain types, compare common options, review estimated ranges, and decide whether to submit your request.
-      </div>
-      <div class="hero-flow">
-        Step 1: Upload Window Photo → Step 2: Select Curtain Type → Step 3: Compare Options → Step 4: Estimate Price → Step 5: Book Measurement
-      </div>
-
+      <p>Need curtains or blinds for privacy, light control, or a better room look? Start with one simple step.</p>
+      <div class="hero-sub">Free curtain suggestion or quick budget estimate</div>
       <div class="hero-actions">
-        <button class="btn btn-dark" type="button" onclick="startRequestFlow()">Start Your Request</button>
-        <button class="btn" type="button" onclick="goToTab('solutions')">Explore Options</button>
+        <button class="btn btn-dark" type="button" onclick="openStartChoices()">Get Started</button>
       </div>
     </div>
 
-    <div class="tabs">
-      <button class="tab-btn active" data-tab="input" type="button">Start Request</button>
-      <button class="tab-btn" data-tab="solutions" type="button">Options</button>
-      <button class="tab-btn" data-tab="quote" type="button">Cost Estimate</button>
-      <button class="tab-btn" data-tab="visual" type="button">Style Reference</button>
-    </div>
-
-    <section class="section-box" id="input">
-      <h2 class="section-title">Upload Window Photos and Describe Your Needs</h2>
-      <p class="section-note">
-        You may explore curtain options and estimated price ranges first, or submit your request directly.
-        Our team will review your photos and project details, prepare a proposal, and send it to your email.
-        If the proposal fits your needs, you can then schedule an on-site measurement.
-      </p>
-
-      <div class="system-message success" style="display:block;">
-        This is a curtain selection system. Upload your window photo → choose curtain type → compare options → get price range → book measurement.
-      </div>
-
-      <div class="generate-actions" style="margin-bottom:18px;">
-        <button class="btn btn-dark" type="button" onclick="toggleRequestForm()">Fill Out Request Form</button>
-        <button class="btn" type="button" onclick="goToTab('solutions')">Explore Options First</button>
-        <button class="btn" type="button" onclick="goToTab('quote')">Review Cost Estimate First</button>
-      </div>
-
-      <div id="requestFormWrap" class="hidden">
-        <div class="input-grid">
-          <div class="field">
-            <label for="customerName">Your Name</label>
-            <input id="customerName" type="text" placeholder="Enter your name" />
-          </div>
-
-          <div class="field">
-            <label for="customerEmail">Email Address</label>
-            <input id="customerEmail" type="email" placeholder="Enter the email address to receive your proposal" />
-          </div>
-
-          <div class="field">
-            <label for="customerPhone">Phone Number</label>
-            <input id="customerPhone" type="text" placeholder="Enter your phone number (optional)" />
-          </div>
-
-          <div class="field">
-            <label for="issueType">Curtain Type</label>
-            <select id="issueType">
-              <option value="curtain">Fabric Curtains</option>
-              <option value="blinds">Blinds (Horizontal / Vertical)</option>
-              <option value="roller">Roller Shades</option>
-              <option value="motorized">Motorized Curtains</option>
-              <option value="custom">Custom Design</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="roomType">Space Type</label>
-            <select id="roomType">
-              <option value="bedroom">Bedroom</option>
-              <option value="living-room">Living Room</option>
-              <option value="office">Office</option>
-              <option value="rental">Rental Unit</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="materialType">Preferred Material</label>
-            <select id="materialType">
-              <option value="not-sure">Not Sure Yet</option>
-              <option value="blackout">Blackout Fabric</option>
-              <option value="sheer">Sheer Fabric</option>
-              <option value="linen">Linen Look</option>
-              <option value="polyester">Polyester</option>
-              <option value="wood-look">Wood Look Blinds</option>
-              <option value="aluminum">Aluminum Blinds</option>
-            </select>
-          </div>
-
-          <div class="field" style="grid-column: 1 / -1;">
-     <label for="issueDescription">Upload photos and tell us what you need</label>
-<textarea id="issueDescription" placeholder="Please upload your window photos and tell us what you need. We can provide a free curtain design suggestion and effect preview based on your space, style, and light control needs. For example: I want blackout curtains for the bedroom, modern style, easy to clean, and better light control."></textarea>
-          </div>
-
-          <div class="field" style="grid-column: 1 / -1;">
-            <label for="photoUpload">Upload Window Photos</label>
-            <input id="photoUpload" type="file" accept="image/*" multiple />
-          </div>
+    <section class="section-box hidden" id="startChoices">
+      <h2 class="section-title">Choose One</h2>
+      <p class="section-note">Start with a free curtain suggestion, or review your likely budget first.</p>
+      <div class="choice-grid">
+        <div class="choice-card">
+          <h3>Get Curtain Suggestion</h3>
+          <p>Upload your window photos and tell us what you need. We’ll review your request and send next-step suggestions to your email.</p>
+          <button class="btn btn-dark" type="button" onclick="goToDesignFlow()">Start Free Suggestion</button>
         </div>
-
-        <div class="upload-note">
-          Please upload:
-          <br>• Full window view
-          <br>• Close-up of wall or ceiling
-          <br>• Existing curtain or blinds (if any)
-          <br><br>
-          This helps us recommend the right curtain type, size, and installation method.
+        <div class="choice-card">
+          <h3>Estimate Curtain Budget</h3>
+          <p>Compare common options and estimated price ranges before submitting anything.</p>
+          <button class="btn btn-dark" type="button" onclick="goToBudgetFlow()">Start Budget Estimate</button>
         </div>
-        
-<div class="system-message" style="display:block; margin-top:14px;">
-Upload your window photos. We’ll provide a free curtain design suggestion, estimated price range, and suitable options — so you can decide what works best before moving forward.
-</div>
-
-        <div class="system-message" style="margin-top:10px;">
-No pressure — you can review everything before booking measurement.
-</div>
-        <div id="previewContainer" class="image-grid"></div>
-
-        <div id="systemMessage" class="system-message hidden"></div>
-
-        <div class="generate-actions">
-          <button class="btn btn-dark" type="button" onclick="submitToBackend()">Submit Request</button>
-          <button class="btn" type="button" onclick="generateOptions()">Generate Suggested Options</button>
-        </div>
-
-        <div id="generatedBox" class="generated-box hidden">
-          <div class="generated-summary" id="generatedSummary"></div>
-          <div class="result-note">
-            These options are for structured reference only and do not represent a final quote.
-            Final recommendations and pricing remain subject to manual review and on-site measurement.
-          </div>
-        </div>
-      </div>
-
-      <div class="system-message" style="display:block; margin-top:18px;">
-        Disclaimer: The information, estimated ranges, visual references, and structured options provided on this page are for general reference only. They do not constitute a final quote, construction commitment, engineering opinion, or legal guarantee. Final scope, materials, dimensions, installation method, work details, and pricing are subject to manual review, on-site measurement, and final confirmation between both parties.
       </div>
     </section>
 
-    <section class="section-box hidden" id="solutions">
-      <h2 class="section-title">Curtain Options</h2>
-      <p class="section-note">
-        These common paths are intended to help customers quickly understand the general differences between budget curtains, standard home upgrades, and premium custom systems.
-      </p>
+    <section class="section-box hidden" id="designFlow">
+      <h2 class="section-title">Free Curtain Suggestion</h2>
+      <p class="section-note">Upload your photos and tell us what you need. We’ll review the request and reply with the next step.</p>
+
+      <div class="input-grid">
+        <div class="field">
+          <label for="customerName">Your Name</label>
+          <input id="customerName" type="text" placeholder="Enter your name" />
+        </div>
+        <div class="field">
+          <label for="customerEmail">Email Address</label>
+          <input id="customerEmail" type="email" placeholder="Enter the email address to receive your proposal" />
+        </div>
+        <div class="field">
+          <label for="customerPhone">Phone Number</label>
+          <input id="customerPhone" type="text" placeholder="Enter your phone number (optional)" />
+        </div>
+        <div class="field">
+          <label for="issueType">Project Type</label>
+          <select id="issueType">
+            <option value="blackout-curtains">Blackout Curtains</option>
+            <option value="sheer-curtains">Sheer Curtains</option>
+            <option value="blinds">Blinds</option>
+            <option value="motorized-curtains">Motorized Curtains</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="materialType">Style / Material</label>
+          <select id="materialType">
+            <option value="not-sure">Not Sure Yet</option>
+            <option value="fabric-basic">Basic Fabric</option>
+            <option value="linen-look">Linen Look</option>
+            <option value="blackout-fabric">Blackout Fabric</option>
+            <option value="wood-look-blinds">Wood Look Blinds</option>
+            <option value="premium-fabric">Premium Fabric</option>
+          </select>
+        </div>
+        <div class="field" style="grid-column:1 / -1;">
+          <label for="issueDescription">Tell Us What You Need</label>
+          <textarea id="issueDescription" placeholder="Example: I want blackout curtains for a bedroom window with a clean modern look and better light control."></textarea>
+        </div>
+        <div class="field" style="grid-column:1 / -1;">
+          <label for="photoUpload">Upload Window Photos</label>
+          <input id="photoUpload" type="file" accept="image/*" multiple />
+        </div>
+      </div>
+
+      <div class="upload-note">
+        Please upload:
+        <br>• Full window view
+        <br>• Close-up of the wall or frame area
+        <br>• Existing curtain or blinds if you already have one
+      </div>
+
+      <div class="system-message" style="display:block; margin-top:14px;">
+        Upload your photos. We will provide a clear next-step suggestion before you decide to move forward.
+      </div>
+
+      <div id="previewContainer" class="image-grid hidden"></div>
+      <div id="systemMessage" class="system-message hidden"></div>
+
+      <div class="step-actions">
+        <button class="btn btn-light" type="button" onclick="backToChoices()">Go Back</button>
+        <button class="btn btn-dark" type="button" onclick="submitToBackend()">Submit My Request</button>
+      </div>
+    </section>
+
+    <section class="section-box hidden" id="budgetFlow">
+      <h2 class="section-title">Estimate My Budget</h2>
+      <p class="section-note">Review common options and estimated price ranges before deciding what fits your space.</p>
 
       <div class="solutions-grid">
         <div class="solution-card" id="cardA">
           <h3>Option A — Basic Curtains</h3>
-          <p>Simple fabric curtains or basic blinds. Suitable for rental homes, small rooms, or budget-focused projects.</p>
-          <div class="price">$80 – $300</div>
-          <div class="decision-note">
-            Best for quick installation and lower-cost needs.
-          </div>
-          <div class="card-actions">
-            <button class="select-btn" type="button" onclick="selectOption('A')">Choose Option A</button>
-          </div>
+          <p>Suitable for smaller windows, simple curtain setups, and budget-focused projects.</p>
+          <div class="price">$150 – $450</div>
+          <div class="decision-note">Best for practical curtain needs and lower-budget situations.</div>
+          <button class="btn btn-light" type="button" onclick="selectOption('A')">Choose Option A</button>
         </div>
-
         <div class="solution-card" id="cardB">
           <div class="popular-badge">Most Popular</div>
-          <h3>Option B — Standard Home Upgrade</h3>
-          <p>Better materials, improved light control, cleaner appearance, and more balanced performance for daily use.</p>
-          <div class="price">$300 – $900</div>
-          <div class="decision-note">
-            Best balance of style, quality, and price.
-          </div>
-          <div class="card-actions">
-            <button class="select-btn" type="button" onclick="selectOption('B')">Choose Option B</button>
-          </div>
+          <h3>Option B — Custom Fabric Curtains</h3>
+          <p>Suitable for better material choice, improved room look, and balanced budgeting.</p>
+          <div class="price">$450 – $1,200</div>
+          <div class="decision-note">Best for a balanced result across style, privacy, and cost.</div>
+          <button class="btn btn-light" type="button" onclick="selectOption('B')">Choose Option B</button>
         </div>
-
         <div class="solution-card" id="cardC">
-          <h3>Option C — Premium Custom Curtains</h3>
-          <p>Custom sizing, higher-end fabrics, layered curtain systems, or motorized curtain setups for full-room upgrades.</p>
-          <div class="price">$900 – $3000+</div>
-          <div class="decision-note">
-            Best for luxury homes, larger spaces, and long-term design upgrades.
-          </div>
-          <div class="card-actions">
-            <button class="select-btn" type="button" onclick="selectOption('C')">Choose Option C</button>
-          </div>
+          <h3>Option C — Motorized System</h3>
+          <p>Suitable for larger windows, premium finishes, and more complete smart home upgrades.</p>
+          <div class="price">$1,200 – $4,000+</div>
+          <div class="decision-note">Best for convenience, premium finish, and long-term value.</div>
+          <button class="btn btn-light" type="button" onclick="selectOption('C')">Choose Option C</button>
         </div>
       </div>
-    </section>
 
-    <section class="section-box hidden" id="quote">
-      <h2 class="section-title">Cost Estimate</h2>
-      <p class="section-note">
-        You may review this estimated range first to understand a likely starting point.
-        Final pricing remains subject to manual review, window measurement, material selection, and installation details.
-      </p>
-
-      <div class="quote-grid">
+      <div class="quote-grid" style="margin-top:18px;">
         <div class="field">
-          <label for="serviceType">Service Type</label>
+          <label for="serviceType">Common Project Type</label>
           <select id="serviceType">
-            <option value="150">Basic Curtains</option>
-            <option value="400">Standard Curtains</option>
-            <option value="900">Custom Curtains</option>
+            <option value="250">Blackout Curtains</option>
+            <option value="220">Sheer Curtains</option>
+            <option value="350">Blinds</option>
             <option value="1200">Motorized Curtains</option>
-            <option value="250">Blinds Installation</option>
           </select>
         </div>
-
+        <div class="field">
+          <label for="budgetMaterial">Material Level</label>
+          <select id="budgetMaterial">
+            <option value="1">Basic</option>
+            <option value="1.2">Standard</option>
+            <option value="1.45">Premium</option>
+          </select>
+        </div>
         <div class="field">
           <label for="unitCount">Number of Windows</label>
           <input id="unitCount" type="number" min="1" value="1" />
         </div>
       </div>
 
-      <div class="quote-result" id="quoteResult">Estimated Cost: $150</div>
+      <div class="quote-result" id="quoteResult">Estimated Cost: $250</div>
+      <div class="quote-note">This estimate is for general reference only. Final pricing depends on size, materials, measurements, and installation conditions.</div>
 
-      <div class="quote-note">
-        This estimate is for general reference only and does not replace manual review, on-site measurement, material confirmation, or a final formal quote.
+      <div class="step-actions">
+        <button class="btn btn-light" type="button" onclick="backToChoices()">Go Back</button>
+        <button class="btn btn-dark" type="button" onclick="goToDesignFlow()">Continue with Free Suggestion</button>
       </div>
-    </section>
-
-    <section class="section-box hidden" id="visual">
-      <h2 class="section-title">Curtain Style Reference</h2>
-      <p class="section-note">
-        Explore common curtain and blinds styles before submitting your request.
-        We will recommend options based on your window size, light control needs, room type, and interior style.
-      </p>
-
-      <div class="visual-wrap">
-        <div class="curtain-preview">
-          <div class="curtain-rail"></div>
-          <div class="curtain-panel-left"></div>
-          <div class="curtain-panel-right"></div>
-          <div class="window-light"></div>
-        </div>
-        <div class="visual-hint">Curtain visual reference</div>
-      </div>
-
-      <div class="image-grid">
-        <img src="../assets/curtain-full.jpg" alt="Full window curtain example" />
-        <img src="../assets/curtain-close.jpg" alt="Curtain detail example" />
-        <img src="../assets/blinds-example.jpg" alt="Blinds style example" />
-      </div>
-
-      <p class="image-grid-note">
-        Full view · Detail · Style reference
-      </p>
     </section>
 
     <div class="cta-wrap">
-      <a
-        class="cta-btn"
-        id="bookingLink"
-        href="https://cal.com/bb369tech/service-decision-review?module=curtains-and-blinds"
-        target="_blank"
-      >
-        Schedule On-Site Measurement
-      </a>
-
-      <div class="cta-safe" id="selectedOptionText">
-        No option selected yet · You can still book a general review
-      </div>
-
-      <div class="cta-note">
-        This page is part of the BB369 Platform curtain module system. It is designed for clearer curtain comparison, estimate guidance, and next-step booking.
-      </div>
+      <a class="cta-btn" id="bookingLink" href="https://cal.com/bb369tech/service-decision-review?module=curtains" target="_blank">Schedule On-Site Measurement</a>
+      <div class="cta-safe" id="selectedOptionText">No option selected yet · You can still book a general review</div>
+      <div class="cta-note">BB369 Platform · Structured service system</div>
     </div>
 
     <div class="footer">
       <div>BB369 Platform</div>
-      <div>Structured decision systems for service businesses.</div>
-      <div class="provenance">
-        Module type: Curtains &amp; Blinds · Platform role: application-facing decision module<br />
-        Research-informed structure · Canonical research reference:
-        xufentu-creator/judgment-as-structural-constraint
-      </div>
+      <div>Structured service system for home projects.</div>
+      <div class="provenance">Module type: Curtains &amp; Blinds</div>
     </div>
   </div>
 
@@ -895,42 +244,64 @@ No pressure — you can review everything before booking measurement.
       allowedImageTypes: ["image/jpeg", "image/png", "image/webp", "image/jpg"]
     };
 
-    const tabs = document.querySelectorAll('.tab-btn');
-    const sections = {
-      input: document.getElementById('input'),
-      solutions: document.getElementById('solutions'),
-      quote: document.getElementById('quote'),
-      visual: document.getElementById('visual')
-    };
+    const startChoices = document.getElementById("startChoices");
+    const designFlow = document.getElementById("designFlow");
+    const budgetFlow = document.getElementById("budgetFlow");
 
-    const serviceType = document.getElementById('serviceType');
-    const unitCount = document.getElementById('unitCount');
-    const quoteResult = document.getElementById('quoteResult');
+    const serviceType = document.getElementById("serviceType");
+    const budgetMaterial = document.getElementById("budgetMaterial");
+    const unitCount = document.getElementById("unitCount");
+    const quoteResult = document.getElementById("quoteResult");
 
-    const generatedBox = document.getElementById('generatedBox');
-    const generatedSummary = document.getElementById('generatedSummary');
-    const issueDescription = document.getElementById('issueDescription');
-    const issueType = document.getElementById('issueType');
-    const roomType = document.getElementById('roomType');
-    const materialType = document.getElementById('materialType');
-    const bookingLink = document.getElementById('bookingLink');
-    const selectedOptionText = document.getElementById('selectedOptionText');
-    const systemMessage = document.getElementById('systemMessage');
+    const issueDescription = document.getElementById("issueDescription");
+    const issueType = document.getElementById("issueType");
+    const materialType = document.getElementById("materialType");
+    const bookingLink = document.getElementById("bookingLink");
+    const selectedOptionText = document.getElementById("selectedOptionText");
+    const systemMessage = document.getElementById("systemMessage");
 
-    const requestFormWrap = document.getElementById('requestFormWrap');
-    const customerName = document.getElementById('customerName');
-    const customerEmail = document.getElementById('customerEmail');
-    const customerPhone = document.getElementById('customerPhone');
-    const photoUpload = document.getElementById('photoUpload');
-    const previewContainer = document.getElementById('previewContainer');
+    const customerName = document.getElementById("customerName");
+    const customerEmail = document.getElementById("customerEmail");
+    const customerPhone = document.getElementById("customerPhone");
+    const photoUpload = document.getElementById("photoUpload");
+    const previewContainer = document.getElementById("previewContainer");
 
     let selectedOption = "";
     let isSubmitting = false;
 
+    function openStartChoices() {
+      startChoices.classList.remove("hidden");
+      startChoices.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function hideAllFlows() {
+      startChoices.classList.add("hidden");
+      designFlow.classList.add("hidden");
+      budgetFlow.classList.add("hidden");
+    }
+
+    function goToDesignFlow() {
+      hideAllFlows();
+      designFlow.classList.remove("hidden");
+      designFlow.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function goToBudgetFlow() {
+      hideAllFlows();
+      budgetFlow.classList.remove("hidden");
+      budgetFlow.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function backToChoices() {
+      hideAllFlows();
+      startChoices.classList.remove("hidden");
+      startChoices.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
     function showMessage(message, type = "success") {
       if (!systemMessage) return;
       systemMessage.textContent = message;
-      systemMessage.classList.remove('hidden', 'error', 'success');
+      systemMessage.classList.remove("hidden", "error", "success");
       systemMessage.classList.add(type);
       systemMessage.style.display = "block";
     }
@@ -938,12 +309,12 @@ No pressure — you can review everything before booking measurement.
     function clearMessage() {
       if (!systemMessage) return;
       systemMessage.textContent = "";
-      systemMessage.classList.add('hidden');
-      systemMessage.classList.remove('error', 'success');
+      systemMessage.classList.add("hidden");
+      systemMessage.classList.remove("error", "success");
     }
 
     function sanitizeForUrl(text, maxLength = 80) {
-      return encodeURIComponent((text || "").trim().replace(/\s+/g, ' ').slice(0, maxLength));
+      return encodeURIComponent((text || "").trim().replace(/\s+/g, " ").slice(0, maxLength));
     }
 
     function isValidEmail(email) {
@@ -957,206 +328,75 @@ No pressure — you can review everything before booking measurement.
 
     function validatePhoto(file) {
       if (!file) return { ok: true };
-
       if (!CONFIG.allowedImageTypes.includes(file.type)) {
         return { ok: false, message: "Please upload a JPG, PNG, or WEBP image." };
       }
-
       const maxBytes = CONFIG.maxPhotoSizeMB * 1024 * 1024;
       if (file.size > maxBytes) {
         return { ok: false, message: `Each image must be smaller than ${CONFIG.maxPhotoSizeMB}MB.` };
       }
-
       return { ok: true };
     }
 
-    function goToTab(tabName) {
-      if (!sections[tabName]) return;
-
-      tabs.forEach(t => t.classList.remove('active'));
-
-      const activeTab = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
-      if (activeTab) activeTab.classList.add('active');
-
-      Object.values(sections).forEach(sec => {
-        if (sec) sec.classList.add('hidden');
-      });
-
-      sections[tabName].classList.remove('hidden');
-      sections[tabName].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    function updateQuote() {
+      const base = parseFloat(serviceType?.value || "0") || 0;
+      const materialFactor = parseFloat(budgetMaterial?.value || "1") || 1;
+      const qty = parseInt(unitCount?.value || "1", 10) || 1;
+      const total = Math.round(base * materialFactor * qty);
+      quoteResult.textContent = `Estimated Cost: $${total.toLocaleString()}`;
     }
 
-    function startRequestFlow() {
-      goToTab('input');
-      if (requestFormWrap) requestFormWrap.classList.remove('hidden');
-      if (customerName) customerName.focus();
-    }
+    serviceType.addEventListener("change", updateQuote);
+    budgetMaterial.addEventListener("change", updateQuote);
+    unitCount.addEventListener("input", updateQuote);
+    updateQuote();
 
-    function toggleRequestForm() {
-      if (!requestFormWrap) return;
-      requestFormWrap.classList.toggle('hidden');
-
-      if (!requestFormWrap.classList.contains('hidden') && customerName) {
-        customerName.focus();
+    photoUpload.addEventListener("change", () => {
+      previewContainer.innerHTML = "";
+      const files = Array.from(photoUpload.files || []);
+      if (!files.length) {
+        previewContainer.classList.add("hidden");
+        clearMessage();
+        return;
       }
-    }
-
-    tabs.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const tabName = btn.dataset.tab;
-        goToTab(tabName);
-
-        if (tabName === 'input' && requestFormWrap) {
-          requestFormWrap.classList.remove('hidden');
+      for (const file of files) {
+        const result = validatePhoto(file);
+        if (!result.ok) {
+          showMessage(result.message, "error");
+          photoUpload.value = "";
+          previewContainer.innerHTML = "";
+          previewContainer.classList.add("hidden");
+          return;
         }
+      }
+      clearMessage();
+      previewContainer.classList.remove("hidden");
+      files.forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const img = document.createElement("img");
+          img.src = e.target.result;
+          img.alt = "Uploaded project photo";
+          previewContainer.appendChild(img);
+        };
+        reader.readAsDataURL(file);
       });
     });
 
-    function updateQuote() {
-      const base = parseFloat(serviceType?.value || "0") || 0;
-      const qty = parseInt(unitCount?.value || "1", 10) || 1;
-      const total = base * qty;
-      if (quoteResult) {
-        quoteResult.textContent = `Estimated Cost: $${total.toLocaleString()}`;
-      }
-    }
-
-    if (serviceType) serviceType.addEventListener('change', updateQuote);
-    if (unitCount) unitCount.addEventListener('input', updateQuote);
-
-    if (photoUpload) {
-      photoUpload.addEventListener('change', () => {
-        clearMessage();
-        if (previewContainer) previewContainer.innerHTML = "";
-
-        const files = Array.from(photoUpload.files || []);
-
-        if (!files.length) return;
-
-        for (const file of files) {
-          const result = validatePhoto(file);
-          if (!result.ok) {
-            showMessage(result.message, "error");
-            photoUpload.value = "";
-            if (previewContainer) previewContainer.innerHTML = "";
-            return;
-          }
-        }
-
-        files.forEach(file => {
-          const reader = new FileReader();
-
-          reader.onload = function (e) {
-            const img = document.createElement("img");
-            img.src = e.target.result;
-            img.alt = "Uploaded curtain project photo";
-            previewContainer.appendChild(img);
-          };
-
-          reader.readAsDataURL(file);
-        });
-      });
-    }
-
-    updateQuote();
-
-    function generateOptions() {
-      clearMessage();
-
-      const rawText = issueDescription.value.trim();
-      const text = rawText.toLowerCase();
-      const scenario = issueType.value;
-      const room = roomType.value;
-      const material = materialType.value;
-
-      if (!rawText) {
-        showMessage("Please describe your curtain project needs before generating suggested options.", "error");
-        goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
-        return;
-      }
-
-      let recommendation = "B";
-      let summary = "A balanced curtain option has been generated based on your current project description.";
-
-      const basicSignals = ["rental", "simple", "budget", "cheap", "small", "temporary", "basic"];
-      const premiumSignals = ["motorized", "luxury", "custom", "layered", "full house", "premium", "high-end", "smart"];
-      const blackoutSignals = ["blackout", "bedroom", "sleep", "dark"];
-      const officeSignals = ["office", "workspace", "clean", "minimal"];
-
-      const basicMatch = basicSignals.some(word => text.includes(word));
-      const premiumMatch = premiumSignals.some(word => text.includes(word));
-      const blackoutMatch = blackoutSignals.some(word => text.includes(word));
-      const officeMatch = officeSignals.some(word => text.includes(word));
-
-      if (scenario === "motorized" || scenario === "custom") {
-        recommendation = "C";
-        summary = "This request looks closer to a premium custom curtain project, so Option C is the most suitable starting point.";
-      }
-
-      if (scenario === "blinds" || scenario === "roller") {
-        recommendation = "B";
-        summary = "This request fits a practical and modern curtain solution, so Option B is a strong starting point.";
-      }
-
-      if (basicMatch) {
-        recommendation = "A";
-        summary = "Your request looks budget-focused or suitable for a simpler installation, so Option A is a good starting point.";
-      }
-
-      if (premiumMatch) {
-        recommendation = "C";
-        summary = "Your request includes custom or higher-end needs, so Option C is the best starting point.";
-      }
-
-      if (room === "bedroom" || blackoutMatch) {
-        recommendation = recommendation === "C" ? "C" : "B";
-        summary = "Bedroom projects often need better privacy and light control, so Option B is a strong starting point unless you want a premium custom setup.";
-      }
-
-      if (room === "office" || officeMatch) {
-        recommendation = recommendation === "C" ? "C" : "B";
-        summary = "Office spaces usually benefit from cleaner light control and lower-maintenance materials, so Option B is a practical starting point.";
-      }
-
-      if (material === "blackout" && recommendation !== "C") {
-        recommendation = "B";
-      }
-
-      generatedSummary.innerHTML = `
-        <strong>Suggested Result:</strong> ${summary}<br><br>
-        <strong>Recommended Starting Point:</strong> Option ${recommendation}<br>
-        <strong>Path:</strong> Submit Request → Review Options → Compare → Manual Proposal → Schedule Measurement
-      `;
-
-      generatedBox.classList.remove('hidden');
-      showMessage("Suggested options have been generated. Please review the recommended path below.", "success");
-
-      goToTab('solutions');
-      selectOption(recommendation);
-    }
-
     function selectOption(option) {
       selectedOption = option;
-
-      ['A', 'B', 'C'].forEach(key => {
+      ["A", "B", "C"].forEach(key => {
         const card = document.getElementById(`card${key}`);
-        if (card) card.classList.remove('selected');
+        if (card) card.classList.remove("selected");
       });
-
       const activeCard = document.getElementById(`card${option}`);
-      if (activeCard) activeCard.classList.add('selected');
+      if (activeCard) activeCard.classList.add("selected");
 
       selectedOptionText.textContent = `Selected Option: ${option} · Ready to book a focused review`;
-
-      const scenario = encodeURIComponent(issueType.value);
-      const room = encodeURIComponent(roomType.value);
-      const material = encodeURIComponent(materialType.value);
-      const shortSummary = sanitizeForUrl(issueDescription.value, 60);
-
-      bookingLink.href =
-        `https://cal.com/bb369tech/service-decision-review?module=curtains-and-blinds&option=${option}&scenario=${scenario}&room=${room}&material=${material}&note=${shortSummary}`;
-
+      const scenario = encodeURIComponent(issueType.value || "curtains");
+      const material = encodeURIComponent(materialType.value || "not-sure");
+      const shortSummary = sanitizeForUrl(issueDescription.value || "", 60);
+      bookingLink.href = `https://cal.com/bb369tech/service-decision-review?module=curtains&option=${option}&scenario=${scenario}&material=${material}&note=${shortSummary}`;
       bookingLink.textContent = `Book Review for Option ${option}`;
     }
 
@@ -1164,29 +404,20 @@ No pressure — you can review everything before booking measurement.
       customerName.value = "";
       customerEmail.value = "";
       customerPhone.value = "";
-      issueType.value = "curtain";
-      roomType.value = "bedroom";
+      issueType.value = "blackout-curtains";
       materialType.value = "not-sure";
       issueDescription.value = "";
       photoUpload.value = "";
-      if (previewContainer) previewContainer.innerHTML = "";
-      generatedBox.classList.add('hidden');
-      updateQuote();
-
+      previewContainer.innerHTML = "";
+      previewContainer.classList.add("hidden");
       selectedOption = "";
       selectedOptionText.textContent = "No option selected yet · You can still book a general review";
-      bookingLink.href = "https://cal.com/bb369tech/service-decision-review?module=curtains-and-blinds";
+      bookingLink.href = "https://cal.com/bb369tech/service-decision-review?module=curtains";
       bookingLink.textContent = "Schedule On-Site Measurement";
-
-      ['A', 'B', 'C'].forEach(key => {
-        const card = document.getElementById(`card${key}`);
-        if (card) card.classList.remove('selected');
-      });
     }
 
     async function submitToBackend() {
       clearMessage();
-
       if (isSubmitting) {
         showMessage("Your request is being submitted. Please wait a moment...", "success");
         return;
@@ -1196,47 +427,30 @@ No pressure — you can review everything before booking measurement.
       const email = customerEmail.value.trim();
       const phone = customerPhone.value.trim();
       const scenario = issueType.value;
-      const room = roomType.value;
       const material = materialType.value;
       const message = issueDescription.value.trim();
       const photoFiles = Array.from(photoUpload.files || []);
 
       if (!name || !email || !message) {
         showMessage("Please enter your name, email address, and project details before submitting.", "error");
-        goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
         return;
       }
-
       if (!isValidEmail(email)) {
         showMessage("Please enter a valid email address.", "error");
-        goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
         customerEmail.focus();
         return;
       }
-
       if (!isValidPhone(phone)) {
         showMessage("Please enter a valid phone number, or leave the field blank.", "error");
-        goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
         customerPhone.focus();
         return;
       }
-
       for (const file of photoFiles) {
         const photoValidation = validatePhoto(file);
         if (!photoValidation.ok) {
           showMessage(photoValidation.message, "error");
-          goToTab('input');
-          if (requestFormWrap) requestFormWrap.classList.remove('hidden');
           return;
         }
-      }
-
-      if (!CONFIG.formEndpoint) {
-        showMessage("This page is ready for display, but the live submission endpoint has not been connected yet. Once you have a real endpoint address, update CONFIG.formEndpoint.", "error");
-        return;
       }
 
       const formData = new FormData();
@@ -1245,37 +459,26 @@ No pressure — you can review everything before booking measurement.
       formData.append("phone", phone);
       formData.append("message", message);
       formData.append("scenario", scenario);
-      formData.append("roomType", room);
       formData.append("materialType", material);
       formData.append("selectedOption", selectedOption || "");
-      formData.append("page", "curtains-and-blinds");
-
-      photoFiles.forEach(file => {
-        formData.append("photos", file);
-      });
+      formData.append("page", "curtains");
+      photoFiles.forEach(file => formData.append("photos", file));
 
       isSubmitting = true;
       showMessage("Submitting your request. Please wait a moment...", "success");
 
       try {
-        const res = await fetch(CONFIG.formEndpoint, {
-          method: "POST",
-          body: formData
-        });
-
+        const res = await fetch(CONFIG.formEndpoint, { method: "POST", body: formData });
         let data = null;
         const contentType = res.headers.get("content-type") || "";
-
-        if (contentType.includes("application/json")) {
-          data = await res.json();
-        } else {
+        if (contentType.includes("application/json")) data = await res.json();
+        else {
           const text = await res.text();
           data = { success: res.ok, message: text };
         }
 
         if (res.ok && (data.success === true || data.success === undefined)) {
-          showMessage("Your request has been submitted successfully. We will review it and send a proposal to your email.", "success");
-          if (requestFormWrap) requestFormWrap.classList.add('hidden');
+          showMessage("Thanks! Your request has been received. We will reply within 24 hours.", "success");
           resetFormAfterSuccess();
         } else {
           showMessage(data.message || "The submission could not be completed. Please try again later.", "error");
