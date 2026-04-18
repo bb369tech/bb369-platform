@@ -1,178 +1,1332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Custom Storage & Cabinets | BB369 Platform</title>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
+  <title>Custom Storage & Cabinets Module | BB369 Platform</title>
 
-<style>
-body {font-family: Arial; margin:0; background:#fff;}
-.page {max-width:1200px;margin:auto;padding:20px;}
-.section-box {background:#f3f3f3;padding:20px;border-radius:16px;margin-bottom:20px;}
-.field input, .field select, .field textarea {
-width:100%;padding:12px;border-radius:10px;border:1px solid #ddd;
-}
-.btn {padding:12px 20px;border-radius:999px;border:1px solid #111;background:#fff;cursor:pointer;}
-.btn-dark {background:#111;color:#fff;}
-.image-grid {display:flex;gap:10px;margin-top:10px;}
-.image-grid img {height:100px;border-radius:10px;}
-.system-message {background:#fff;padding:10px;border-radius:10px;margin-top:10px;}
-</style>
+  <meta
+    name="description"
+    content="Custom storage and cabinets decision module within the BB369 Platform. Upload space photos, describe your needs, compare wardrobe, cabinet, and storage options, review estimated ranges, and request a proposal by email."
+  />
+  <meta
+    name="keywords"
+    content="BB369 Platform, custom storage, custom cabinets, wardrobe, closet, shoe cabinet, kitchen cabinets, TV wall, built-in storage, structured decision, compare options, estimate range, book measurement"
+  />
+  <meta name="robots" content="index,follow" />
 
+  <meta property="og:title" content="Custom Storage & Cabinets Module | BB369 Platform" />
+  <meta
+    property="og:description"
+    content="A structured decision module for wardrobes, cabinets, closets, and custom storage projects."
+  />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Custom Storage & Cabinets Module | BB369 Platform",
+    "description": "A structured custom storage and cabinets selection system for wardrobes, closets, shoe cabinets, kitchen cabinets, and full-home built-in storage.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "BB369 Platform"
+    },
+    "about": [
+      "Custom Storage",
+      "Wardrobe",
+      "Closet",
+      "Kitchen Cabinets",
+      "Shoe Cabinet",
+      "Built-In Storage",
+      "Structured Decision",
+      "Compare Options",
+      "Estimate Range",
+      "Book Measurement"
+    ]
+  }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111111;
+    }
+
+    .page {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-bottom: 40px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      border-bottom: 1px solid #ececec;
+      font-size: 0.95rem;
+    }
+
+    .back-link {
+      color: #111;
+      text-decoration: none;
+    }
+
+    .topbar-note {
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    .hero-soft {
+      margin: 20px 24px 10px;
+      padding: 36px 24px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
+      border: 1px solid #ececec;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-soft::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("../assets/cabinet-hero.jpg") center/cover no-repeat;
+      opacity: 0.05;
+      z-index: 0;
+    }
+
+    .hero-soft * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-soft h1 {
+      margin: 0 0 10px;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .hero-soft p {
+      margin: 0 auto;
+      max-width: 760px;
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .hero-soft-sub {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    .hero-flow {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #777;
+      line-height: 1.5;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #111;
+      cursor: pointer;
+      background: #fff;
+      color: #111;
+    }
+
+    .btn-dark {
+      background: #111;
+      color: #fff;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 14px;
+      padding: 16px 24px 24px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: 1px solid #111;
+      background: #fff;
+      color: #111;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .tab-btn.active {
+      background: #111;
+      color: #fff;
+    }
+
+    .section-box {
+      margin: 0 24px 24px;
+      border-radius: 22px;
+      background: #f3f3f3;
+      min-height: 220px;
+      padding: 22px;
+    }
+
+    .section-title {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+    }
+
+    .section-note {
+      margin: 0 0 18px;
+      color: #666;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      max-width: 880px;
+    }
+
+    .system-message {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      color: #444;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .system-message.hidden {
+      display: none;
+    }
+
+    .system-message.error {
+      border-color: #e3c2c2;
+      background: #fff8f8;
+      color: #8a3a3a;
+    }
+
+    .system-message.success {
+      border-color: #d8e6d8;
+      background: #f8fff8;
+      color: #2f5f2f;
+    }
+
+    .input-grid,
+    .quote-grid,
+    .solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .input-grid {
+      max-width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .quote-grid {
+      max-width: 900px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+      color: #444;
+      font-weight: 600;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+      background: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .upload-note,
+    .quote-note,
+    .result-note {
+      margin-top: 10px;
+      color: #777;
+      font-size: 0.88rem;
+      max-width: 760px;
+      line-height: 1.5;
+    }
+
+    .generate-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .generated-box {
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+    }
+
+    .generated-box.hidden {
+      display: none;
+    }
+
+    .generated-summary {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .solution-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 18px;
+      padding: 18px;
+      transition: 0.2s ease;
+    }
+
+    .solution-card.selected {
+      border-color: #111;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+    }
+
+    .solution-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+    }
+
+    .solution-card p {
+      margin: 0 0 10px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .price {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .decision-note {
+      font-size: 12px;
+      color: #888;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    .popular-badge {
+      font-size: 12px;
+      color: #fff;
+      background: #111;
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .card-actions {
+      margin-top: 14px;
+    }
+
+    .select-btn {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid #111;
+      background: #fff;
+      color: #111;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .quote-result {
+      margin-top: 22px;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .visual-wrap {
+      position: relative;
+      max-width: 860px;
+      margin: 0 auto 24px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #f4f4f4 0%, #e9e9e9 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+    }
+
+    .cabinet-preview {
+      width: 420px;
+      height: 240px;
+      position: relative;
+      background: linear-gradient(180deg, #d5d5d5 0%, #efefef 100%);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      gap: 10px;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+
+    .cabinet-box {
+      background: linear-gradient(180deg, #a98d6b, #8e7353);
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.08);
+      position: relative;
+    }
+
+    .cabinet-box::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 50%;
+      width: 2px;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.35);
+    }
+
+    .cabinet-tall {
+      width: 110px;
+      height: 170px;
+    }
+
+    .cabinet-mid {
+      width: 120px;
+      height: 130px;
+    }
+
+    .cabinet-small {
+      width: 95px;
+      height: 100px;
+    }
+
+    .visual-hint {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      background: rgba(255,255,255,0.92);
+      color: #444;
+      font-size: 0.75rem;
+      padding: 6px 10px;
+      border-radius: 10px;
+      opacity: 0.9;
+      z-index: 1;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 0 40px 30px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      transform: scale(0.96);
+      display: block;
+      background: #fff;
+      border: 1px solid #ececec;
+    }
+
+    .image-grid-note {
+      text-align: center;
+      color: #666;
+      margin: 2px 24px 22px;
+      font-size: 14px;
+    }
+
+    .cta-wrap {
+      text-align: center;
+      padding: 10px 0 0;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      background: #111;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .cta-note {
+      max-width: 760px;
+      margin: 12px auto 0;
+      color: #888;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .cta-safe {
+      font-size: 12px;
+      color: #888;
+      margin-top: 8px;
+    }
+
+    .footer {
+      margin: 42px 24px 0;
+      padding-top: 18px;
+      border-top: 1px solid #ececec;
+      text-align: center;
+      color: #888;
+      font-size: 0.92rem;
+    }
+
+    .provenance {
+      margin-top: 8px;
+      font-size: 10px;
+      color: #aaa;
+      opacity: 0.75;
+      line-height: 1.5;
+    }
+
+    #requestFormWrap {
+      margin-top: 16px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    #previewContainer {
+      margin-top: 15px;
+      padding: 0;
+    }
+
+    #previewContainer img {
+      height: 120px;
+      object-fit: cover;
+      transform: none;
+    }
+
+    @media (max-width: 900px) {
+      .image-grid {
+        grid-template-columns: 1fr;
+        padding: 0 24px 24px;
+      }
+
+      .image-grid img {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-soft {
+        margin: 16px 16px 8px;
+        padding: 26px 18px;
+      }
+
+      .hero-soft h1 {
+        font-size: 1.35rem;
+      }
+
+      .tabs {
+        padding: 14px 16px 20px;
+      }
+
+      .section-box {
+        margin: 0 16px 20px;
+        min-height: 200px;
+      }
+
+      .visual-wrap {
+        min-height: 220px;
+      }
+
+      .cabinet-preview {
+        width: 280px;
+        height: 180px;
+        gap: 6px;
+        padding: 18px;
+      }
+
+      .cabinet-tall {
+        width: 72px;
+        height: 120px;
+      }
+
+      .cabinet-mid {
+        width: 82px;
+        height: 95px;
+      }
+
+      .cabinet-small {
+        width: 62px;
+        height: 72px;
+      }
+
+      .image-grid {
+        padding: 0 16px 24px;
+      }
+
+      .topbar {
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="page">
 
-<div class="page">
+    <div class="topbar">
+      <a class="back-link" href="../index.html">← Home</a>
+      <div class="topbar-note">BB369 Platform Module</div>
+    </div>
 
-<h1>Custom Cabinets & Storage</h1>
+    <div class="hero-soft">
+      <h1>Closets / Cabinets / Storage</h1>
+      <p>
+        Upload your space photos and describe your needs.
+        We help you compare wardrobes, shoe cabinets, kitchen cabinets, and full-home storage solutions —
+        with clear options, estimated ranges, and next steps.
+      </p>
+      <div class="hero-soft-sub">
+        This is a custom storage selection system. You can compare layouts, materials, and budget levels before deciding whether to submit your request.
+      </div>
+      <div class="hero-flow">
+        Step 1: Upload Space Photos → Step 2: Select Project Type → Step 3: Compare Options → Step 4: Estimate Price → Step 5: Book Measurement
+      </div>
 
-<p>
-Upload your space photos. We help you design wardrobes, cabinets, and storage solutions — with clear options and price ranges.
-</p>
+      <div class="hero-actions">
+        <button class="btn btn-dark" type="button" onclick="startRequestFlow()">Start Your Request</button>
+        <button class="btn" type="button" onclick="goToTab('solutions')">Explore Options</button>
+      </div>
+    </div>
 
-<div class="section-box">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="input" type="button">Start Request</button>
+      <button class="tab-btn" data-tab="solutions" type="button">Options</button>
+      <button class="tab-btn" data-tab="quote" type="button">Cost Estimate</button>
+      <button class="tab-btn" data-tab="visual" type="button">Design Reference</button>
+    </div>
 
-<h3>Upload Photos & Describe Your Needs</h3>
+    <section class="section-box" id="input">
+      <h2 class="section-title">Upload Space Photos and Describe Your Needs</h2>
+      <p class="section-note">
+        You may explore layout options and estimated price ranges first, or submit your request directly.
+        Our team will review your photos and project details, prepare a proposal, and send it to your email.
+        If the proposal fits your needs, you can then schedule an on-site measurement.
+      </p>
 
-<div class="field">
-<label>Your Name</label>
-<input type="text">
-</div>
+      <div class="system-message success" style="display:block;">
+        This is a custom storage selection system. Upload your space photos, compare layout and material options, review estimated ranges, and decide before moving forward.
+      </div>
 
-<div class="field">
-<label>Email</label>
-<input type="email">
-</div>
+      <div class="generate-actions" style="margin-bottom:18px;">
+        <button class="btn btn-dark" type="button" onclick="toggleRequestForm()">Fill Out Request Form</button>
+        <button class="btn" type="button" onclick="goToTab('solutions')">Explore Options First</button>
+        <button class="btn" type="button" onclick="goToTab('quote')">Review Cost Estimate First</button>
+      </div>
 
-<div class="field">
-<label>Project Type</label>
-<select>
-<option>Wardrobe (Closet)</option>
-<option>Kitchen Cabinets</option>
-<option>Shoe Cabinet</option>
-<option>TV Wall / Storage</option>
-<option>Full Home Custom Storage</option>
-</select>
-</div>
+      <div id="requestFormWrap" class="hidden">
+        <div class="input-grid">
+          <div class="field">
+            <label for="customerName">Your Name</label>
+            <input id="customerName" type="text" placeholder="Enter your name" />
+          </div>
 
-<div class="field">
-<label>Material Preference</label>
-<select>
-<option>Not sure</option>
-<option>Laminate (budget)</option>
-<option>Plywood</option>
-<option>Solid Wood</option>
-<option>MDF Painted</option>
-<option>High Gloss / Acrylic</option>
-</select>
-</div>
+          <div class="field">
+            <label for="customerEmail">Email Address</label>
+            <input id="customerEmail" type="email" placeholder="Enter the email address to receive your proposal" />
+          </div>
 
-<div class="field">
-<label>Describe Your Needs</label>
-<textarea placeholder="Upload photos and tell us what you need. For example: I want a modern wardrobe with more storage space, easy to clean, and soft-close doors."></textarea>
-</div>
+          <div class="field">
+            <label for="customerPhone">Phone Number</label>
+            <input id="customerPhone" type="text" placeholder="Enter your phone number (optional)" />
+          </div>
 
-<div class="field">
-<label>Upload Photos</label>
-<input id="photoUpload" type="file" multiple>
-</div>
+          <div class="field">
+            <label for="projectType">Project Type</label>
+            <select id="projectType">
+              <option value="wardrobe">Wardrobe / Closet</option>
+              <option value="shoe-cabinet">Shoe Cabinet</option>
+              <option value="kitchen-cabinets">Kitchen Cabinets</option>
+              <option value="tv-storage">TV Wall / Storage</option>
+              <option value="pantry">Pantry / Utility Storage</option>
+              <option value="full-home-storage">Full Home Custom Storage</option>
+            </select>
+          </div>
 
-<div class="system-message">
-Upload your space photos. We’ll provide a free design suggestion, estimated price range, and layout options before you decide.
-</div>
+          <div class="field">
+            <label for="spaceType">Space Type</label>
+            <select id="spaceType">
+              <option value="bedroom">Bedroom</option>
+              <option value="living-room">Living Room</option>
+              <option value="kitchen">Kitchen</option>
+              <option value="entryway">Entryway</option>
+              <option value="office">Office</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
 
-<div class="system-message">
-No pressure — you can review everything before moving forward.
-</div>
+          <div class="field">
+            <label for="materialType">Material Preference</label>
+            <select id="materialType">
+              <option value="not-sure">Not Sure Yet</option>
+              <option value="laminate">Laminate</option>
+              <option value="melamine">Melamine</option>
+              <option value="plywood">Plywood</option>
+              <option value="mdf">MDF Painted</option>
+              <option value="veneer">Wood Veneer</option>
+              <option value="solid-wood">Solid Wood</option>
+              <option value="high-gloss">High Gloss / Acrylic</option>
+            </select>
+          </div>
 
-<div id="previewContainer" class="image-grid"></div>
+          <div class="field">
+            <label for="finishStyle">Preferred Style</label>
+            <select id="finishStyle">
+              <option value="not-sure">Not Sure Yet</option>
+              <option value="modern">Modern</option>
+              <option value="minimal">Minimal</option>
+              <option value="warm-wood">Warm Wood Look</option>
+              <option value="luxury">Luxury / Premium</option>
+              <option value="family-friendly">Family Friendly / Easy to Clean</option>
+            </select>
+          </div>
 
-<br>
+          <div class="field" style="grid-column: 1 / -1;">
+            <label for="issueDescription">Upload photos and tell us what you need</label>
+            <textarea id="issueDescription" placeholder="For example: I want a modern wardrobe with more storage, easy to clean surfaces, soft-close doors, and a lighter wood finish."></textarea>
+          </div>
 
-<button class="btn btn-dark">Submit Request</button>
+          <div class="field" style="grid-column: 1 / -1;">
+            <label for="photoUpload">Upload Space Photos</label>
+            <input id="photoUpload" type="file" accept="image/*" multiple />
+          </div>
+        </div>
 
-</div>
+        <div class="upload-note">
+          Please upload:
+          <br>• Full space view
+          <br>• Wall area for installation
+          <br>• Existing cabinet or storage area (if any)
+          <br><br>
+          This helps us recommend the right layout, storage type, dimensions, and installation method.
+        </div>
 
-<div class="section-box">
+        <div class="system-message" style="display:block; margin-top:14px;">
+          Upload your space photos. We’ll provide a free design suggestion, estimated price range, and suitable options — so you can decide what works best before moving forward.
+        </div>
 
-<h3>Options</h3>
+        <div class="system-message" style="margin-top:10px;">
+          No pressure — you can review everything before booking measurement.
+        </div>
 
-<div>
+        <div id="previewContainer" class="image-grid"></div>
 
-<b>Option A — Basic Storage</b><br>
-Simple cabinets or wardrobe system<br>
-💲 $300 – $1,200
+        <div id="systemMessage" class="system-message hidden"></div>
 
-</div><br>
+        <div class="generate-actions">
+          <button class="btn btn-dark" type="button" onclick="submitToBackend()">Submit Request</button>
+          <button class="btn" type="button" onclick="generateOptions()">Generate Suggested Options</button>
+        </div>
 
-<div>
+        <div id="generatedBox" class="generated-box hidden">
+          <div class="generated-summary" id="generatedSummary"></div>
+          <div class="result-note">
+            These options are for structured reference only and do not represent a final quote.
+            Final recommendations and pricing remain subject to manual review and on-site measurement.
+          </div>
+        </div>
+      </div>
 
-<b>Option B — Standard Custom Design</b><br>
-Better layout, materials, and storage planning<br>
-💲 $1,200 – $4,000
+      <div class="system-message" style="display:block; margin-top:18px;">
+        Disclaimer: The information, estimated ranges, visual references, and structured options provided on this page are for general reference only. They do not constitute a final quote, construction commitment, engineering opinion, or legal guarantee. Final scope, materials, dimensions, hardware, layout, work details, and pricing are subject to manual review, on-site measurement, and final confirmation between both parties.
+      </div>
+    </section>
 
-</div><br>
+    <section class="section-box hidden" id="solutions">
+      <h2 class="section-title">Storage Options</h2>
+      <p class="section-note">
+        These common paths are intended to help customers quickly understand the general differences between budget storage upgrades, standard custom solutions, and premium full-design systems.
+      </p>
 
-<div>
+      <div class="solutions-grid">
+        <div class="solution-card" id="cardA">
+          <h3>Option A — Basic Storage Upgrade</h3>
+          <p>Simple wardrobe, cabinet, or storage setup with practical materials and a straightforward layout.</p>
+          <div class="price">$500 – $1,500</div>
+          <div class="decision-note">
+            Best for smaller spaces, rental properties, or budget-focused projects.
+          </div>
+          <div class="card-actions">
+            <button class="select-btn" type="button" onclick="selectOption('A')">Choose Option A</button>
+          </div>
+        </div>
 
-<b>Option C — Premium Custom System</b><br>
-Full design, high-end materials, detailed layout<br>
-💲 $4,000 – $12,000+
+        <div class="solution-card" id="cardB">
+          <div class="popular-badge">Most Popular</div>
+          <h3>Option B — Standard Custom Design</h3>
+          <p>Better layout planning, cleaner finish, improved functionality, and more balanced material choices.</p>
+          <div class="price">$1,500 – $5,000</div>
+          <div class="decision-note">
+            Best balance of design, storage efficiency, and price.
+          </div>
+          <div class="card-actions">
+            <button class="select-btn" type="button" onclick="selectOption('B')">Choose Option B</button>
+          </div>
+        </div>
 
-</div>
+        <div class="solution-card" id="cardC">
+          <h3>Option C — Premium Full Custom System</h3>
+          <p>Full design planning, premium finishes, built-in solutions, upgraded hardware, and higher-end custom details.</p>
+          <div class="price">$5,000 – $15,000+</div>
+          <div class="decision-note">
+            Best for full-home storage upgrades, premium spaces, and long-term value.
+          </div>
+          <div class="card-actions">
+            <button class="select-btn" type="button" onclick="selectOption('C')">Choose Option C</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</div>
+    <section class="section-box hidden" id="quote">
+      <h2 class="section-title">Cost Estimate</h2>
+      <p class="section-note">
+        You may review this estimated range first to understand a likely starting point.
+        Final pricing remains subject to manual review, on-site measurement, material selection, hardware level, and installation details.
+      </p>
 
-<div class="section-box">
+      <div class="quote-grid">
+        <div class="field">
+          <label for="serviceType">Service Type</label>
+          <select id="serviceType">
+            <option value="1200">Wardrobe / Closet</option>
+            <option value="800">Shoe Cabinet</option>
+            <option value="3000">Kitchen Cabinets</option>
+            <option value="1800">TV Wall / Storage</option>
+            <option value="2200">Pantry / Utility Storage</option>
+            <option value="4500">Full Home Custom Storage</option>
+          </select>
+        </div>
 
-<h3>Estimated Cost</h3>
+        <div class="field">
+          <label for="unitCount">Number of Units / Areas</label>
+          <input id="unitCount" type="number" min="1" value="1" />
+        </div>
+      </div>
 
-<select id="priceType">
-<option value="800">Wardrobe</option>
-<option value="1500">Kitchen Cabinets</option>
-<option value="600">Shoe Cabinet</option>
-<option value="2000">Full Storage</option>
-</select>
+      <div class="quote-result" id="quoteResult">Estimated Cost: $1,200</div>
 
-<input id="qty" type="number" value="1">
+      <div class="quote-note">
+        This estimate is for general reference only and does not replace manual review, on-site measurement, material confirmation, or a final formal quote.
+      </div>
+    </section>
 
-<p id="price">$800</p>
+    <section class="section-box hidden" id="visual">
+      <h2 class="section-title">Design Reference</h2>
+      <p class="section-note">
+        Explore common custom storage styles before submitting your request.
+        We will recommend options based on your space, layout needs, storage goals, and preferred material level.
+      </p>
 
-</div>
+      <div class="visual-wrap">
+        <div class="cabinet-preview">
+          <div class="cabinet-box cabinet-tall"></div>
+          <div class="cabinet-box cabinet-mid"></div>
+          <div class="cabinet-box cabinet-small"></div>
+        </div>
+        <div class="visual-hint">Storage design reference</div>
+      </div>
 
-</div>
+      <div class="image-grid">
+        <img src="../assets/cabinet-full.jpg" alt="Custom cabinet full view" />
+        <img src="../assets/cabinet-detail.jpg" alt="Cabinet material and detail view" />
+        <img src="../assets/cabinet-layout.jpg" alt="Cabinet layout example" />
+      </div>
 
-<script>
+      <p class="image-grid-note">
+        Full view · Material detail · Layout reference
+      </p>
+    </section>
 
-// 图片预览
-document.getElementById("photoUpload").addEventListener("change", function(){
-let preview = document.getElementById("previewContainer");
-preview.innerHTML = "";
+    <div class="cta-wrap">
+      <a
+        class="cta-btn"
+        id="bookingLink"
+        href="https://cal.com/bb369tech/service-decision-review?module=custom-storage"
+        target="_blank"
+      >
+        Schedule On-Site Measurement
+      </a>
 
-Array.from(this.files).forEach(file=>{
-let reader = new FileReader();
-reader.onload = function(e){
-let img = document.createElement("img");
-img.src = e.target.result;
-preview.appendChild(img);
-}
-reader.readAsDataURL(file);
-});
-});
+      <div class="cta-safe" id="selectedOptionText">
+        No option selected yet · You can still book a general review
+      </div>
 
-// 价格计算
-let priceType = document.getElementById("priceType");
-let qty = document.getElementById("qty");
-let price = document.getElementById("price");
+      <div class="cta-note">
+        This page is part of the BB369 Platform custom storage module system. It is designed for clearer layout comparison, estimate guidance, and next-step booking.
+      </div>
+    </div>
 
-function updatePrice(){
-price.innerText = "$" + (priceType.value * qty.value);
-}
+    <div class="footer">
+      <div>BB369 Platform</div>
+      <div>Structured decision systems for service businesses.</div>
+      <div class="provenance">
+        Module type: Custom Storage &amp; Cabinets · Platform role: application-facing decision module<br />
+        Research-informed structure · Canonical research reference:
+        xufentu-creator/judgment-as-structural-constraint
+      </div>
+    </div>
+  </div>
 
-priceType.onchange = updatePrice;
-qty.oninput = updatePrice;
+  <script>
+    const CONFIG = {
+      formEndpoint: "https://bb369-sendgrid-api.onrender.com/submit",
+      maxPhotoSizeMB: 8,
+      allowedImageTypes: ["image/jpeg", "image/png", "image/webp", "image/jpg"]
+    };
 
-</script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const sections = {
+      input: document.getElementById('input'),
+      solutions: document.getElementById('solutions'),
+      quote: document.getElementById('quote'),
+      visual: document.getElementById('visual')
+    };
 
+    const serviceType = document.getElementById('serviceType');
+    const unitCount = document.getElementById('unitCount');
+    const quoteResult = document.getElementById('quoteResult');
+
+    const generatedBox = document.getElementById('generatedBox');
+    const generatedSummary = document.getElementById('generatedSummary');
+    const issueDescription = document.getElementById('issueDescription');
+    const projectType = document.getElementById('projectType');
+    const spaceType = document.getElementById('spaceType');
+    const materialType = document.getElementById('materialType');
+    const finishStyle = document.getElementById('finishStyle');
+    const bookingLink = document.getElementById('bookingLink');
+    const selectedOptionText = document.getElementById('selectedOptionText');
+    const systemMessage = document.getElementById('systemMessage');
+
+    const requestFormWrap = document.getElementById('requestFormWrap');
+    const customerName = document.getElementById('customerName');
+    const customerEmail = document.getElementById('customerEmail');
+    const customerPhone = document.getElementById('customerPhone');
+    const photoUpload = document.getElementById('photoUpload');
+    const previewContainer = document.getElementById('previewContainer');
+
+    let selectedOption = "";
+    let isSubmitting = false;
+
+    function showMessage(message, type = "success") {
+      if (!systemMessage) return;
+      systemMessage.textContent = message;
+      systemMessage.classList.remove('hidden', 'error', 'success');
+      systemMessage.classList.add(type);
+      systemMessage.style.display = "block";
+    }
+
+    function clearMessage() {
+      if (!systemMessage) return;
+      systemMessage.textContent = "";
+      systemMessage.classList.add('hidden');
+      systemMessage.classList.remove('error', 'success');
+    }
+
+    function sanitizeForUrl(text, maxLength = 80) {
+      return encodeURIComponent((text || "").trim().replace(/\s+/g, ' ').slice(0, maxLength));
+    }
+
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function isValidPhone(phone) {
+      if (!phone) return true;
+      return /^[0-9+\-()\s]{6,25}$/.test(phone);
+    }
+
+    function validatePhoto(file) {
+      if (!file) return { ok: true };
+
+      if (!CONFIG.allowedImageTypes.includes(file.type)) {
+        return { ok: false, message: "Please upload a JPG, PNG, or WEBP image." };
+      }
+
+      const maxBytes = CONFIG.maxPhotoSizeMB * 1024 * 1024;
+      if (file.size > maxBytes) {
+        return { ok: false, message: `Each image must be smaller than ${CONFIG.maxPhotoSizeMB}MB.` };
+      }
+
+      return { ok: true };
+    }
+
+    function goToTab(tabName) {
+      if (!sections[tabName]) return;
+
+      tabs.forEach(t => t.classList.remove('active'));
+
+      const activeTab = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+      if (activeTab) activeTab.classList.add('active');
+
+      Object.values(sections).forEach(sec => {
+        if (sec) sec.classList.add('hidden');
+      });
+
+      sections[tabName].classList.remove('hidden');
+      sections[tabName].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function startRequestFlow() {
+      goToTab('input');
+      if (requestFormWrap) requestFormWrap.classList.remove('hidden');
+      if (customerName) customerName.focus();
+    }
+
+    function toggleRequestForm() {
+      if (!requestFormWrap) return;
+      requestFormWrap.classList.toggle('hidden');
+
+      if (!requestFormWrap.classList.contains('hidden') && customerName) {
+        customerName.focus();
+      }
+    }
+
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tabName = btn.dataset.tab;
+        goToTab(tabName);
+
+        if (tabName === 'input' && requestFormWrap) {
+          requestFormWrap.classList.remove('hidden');
+        }
+      });
+    });
+
+    function updateQuote() {
+      const base = parseFloat(serviceType?.value || "0") || 0;
+      const qty = parseInt(unitCount?.value || "1", 10) || 1;
+      const total = base * qty;
+      if (quoteResult) {
+        quoteResult.textContent = `Estimated Cost: $${total.toLocaleString()}`;
+      }
+    }
+
+    if (serviceType) serviceType.addEventListener('change', updateQuote);
+    if (unitCount) unitCount.addEventListener('input', updateQuote);
+
+    if (photoUpload) {
+      photoUpload.addEventListener('change', () => {
+        clearMessage();
+        if (previewContainer) previewContainer.innerHTML = "";
+
+        const files = Array.from(photoUpload.files || []);
+
+        if (!files.length) return;
+
+        for (const file of files) {
+          const result = validatePhoto(file);
+          if (!result.ok) {
+            showMessage(result.message, "error");
+            photoUpload.value = "";
+            if (previewContainer) previewContainer.innerHTML = "";
+            return;
+          }
+        }
+
+        files.forEach(file => {
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            const img = document.createElement("img");
+            img.src = e.target.result;
+            img.alt = "Uploaded storage project photo";
+            previewContainer.appendChild(img);
+          };
+
+          reader.readAsDataURL(file);
+        });
+      });
+    }
+
+    updateQuote();
+
+    function generateOptions() {
+      clearMessage();
+
+      const rawText = issueDescription.value.trim();
+      const text = rawText.toLowerCase();
+      const project = projectType.value;
+      const space = spaceType.value;
+      const material = materialType.value;
+      const style = finishStyle.value;
+
+      if (!rawText) {
+        showMessage("Please describe your storage project needs before generating suggested options.", "error");
+        goToTab('input');
+        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
+        return;
+      }
+
+      let recommendation = "B";
+      let summary = "A balanced custom storage option has been generated based on your current project description.";
+
+      const basicSignals = ["simple", "budget", "rental", "small", "basic", "cheap"];
+      const premiumSignals = ["luxury", "premium", "full house", "full-home", "custom", "walk-in", "high-end"];
+      const kitchenSignals = ["kitchen", "cabinet", "pantry"];
+      const familySignals = ["easy to clean", "storage", "kids", "family"];
+
+      const basicMatch = basicSignals.some(word => text.includes(word));
+      const premiumMatch = premiumSignals.some(word => text.includes(word));
+      const kitchenMatch = kitchenSignals.some(word => text.includes(word));
+      const familyMatch = familySignals.some(word => text.includes(word));
+
+      if (project === "full-home-storage") {
+        recommendation = "C";
+        summary = "This request looks closer to a full-home custom storage project, so Option C is the strongest starting point.";
+      }
+
+      if (project === "kitchen-cabinets" || project === "tv-storage" || project === "pantry") {
+        recommendation = "B";
+        summary = "This request fits a more functional custom storage solution, so Option B is a strong starting point.";
+      }
+
+      if (basicMatch) {
+        recommendation = "A";
+        summary = "Your request looks suitable for a simpler and more budget-conscious storage solution, so Option A is a good starting point.";
+      }
+
+      if (premiumMatch) {
+        recommendation = "C";
+        summary = "Your request includes stronger custom and premium signals, so Option C is the best starting point.";
+      }
+
+      if ((space === "kitchen" || kitchenMatch) && recommendation !== "C") {
+        recommendation = "B";
+        summary = "Kitchen and functional storage areas usually benefit from better layout planning and material balance, so Option B is a strong starting point.";
+      }
+
+      if ((style === "luxury" || material === "solid-wood" || material === "veneer") && recommendation !== "C") {
+        recommendation = "C";
+        summary = "Your material and style preferences suggest a more premium custom solution, so Option C is the most suitable starting point.";
+      }
+
+      if (familyMatch && recommendation === "A") {
+        recommendation = "B";
+        summary = "Because your request focuses on daily function and easier use, Option B is a better balanced starting point.";
+      }
+
+      generatedSummary.innerHTML = `
+        <strong>Suggested Result:</strong> ${summary}<br><br>
+        <strong>Recommended Starting Point:</strong> Option ${recommendation}<br>
+        <strong>Path:</strong> Submit Request → Review Options → Compare → Manual Proposal → Schedule Measurement
+      `;
+
+      generatedBox.classList.remove('hidden');
+      showMessage("Suggested options have been generated. Please review the recommended path below.", "success");
+
+      goToTab('solutions');
+      selectOption(recommendation);
+    }
+
+    function selectOption(option) {
+      selectedOption = option;
+
+      ['A', 'B', 'C'].forEach(key => {
+        const card = document.getElementById(`card${key}`);
+        if (card) card.classList.remove('selected');
+      });
+
+      const activeCard = document.getElementById(`card${option}`);
+      if (activeCard) activeCard.classList.add('selected');
+
+      selectedOptionText.textContent = `Selected Option: ${option} · Ready to book a focused review`;
+
+      const project = encodeURIComponent(projectType.value);
+      const space = encodeURIComponent(spaceType.value);
+      const material = encodeURIComponent(materialType.value);
+      const style = encodeURIComponent(finishStyle.value);
+      const shortSummary = sanitizeForUrl(issueDescription.value, 60);
+
+      bookingLink.href =
+        `https://cal.com/bb369tech/service-decision-review?module=custom-storage&option=${option}&project=${project}&space=${space}&material=${material}&style=${style}&note=${shortSummary}`;
+
+      bookingLink.textContent = `Book Review for Option ${option}`;
+    }
+
+    function resetFormAfterSuccess() {
+      customerName.value = "";
+      customerEmail.value = "";
+      customerPhone.value = "";
+      projectType.value = "wardrobe";
+      spaceType.value = "bedroom";
+      materialType.value = "not-sure";
+      finishStyle.value = "not-sure";
+      issueDescription.value = "";
+      photoUpload.value = "";
+      if (previewContainer) previewContainer.innerHTML = "";
+      generatedBox.classList.add('hidden');
+      updateQuote();
+
+      selectedOption = "";
+      selectedOptionText.textContent = "No option selected yet · You can still book a general review";
+      bookingLink.href = "https://cal.com/bb369tech/service-decision-review?module=custom-storage";
+      bookingLink.textContent = "Schedule On-Site Measurement";
+
+      ['A', 'B', 'C'].forEach(key => {
+        const card = document.getElementById(`card${key}`);
+        if (card) card.classList.remove('selected');
+      });
+    }
+
+    async function submitToBackend() {
+      clearMessage();
+
+      if (isSubmitting) {
+        showMessage("Your request is being submitted. Please wait a moment...", "success");
+        return;
+      }
+
+      const name = customerName.value.trim();
+      const email = customerEmail.value.trim();
+      const phone = customerPhone.value.trim();
+      const project = projectType.value;
+      const space = spaceType.value;
+      const material = materialType.value;
+      const style = finishStyle.value;
+      const message = issueDescription.value.trim();
+      const photoFiles = Array.from(photoUpload.files || []);
+
+      if (!name || !email || !message) {
+        showMessage("Please enter your name, email address, and project details before submitting.", "error");
+        goToTab('input');
+        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        showMessage("Please enter a valid email address.", "error");
+        goToTab('input');
+        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
+        customerEmail.focus();
+        return;
+      }
+
+      if (!isValidPhone(phone)) {
+        showMessage("Please enter a valid phone number, or leave the field blank.", "error");
+        goToTab('input');
+        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
+        customerPhone.focus();
+        return;
+      }
+
+      for (const file of photoFiles) {
+        const photoValidation = validatePhoto(file);
+        if (!photoValidation.ok) {
+          showMessage(photoValidation.message, "error");
+          goToTab('input');
+          if (requestFormWrap) requestFormWrap.classList.remove('hidden');
+          return;
+        }
+      }
+
+      if (!CONFIG.formEndpoint) {
+        showMessage("This page is ready for display, but the live submission endpoint has not been connected yet. Once you have a real endpoint address, update CONFIG.formEndpoint.", "error");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("phone", phone);
+      formData.append("message", message);
+      formData.append("projectType", project);
+      formData.append("spaceType", space);
+      formData.append("materialType", material);
+      formData.append("finishStyle", style);
+      formData.append("selectedOption", selectedOption || "");
+      formData.append("page", "custom-storage");
+
+      photoFiles.forEach(file => {
+        formData.append("photos", file);
+      });
+
+      isSubmitting = true;
+      showMessage("Submitting your request. Please wait a moment...", "success");
+
+      try {
+        const res = await fetch(CONFIG.formEndpoint, {
+          method: "POST",
+          body: formData
+        });
+
+        let data = null;
+        const contentType = res.headers.get("content-type") || "";
+
+        if (contentType.includes("application/json")) {
+          data = await res.json();
+        } else {
+          const text = await res.text();
+          data = { success: res.ok, message: text };
+        }
+
+        if (res.ok && (data.success === true || data.success === undefined)) {
+          showMessage("Your request has been submitted successfully. Please check your email for confirmation.", "success");
+          if (requestFormWrap) requestFormWrap.classList.add('hidden');
+          resetFormAfterSuccess();
+        } else {
+          showMessage(data.message || "The submission could not be completed. Please try again later.", "error");
+        }
+      } catch (err) {
+        console.error(err);
+        showMessage("The live submission endpoint could not be reached. Please check the endpoint address, CORS settings, and deployment status.", "error");
+      } finally {
+        isSubmitting = false;
+      }
+    }
+  </script>
 </body>
 </html>
