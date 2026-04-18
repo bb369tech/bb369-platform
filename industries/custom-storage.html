@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Custom Storage & Cabinets | BB369 Platform</title>
+
+<style>
+body {font-family: Arial; margin:0; background:#fff;}
+.page {max-width:1200px;margin:auto;padding:20px;}
+.section-box {background:#f3f3f3;padding:20px;border-radius:16px;margin-bottom:20px;}
+.field input, .field select, .field textarea {
+width:100%;padding:12px;border-radius:10px;border:1px solid #ddd;
+}
+.btn {padding:12px 20px;border-radius:999px;border:1px solid #111;background:#fff;cursor:pointer;}
+.btn-dark {background:#111;color:#fff;}
+.image-grid {display:flex;gap:10px;margin-top:10px;}
+.image-grid img {height:100px;border-radius:10px;}
+.system-message {background:#fff;padding:10px;border-radius:10px;margin-top:10px;}
+</style>
+
+</head>
+<body>
+
+<div class="page">
+
+<h1>Custom Cabinets & Storage</h1>
+
+<p>
+Upload your space photos. We help you design wardrobes, cabinets, and storage solutions — with clear options and price ranges.
+</p>
+
+<div class="section-box">
+
+<h3>Upload Photos & Describe Your Needs</h3>
+
+<div class="field">
+<label>Your Name</label>
+<input type="text">
+</div>
+
+<div class="field">
+<label>Email</label>
+<input type="email">
+</div>
+
+<div class="field">
+<label>Project Type</label>
+<select>
+<option>Wardrobe (Closet)</option>
+<option>Kitchen Cabinets</option>
+<option>Shoe Cabinet</option>
+<option>TV Wall / Storage</option>
+<option>Full Home Custom Storage</option>
+</select>
+</div>
+
+<div class="field">
+<label>Material Preference</label>
+<select>
+<option>Not sure</option>
+<option>Laminate (budget)</option>
+<option>Plywood</option>
+<option>Solid Wood</option>
+<option>MDF Painted</option>
+<option>High Gloss / Acrylic</option>
+</select>
+</div>
+
+<div class="field">
+<label>Describe Your Needs</label>
+<textarea placeholder="Upload photos and tell us what you need. For example: I want a modern wardrobe with more storage space, easy to clean, and soft-close doors."></textarea>
+</div>
+
+<div class="field">
+<label>Upload Photos</label>
+<input id="photoUpload" type="file" multiple>
+</div>
+
+<div class="system-message">
+Upload your space photos. We’ll provide a free design suggestion, estimated price range, and layout options before you decide.
+</div>
+
+<div class="system-message">
+No pressure — you can review everything before moving forward.
+</div>
+
+<div id="previewContainer" class="image-grid"></div>
+
+<br>
+
+<button class="btn btn-dark">Submit Request</button>
+
+</div>
+
+<div class="section-box">
+
+<h3>Options</h3>
+
+<div>
+
+<b>Option A — Basic Storage</b><br>
+Simple cabinets or wardrobe system<br>
+💲 $300 – $1,200
+
+</div><br>
+
+<div>
+
+<b>Option B — Standard Custom Design</b><br>
+Better layout, materials, and storage planning<br>
+💲 $1,200 – $4,000
+
+</div><br>
+
+<div>
+
+<b>Option C — Premium Custom System</b><br>
+Full design, high-end materials, detailed layout<br>
+💲 $4,000 – $12,000+
+
+</div>
+
+</div>
+
+<div class="section-box">
+
+<h3>Estimated Cost</h3>
+
+<select id="priceType">
+<option value="800">Wardrobe</option>
+<option value="1500">Kitchen Cabinets</option>
+<option value="600">Shoe Cabinet</option>
+<option value="2000">Full Storage</option>
+</select>
+
+<input id="qty" type="number" value="1">
+
+<p id="price">$800</p>
+
+</div>
+
+</div>
+
+<script>
+
+// 图片预览
+document.getElementById("photoUpload").addEventListener("change", function(){
+let preview = document.getElementById("previewContainer");
+preview.innerHTML = "";
+
+Array.from(this.files).forEach(file=>{
+let reader = new FileReader();
+reader.onload = function(e){
+let img = document.createElement("img");
+img.src = e.target.result;
+preview.appendChild(img);
+}
+reader.readAsDataURL(file);
+});
+});
+
+// 价格计算
+let priceType = document.getElementById("priceType");
+let qty = document.getElementById("qty");
+let price = document.getElementById("price");
+
+function updatePrice(){
+price.innerText = "$" + (priceType.value * qty.value);
+}
+
+priceType.onchange = updatePrice;
+qty.oninput = updatePrice;
+
+</script>
+
+</body>
+</html>
