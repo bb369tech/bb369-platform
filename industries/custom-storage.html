@@ -10,11 +10,11 @@
 
   <meta
     name="description"
-    content="Custom storage decision module within the BB369 Platform. Upload your space photos, describe your needs, compare closet, cabinet, and storage options, review estimated ranges, and request a proposal by email."
+    content="Custom storage decision module within the BB369 Platform. Upload your space photos, describe your needs, compare storage options, review estimated ranges, and request a proposal by email."
   />
   <meta
     name="keywords"
-    content="BB369 Platform, closets, cabinets, storage, wardrobe, shoe cabinet, kitchen cabinets, built-in storage, custom storage, estimate range, structured decision"
+    content="BB369 Platform, closets, cabinets, storage, wardrobe, shoe cabinet, kitchen cabinets, custom storage, built-in storage, structured decision, estimate range"
   />
   <meta name="robots" content="index,follow" />
 
@@ -27,30 +27,6 @@
 
   <link rel="stylesheet" href="../style.css" />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Closets / Cabinets / Storage | BB369 Platform",
-    "description": "A structured custom storage decision module for closets, wardrobes, cabinets, and built-in storage.",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "BB369 Platform"
-    },
-    "about": [
-      "Closets",
-      "Cabinets",
-      "Storage",
-      "Wardrobe",
-      "Built-In Storage",
-      "Structured Decision",
-      "Compare Options",
-      "Estimate Range",
-      "Next-Step Booking"
-    ]
-  }
-  </script>
-
   <style>
     body {
       margin: 0;
@@ -60,7 +36,7 @@
     }
 
     .page {
-      max-width: 1320px;
+      max-width: 1180px;
       margin: 0 auto;
       padding-bottom: 40px;
     }
@@ -84,26 +60,27 @@
       color: #888;
     }
 
-    .hero-clean {
+    .hero {
       margin: 20px 24px 14px;
       padding: 34px 24px;
       border-radius: 22px;
-      background: #f7f7f7;
+      background: #f6f6f6;
       border: 1px solid #ececec;
     }
 
-    .hero-clean h1 {
+    .hero h1 {
       margin: 0 0 10px;
-      font-size: 1.75rem;
+      font-size: 1.7rem;
       line-height: 1.2;
+      color: #111;
     }
 
-    .hero-clean p {
+    .hero p {
       margin: 0;
-      max-width: 820px;
+      max-width: 760px;
       color: #666;
-      line-height: 1.65;
       font-size: 0.96rem;
+      line-height: 1.65;
     }
 
     .hero-sub {
@@ -113,17 +90,7 @@
       line-height: 1.5;
     }
 
-    .hero-flow {
-      margin-top: 14px;
-      font-size: 12px;
-      color: #777;
-      line-height: 1.5;
-    }
-
     .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
       margin-top: 18px;
     }
 
@@ -137,31 +104,10 @@
       cursor: pointer;
       background: #fff;
       color: #111;
+      font-size: 0.95rem;
     }
 
     .btn-dark {
-      background: #111;
-      color: #fff;
-    }
-
-    .tabs {
-      display: flex;
-      gap: 14px;
-      padding: 12px 24px 24px;
-      flex-wrap: wrap;
-    }
-
-    .tab-btn {
-      padding: 12px 22px;
-      border-radius: 999px;
-      border: 1px solid #111;
-      background: #fff;
-      color: #111;
-      font-size: 0.95rem;
-      cursor: pointer;
-    }
-
-    .tab-btn.active {
       background: #111;
       color: #fff;
     }
@@ -170,13 +116,13 @@
       margin: 0 24px 24px;
       border-radius: 22px;
       background: #f3f3f3;
-      min-height: 220px;
       padding: 22px;
     }
 
     .section-title {
       margin: 0 0 8px;
-      font-size: 1.15rem;
+      font-size: 1.12rem;
+      color: #111;
     }
 
     .section-note {
@@ -184,11 +130,11 @@
       color: #666;
       line-height: 1.6;
       font-size: 0.95rem;
-      max-width: 900px;
+      max-width: 860px;
     }
 
     .system-message {
-      margin-top: 16px;
+      margin-top: 14px;
       padding: 12px 14px;
       border-radius: 12px;
       background: #fff;
@@ -199,7 +145,7 @@
     }
 
     .system-message.hidden {
-      display: none;
+      display: none !important;
     }
 
     .system-message.error {
@@ -214,11 +160,15 @@
       color: #2f5f2f;
     }
 
+    .hidden {
+      display: none !important;
+    }
+
     .input-grid,
-    .quote-grid,
-    .solutions-grid {
+    .solutions-grid,
+    .quote-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 18px;
     }
 
@@ -248,40 +198,11 @@
       resize: vertical;
     }
 
-    .upload-note,
-    .quote-note,
-    .result-note {
-      margin-top: 10px;
-      color: #777;
-      font-size: 0.88rem;
-      max-width: 760px;
-      line-height: 1.5;
-    }
-
-    .generate-actions {
+    .step-actions {
+      margin-top: 18px;
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .generated-box {
-      margin-top: 22px;
-      padding: 18px;
-      border-radius: 16px;
-      background: #fff;
-      border: 1px solid #e5e5e5;
-    }
-
-    .generated-box.hidden {
-      display: none;
-    }
-
-    .generated-summary {
-      font-size: 0.95rem;
-      color: #444;
-      line-height: 1.6;
-      margin-bottom: 12px;
     }
 
     .solution-card {
@@ -299,25 +220,18 @@
 
     .solution-card h3 {
       margin: 0 0 10px;
-      font-size: 1.05rem;
+      font-size: 1.04rem;
     }
 
     .solution-card p {
       margin: 0 0 10px;
       color: #666;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     .price {
       font-weight: 600;
       margin-bottom: 6px;
-    }
-
-    .decision-note {
-      font-size: 12px;
-      color: #888;
-      margin-top: 6px;
-      line-height: 1.5;
     }
 
     .popular-badge {
@@ -330,12 +244,15 @@
       margin-bottom: 8px;
     }
 
-    .card-actions {
-      margin-top: 14px;
+    .decision-note {
+      font-size: 12px;
+      color: #888;
+      line-height: 1.5;
     }
 
     .select-btn {
       display: inline-block;
+      margin-top: 14px;
       padding: 10px 16px;
       border-radius: 999px;
       border: 1px solid #111;
@@ -346,22 +263,75 @@
     }
 
     .quote-result {
-      margin-top: 22px;
+      margin-top: 18px;
       font-size: 1.05rem;
       font-weight: 600;
     }
 
+    .quote-note,
+    .upload-note,
+    .result-note {
+      margin-top: 10px;
+      color: #777;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      max-width: 760px;
+    }
+
+    .generated-box {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+    }
+
+    .generated-box.hidden {
+      display: none !important;
+    }
+
+    .generated-summary {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      border: 1px solid #ececec;
+      background: #fff;
+    }
+
+    #previewContainer {
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+
+    #previewContainer img {
+      height: 120px;
+      aspect-ratio: auto;
+    }
+
     .visual-wrap {
       max-width: 860px;
-      margin: 0 auto 24px;
+      margin: 0 auto 20px;
       border-radius: 18px;
       background: linear-gradient(180deg, #f6f6f6 0%, #eaeaea 100%);
-      overflow: hidden;
-      min-height: 280px;
+      min-height: 260px;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
+      overflow: hidden;
     }
 
     .storage-layout {
@@ -389,20 +359,9 @@
       background: rgba(255,255,255,0.35);
     }
 
-    .storage-a {
-      width: 95px;
-      height: 170px;
-    }
-
-    .storage-b {
-      width: 130px;
-      height: 120px;
-    }
-
-    .storage-c {
-      width: 105px;
-      height: 145px;
-    }
+    .storage-a { width: 95px; height: 170px; }
+    .storage-b { width: 130px; height: 120px; }
+    .storage-c { width: 105px; height: 145px; }
 
     .visual-hint {
       position: absolute;
@@ -413,48 +372,11 @@
       font-size: 0.75rem;
       padding: 6px 10px;
       border-radius: 10px;
-      opacity: 0.9;
-      z-index: 1;
-    }
-
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding: 0 40px 30px;
-    }
-
-    .image-grid img {
-      width: 100%;
-      border-radius: 16px;
-      object-fit: cover;
-      aspect-ratio: 1 / 1;
-      display: block;
-      border: 1px solid #ececec;
-      background: #fff;
-    }
-
-    .image-grid-note {
-      text-align: center;
-      color: #666;
-      margin: 2px 24px 22px;
-      font-size: 14px;
-    }
-
-    #previewContainer {
-      margin-top: 15px;
-      padding: 0;
-      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    }
-
-    #previewContainer img {
-      height: 120px;
-      object-fit: cover;
     }
 
     .cta-wrap {
       text-align: center;
-      padding: 10px 0 0;
+      padding: 10px 24px 0;
     }
 
     .cta-btn {
@@ -468,18 +390,18 @@
       margin-bottom: 14px;
     }
 
+    .cta-safe {
+      font-size: 12px;
+      color: #888;
+      margin-top: 8px;
+    }
+
     .cta-note {
       max-width: 760px;
       margin: 12px auto 0;
       color: #888;
       font-size: 0.85rem;
       line-height: 1.5;
-    }
-
-    .cta-safe {
-      font-size: 12px;
-      color: #888;
-      margin-top: 8px;
     }
 
     .footer {
@@ -499,62 +421,33 @@
       line-height: 1.5;
     }
 
-    #requestFormWrap {
-      margin-top: 16px;
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
     @media (max-width: 900px) {
       .image-grid {
         grid-template-columns: 1fr;
-        padding: 0 24px 24px;
       }
     }
 
     @media (max-width: 640px) {
-      .hero-clean {
-        margin: 16px 16px 8px;
-        padding: 24px 18px;
-      }
-
-      .hero-clean h1 {
-        font-size: 1.35rem;
-      }
-
-      .tabs {
-        padding: 14px 16px 20px;
-      }
-
-      .section-box {
-        margin: 0 16px 20px;
-        min-height: 200px;
-      }
-
-      .image-grid {
-        padding: 0 16px 24px;
-      }
-
       .topbar {
         padding: 16px;
       }
 
-      .storage-a {
-        width: 68px;
-        height: 120px;
+      .hero {
+        margin: 16px 16px 10px;
+        padding: 24px 18px;
       }
 
-      .storage-b {
-        width: 88px;
-        height: 88px;
+      .hero h1 {
+        font-size: 1.35rem;
       }
 
-      .storage-c {
-        width: 72px;
-        height: 100px;
+      .section-box {
+        margin: 0 16px 20px;
       }
+
+      .storage-a { width: 68px; height: 120px; }
+      .storage-b { width: 88px; height: 88px; }
+      .storage-c { width: 72px; height: 100px; }
     }
   </style>
 </head>
@@ -566,46 +459,33 @@
       <div class="topbar-note">BB369 Platform Module</div>
     </div>
 
-    <div class="hero-clean">
+    <div class="hero">
       <h1>Closets / Cabinets / Storage</h1>
       <p>
-        Upload your space photos and tell us what you want to build.
-        This module helps users compare wardrobes, shoe cabinets, kitchen cabinets, TV storage, and built-in storage options before moving forward.
+        Upload your space photos and tell us what you need.
+        We help you compare wardrobes, shoe cabinets, kitchen cabinets, TV storage, and built-in storage options before you move forward.
       </p>
       <div class="hero-sub">
-        Clear categories · material selection · estimated ranges · next-step booking
-      </div>
-      <div class="hero-flow">
-        Step 1: Fill Out Request Form → Step 2: Compare Options → Step 3: Review Estimated Cost → Step 4: Receive Proposal → Step 5: Schedule On-Site Measurement
+        Clear process · simple options · estimated ranges · easy next step
       </div>
 
       <div class="hero-actions">
         <button class="btn btn-dark" type="button" onclick="startRequestFlow()">Start Your Request</button>
-        <button class="btn" type="button" onclick="goToTab('solutions')">Explore Options</button>
       </div>
-    </div>
-
-    <div class="tabs">
-      <button class="tab-btn active" data-tab="input" type="button">Start Request</button>
-      <button class="tab-btn" data-tab="solutions" type="button">Options</button>
-      <button class="tab-btn" data-tab="quote" type="button">Cost Estimate</button>
-      <button class="tab-btn" data-tab="visual" type="button">Design Reference</button>
     </div>
 
     <section class="section-box" id="input">
-      <h2 class="section-title">Upload Photos and Describe Your Storage Project</h2>
+      <h2 class="section-title">Step 1 · Tell Us About Your Project</h2>
       <p class="section-note">
-        You may explore common options and estimated ranges first, or submit your request directly. Our team will review your photos and project details, prepare a proposal, and send it to your email.
+        Start with the basics. Once you fill out the request form, the next step will guide you to options and estimated ranges.
       </p>
 
-      <div class="system-message success" style="display:block;">
-        How it works: click “Fill Out Request Form” below, enter your project details, upload photos, and we will review the request before sending next-step suggestions.
+      <div id="requestIntro" class="system-message success" style="display:block;">
+        One simple step at a time. Start your request first, then review suggested options and estimated pricing.
       </div>
 
-      <div class="generate-actions" style="margin-bottom:18px;">
-        <button class="btn btn-dark" type="button" onclick="toggleRequestForm()">Fill Out Request Form</button>
-        <button class="btn" type="button" onclick="goToTab('solutions')">Explore Options First</button>
-        <button class="btn" type="button" onclick="goToTab('quote')">Review Cost Estimate First</button>
+      <div class="step-actions" id="introActions">
+        <button class="btn btn-dark" type="button" onclick="toggleRequestForm()">Start Request</button>
       </div>
 
       <div id="requestFormWrap" class="hidden">
@@ -637,7 +517,7 @@
             </select>
           </div>
 
-          <div class="field">
+          <div class="field hidden" id="materialField">
             <label for="materialType">Material Preference</label>
             <select id="materialType">
               <option value="not-sure">Not Sure Yet</option>
@@ -656,55 +536,47 @@
             <textarea id="issueDescription" placeholder="Example: I want a modern wardrobe with more storage, soft-close doors, easy-to-clean finish, and better use of the wall space."></textarea>
           </div>
 
-          <div class="field" style="grid-column: 1 / -1;">
+          <div class="field hidden" id="photoField" style="grid-column: 1 / -1;">
             <label for="photoUpload">Upload Space Photos</label>
             <input id="photoUpload" type="file" accept="image/*" multiple />
           </div>
         </div>
 
-        <div class="upload-note">
+        <div class="upload-note hidden" id="uploadNote">
           Please upload:
           <br>• Full room or wall view
           <br>• Existing cabinet or storage area (if any)
           <br>• Close-up of the area where you want the storage installed
-          <br><br>
-          This helps us recommend the right layout, material level, and installation direction.
         </div>
 
-        <div class="system-message" style="display:block; margin-top:14px;">
-          Upload your photos. We will provide a free storage suggestion, estimated range, and suitable options before you decide to move forward.
-        </div>
-
-        <div class="system-message" style="margin-top:10px;">
-          No pressure — you can review everything before booking measurement.
-        </div>
-
-        <div id="previewContainer" class="image-grid"></div>
-
+        <div id="previewContainer" class="image-grid hidden"></div>
         <div id="systemMessage" class="system-message hidden"></div>
 
-        <div class="generate-actions">
-          <button class="btn btn-dark" type="button" onclick="submitToBackend()">Submit Request</button>
-          <button class="btn" type="button" onclick="generateOptions()">Generate Suggested Options</button>
+        <div class="step-actions" id="step1Actions">
+          <button class="btn btn-dark" type="button" onclick="showMoreFields()">Continue</button>
+        </div>
+
+        <div class="step-actions hidden" id="step2Actions">
+          <button class="btn btn-dark" type="button" onclick="generateOptions()">Continue to Options</button>
         </div>
 
         <div id="generatedBox" class="generated-box hidden">
           <div class="generated-summary" id="generatedSummary"></div>
           <div class="result-note">
-            These options are for structured reference only and do not represent a final quote. Final recommendations and pricing remain subject to manual review and on-site measurement.
+            These options are for structured reference only and do not represent a final quote.
           </div>
         </div>
       </div>
 
       <div class="system-message" style="display:block; margin-top:18px;">
-        Disclaimer: The information, estimated ranges, visual references, and structured options provided on this page are for general reference only. They do not constitute a final quote, construction commitment, engineering opinion, or legal guarantee. Final scope, materials, dimensions, layout, hardware, work details, and pricing are subject to manual review, on-site measurement, and final confirmation between both parties.
+        Disclaimer: The information, estimated ranges, visual references, and structured options provided on this page are for general reference only. Final scope, materials, layout, hardware, and pricing remain subject to manual review and on-site measurement.
       </div>
     </section>
 
     <section class="section-box hidden" id="solutions">
-      <h2 class="section-title">Options</h2>
+      <h2 class="section-title">Step 2 · Review Suggested Options</h2>
       <p class="section-note">
-        These three common paths are intended to help you quickly understand the general differences between basic storage, standard custom storage, and premium built-in systems.
+        These three common paths help you understand the difference between simple storage, standard custom work, and premium built-in systems.
       </p>
 
       <div class="solutions-grid">
@@ -715,9 +587,7 @@
           <div class="decision-note">
             Best for practical storage needs and lower-budget situations.
           </div>
-          <div class="card-actions">
-            <button class="select-btn" type="button" onclick="selectOption('A')">Choose Option A</button>
-          </div>
+          <button class="select-btn" type="button" onclick="selectOption('A')">Choose Option A</button>
         </div>
 
         <div class="solution-card" id="cardB">
@@ -728,9 +598,7 @@
           <div class="decision-note">
             Best for users looking for a balanced path across layout, appearance, and cost.
           </div>
-          <div class="card-actions">
-            <button class="select-btn" type="button" onclick="selectOption('B')">Choose Option B</button>
-          </div>
+          <button class="select-btn" type="button" onclick="selectOption('B')">Choose Option B</button>
         </div>
 
         <div class="solution-card" id="cardC">
@@ -740,17 +608,19 @@
           <div class="decision-note">
             Best for more complete custom work and long-term value considerations.
           </div>
-          <div class="card-actions">
-            <button class="select-btn" type="button" onclick="selectOption('C')">Choose Option C</button>
-          </div>
+          <button class="select-btn" type="button" onclick="selectOption('C')">Choose Option C</button>
         </div>
+      </div>
+
+      <div class="step-actions">
+        <button class="btn btn-dark" type="button" onclick="goToTab('quote')">Continue to Estimated Cost</button>
       </div>
     </section>
 
     <section class="section-box hidden" id="quote">
-      <h2 class="section-title">Cost Estimate</h2>
+      <h2 class="section-title">Step 3 · Review Estimated Cost</h2>
       <p class="section-note">
-        You may review this estimated range first to understand a likely starting point. Final pricing remains subject to manual review and on-site measurement.
+        This estimated range gives you a general starting point before manual review and on-site measurement.
       </p>
 
       <div class="quote-grid">
@@ -775,14 +645,18 @@
       <div class="quote-result" id="quoteResult">Estimated Cost: $1,200</div>
 
       <div class="quote-note">
-        This estimate is for general reference only and does not replace manual review, on-site measurement, material confirmation, or a final formal quote.
+        No pressure — you can review everything before submitting your request.
+      </div>
+
+      <div class="step-actions">
+        <button class="btn btn-dark" type="button" onclick="submitToBackend()">Submit Request</button>
       </div>
     </section>
 
     <section class="section-box hidden" id="visual">
       <h2 class="section-title">Design Reference</h2>
       <p class="section-note">
-        The visuals shown here are storage references and illustrative examples only. They do not represent a final deliverable. Your actual proposal will be manually prepared based on the photos and project details you submit.
+        These are visual references only. Your actual proposal will be prepared based on the photos and project details you submit.
       </p>
 
       <div class="visual-wrap">
@@ -799,10 +673,6 @@
         <img src="../assets/cabinet-detail.jpg" alt="Cabinet material detail reference" />
         <img src="../assets/cabinet-layout.jpg" alt="Cabinet layout and built-in storage reference" />
       </div>
-
-      <p class="image-grid-note">
-        Full view · Material detail · Layout reference
-      </p>
     </section>
 
     <div class="cta-wrap">
@@ -820,7 +690,7 @@
       </div>
 
       <div class="cta-note">
-        This page is part of the BB369 Platform decision module system. It is informed by a structured decision approach and designed for clearer service comparison, estimate guidance, and next-step booking.
+        This page is part of the BB369 Platform decision module system and is designed for clearer service comparison, estimate guidance, and next-step booking.
       </div>
     </div>
 
@@ -842,7 +712,7 @@
       allowedImageTypes: ["image/jpeg", "image/png", "image/webp", "image/jpg"]
     };
 
-    const tabs = document.querySelectorAll('.tab-btn');
+    const tabs = [];
     const sections = {
       input: document.getElementById('input'),
       solutions: document.getElementById('solutions'),
@@ -869,6 +739,12 @@
     const customerPhone = document.getElementById('customerPhone');
     const photoUpload = document.getElementById('photoUpload');
     const previewContainer = document.getElementById('previewContainer');
+
+    const materialField = document.getElementById('materialField');
+    const photoField = document.getElementById('photoField');
+    const uploadNote = document.getElementById('uploadNote');
+    const step1Actions = document.getElementById('step1Actions');
+    const step2Actions = document.getElementById('step2Actions');
 
     let selectedOption = "";
     let isSubmitting = false;
@@ -917,46 +793,49 @@
     }
 
     function goToTab(tabName) {
-      if (!sections[tabName]) return;
-
-      tabs.forEach(t => t.classList.remove('active'));
-
-      const activeTab = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
-      if (activeTab) activeTab.classList.add('active');
-
       Object.values(sections).forEach(sec => {
         if (sec) sec.classList.add('hidden');
       });
-
-      sections[tabName].classList.remove('hidden');
-      sections[tabName].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (sections[tabName]) {
+        sections[tabName].classList.remove('hidden');
+        sections[tabName].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
 
     function startRequestFlow() {
       goToTab('input');
-      if (requestFormWrap) requestFormWrap.classList.remove('hidden');
-      if (customerName) customerName.focus();
+      requestFormWrap.classList.remove('hidden');
+      customerName.focus();
     }
 
     function toggleRequestForm() {
-      if (!requestFormWrap) return;
-      requestFormWrap.classList.toggle('hidden');
-
-      if (!requestFormWrap.classList.contains('hidden') && customerName) {
-        customerName.focus();
-      }
+      requestFormWrap.classList.remove('hidden');
+      customerName.focus();
     }
 
-    tabs.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const tabName = btn.dataset.tab;
-        goToTab(tabName);
+    function showMoreFields() {
+      const name = customerName.value.trim();
+      const email = customerEmail.value.trim();
+      const message = issueDescription.value.trim();
 
-        if (tabName === 'input' && requestFormWrap) {
-          requestFormWrap.classList.remove('hidden');
-        }
-      });
-    });
+      clearMessage();
+
+      if (!name || !email || !message) {
+        showMessage("Please enter your name, email address, and project details before continuing.", "error");
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        showMessage("Please enter a valid email address.", "error");
+        return;
+      }
+
+      materialField.classList.remove('hidden');
+      photoField.classList.remove('hidden');
+      uploadNote.classList.remove('hidden');
+      step1Actions.classList.add('hidden');
+      step2Actions.classList.remove('hidden');
+    }
 
     function updateQuote() {
       const base = parseFloat(serviceType?.value || "0") || 0;
@@ -976,6 +855,7 @@
 
         const files = Array.from(photoUpload.files || []);
         if (!files.length) {
+          previewContainer.classList.add('hidden');
           clearMessage();
           return;
         }
@@ -986,11 +866,13 @@
             showMessage(result.message, "error");
             photoUpload.value = "";
             previewContainer.innerHTML = "";
+            previewContainer.classList.add('hidden');
             return;
           }
         }
 
         clearMessage();
+        previewContainer.classList.remove('hidden');
 
         files.forEach(file => {
           const reader = new FileReader();
@@ -1017,8 +899,6 @@
 
       if (!rawText) {
         showMessage("Please describe your project needs before generating suggested options.", "error");
-        goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
         return;
       }
 
@@ -1068,12 +948,11 @@
       generatedSummary.innerHTML = `
         <strong>Suggested Result:</strong> ${summary}<br><br>
         <strong>Recommended Starting Point:</strong> Option ${recommendation}<br>
-        <strong>Path:</strong> Submit Request → Review Options → Compare → Manual Proposal → Schedule Measurement
+        <strong>Path:</strong> Review Options → Compare Estimated Cost → Submit Request
       `;
 
       generatedBox.classList.remove('hidden');
       showMessage("Suggested options have been generated. Please review the recommended path below.", "success");
-
       goToTab('solutions');
       selectOption(recommendation);
     }
@@ -1110,7 +989,13 @@
       issueDescription.value = "";
       photoUpload.value = "";
       previewContainer.innerHTML = "";
+      previewContainer.classList.add('hidden');
       generatedBox.classList.add('hidden');
+      materialField.classList.add('hidden');
+      photoField.classList.add('hidden');
+      uploadNote.classList.add('hidden');
+      step1Actions.classList.remove('hidden');
+      step2Actions.classList.add('hidden');
       updateQuote();
 
       selectedOption = "";
@@ -1143,14 +1028,14 @@
       if (!name || !email || !message) {
         showMessage("Please enter your name, email address, and project details before submitting.", "error");
         goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
+        requestFormWrap.classList.remove('hidden');
         return;
       }
 
       if (!isValidEmail(email)) {
         showMessage("Please enter a valid email address.", "error");
         goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
+        requestFormWrap.classList.remove('hidden');
         customerEmail.focus();
         return;
       }
@@ -1158,7 +1043,7 @@
       if (!isValidPhone(phone)) {
         showMessage("Please enter a valid phone number, or leave the field blank.", "error");
         goToTab('input');
-        if (requestFormWrap) requestFormWrap.classList.remove('hidden');
+        requestFormWrap.classList.remove('hidden');
         customerPhone.focus();
         return;
       }
@@ -1168,7 +1053,7 @@
         if (!photoValidation.ok) {
           showMessage(photoValidation.message, "error");
           goToTab('input');
-          if (requestFormWrap) requestFormWrap.classList.remove('hidden');
+          requestFormWrap.classList.remove('hidden');
           return;
         }
       }
@@ -1213,7 +1098,6 @@
 
         if (res.ok && (data.success === true || data.success === undefined)) {
           showMessage("Your request has been submitted successfully. We will review it and send a proposal to your email.", "success");
-          if (requestFormWrap) requestFormWrap.classList.add('hidden');
           resetFormAfterSuccess();
         } else {
           showMessage(data.message || "The submission could not be completed. Please try again later.", "error");
